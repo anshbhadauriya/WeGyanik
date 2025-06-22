@@ -30,7 +30,11 @@ class screen1 : AppCompatActivity() {
 
         val images = listOf(
             R.drawable.trishul,
-            R.drawable.drone
+            R.drawable.drone,
+            R.drawable.vamann,
+            R.drawable.wegyanik_kit,
+            R.drawable.wegyanik_kit2,
+
         )
 
         adapter = BannerAdapter(images)
