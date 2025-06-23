@@ -18,7 +18,7 @@ class screen1 : AppCompatActivity() {
                 currentPage = 0
             }
             bannerViewPager.setCurrentItem(currentPage++, true)
-            handler.postDelayed(this, 3000)
+            handler.postDelayed(this, 30000)
         }
     }
 
