@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Wegyanik Card -->
     <androidx.cardview.widget.CardView
         android:id="@+id/whyCard"
         android:layout_width="match_parent"
@@ -76,7 +75,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <!-- Community Text -->
     <TextView
         android:id="@+id/domain"
         android:layout_width="wrap_content"

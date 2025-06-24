@@ -14,9 +14,9 @@
         android:padding="16dp"
         android:gravity="center_horizontal">
 
-        <!-- Wegyanik Logo -->
 
-        <!-- Banner ViewPager -->
+
+
         <ImageView
             android:id="@+id/wegyaniklogoooo"
             android:layout_width="222dp"
