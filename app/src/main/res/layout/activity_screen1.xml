@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:gravity="center_horizontal">
 
 
@@ -29,7 +30,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/bannerViewPager"
             android:layout_width="match_parent"
-            android:layout_height="194dp"
+            android:layout_height="208dp"
             android:layout_marginTop="48dp" />
 
         <TextView
@@ -114,6 +115,7 @@
         <!-- 🔽 Add more sections here -->
         <include layout="@layout/home_scroll_1" />
         <include layout="@layout/home_scroll_2" />
+        <include layout="@layout/home_scroll_3" />
 
     </LinearLayout>
 </ScrollView>

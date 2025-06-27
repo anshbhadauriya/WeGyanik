@@ -29,6 +29,8 @@ class screen1 : AppCompatActivity() {
         bannerViewPager = findViewById(R.id.bannerViewPager)
 
         val images = listOf(
+            R.drawable.robobanner,
+            R.drawable.robobanner2,
             R.drawable.trishul,
             R.drawable.drone,
             R.drawable.vamann,
