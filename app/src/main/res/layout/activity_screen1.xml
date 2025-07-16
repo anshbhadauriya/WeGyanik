@@ -116,6 +116,7 @@
         <include layout="@layout/home_scroll_2" />
         <include layout="@layout/home_scroll_3" />
         <include layout="@layout/home_scroll_4" />
+        <include layout="@layout/home_scroll_5" />
 
     </LinearLayout>
 </ScrollView>
