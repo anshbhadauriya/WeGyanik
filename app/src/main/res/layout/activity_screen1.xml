@@ -1,122 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeScreen">
 
-    <LinearLayout
+    <!-- Scrollable Content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:gravity="center_horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-
-
-
-        <ImageView
-            android:id="@+id/wegyaniklogoooo"
-            android:layout_width="222dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="24dp"
-            android:contentDescription="Wegyanik logo"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/wegyaniklogo" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/bannerViewPager"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="208dp"
-            android:layout_marginTop="48dp" />
-
-        <TextView
-            android:id="@+id/community"
-            android:drawableStart="@drawable/supervisor_account_24dp_1f1f1f_fill0_wght0_grad0_opsz24"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Community"
-            android:textStyle="bold"
-            android:textColor="#e95b0b"
-            android:layout_marginTop="40dp"
-            android:textSize="30sp" />
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center_horizontal">
 
+            <ImageView
+                android:id="@+id/wegyaniklogoooo"
+                android:layout_width="222dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="Wegyanik logo"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/wegyaniklogo" />
 
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="8dp"
-            app:cardUseCompatPadding="true">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/bannerViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="12dp">
+                android:layout_height="208dp"
+                android:layout_marginTop="48dp" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="59dp"
-                    android:layout_height="51dp"
-                    android:layout_marginTop="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/bulbb" />
+            <TextView
+                android:id="@+id/community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Community"
+                android:textStyle="bold"
+                android:textColor="#e95b0b"
+                android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/titleText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="What is Wegyanik?"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/imageView" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
 
-                <TextView
-                    android:id="@+id/descriptionText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:gravity="center"
-                    android:text="Wegyanik is a platform that empowers students and institutions to innovate, collaborate, and grow through technology and hands-on learning."
-                    android:textColor="#444444"
-                    android:textSize="13sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/titleText"
-                    app:layout_constraintVertical_bias="0.0" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
 
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Explore Wegyanik"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:backgroundTint="#e95b0b"
-                    app:layout_constraintTop_toBottomOf="@+id/descriptionText"
-                    app:layout_constraintVertical_bias="0.38" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="59dp"
+                        android:layout_height="51dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bulbb" />
 
-        <include layout="@layout/home_scroll_1" />
-        <include layout="@layout/home_scroll_2" />
-        <include layout="@layout/home_scroll_3" />
-        <include layout="@layout/home_scroll_4" />
-        <include layout="@layout/home_scroll_5" />
+                    <TextView
+                        android:id="@+id/titleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="What is Wegyanik?"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView" />
 
-    </LinearLayout>
-</ScrollView>
+                    <TextView
+                        android:id="@+id/descriptionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="Wegyanik is a platform that empowers students and institutions to innovate, collaborate, and grow through technology and hands-on learning."
+                        android:textColor="#444444"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titleText"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Explore Wegyanik"
+                        android:backgroundTint="#e95b0b"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/descriptionText"
+                        app:layout_constraintVertical_bias="0.38" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Include Other Layouts -->
+            <include layout="@layout/home_scroll_1" />
+            <include layout="@layout/home_scroll_2" />
+            <include layout="@layout/home_scroll_3" />
+            <include layout="@layout/home_scroll_4" />
+            <include layout="@layout/home_scroll_5" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>
