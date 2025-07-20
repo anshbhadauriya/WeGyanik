@@ -1,5 +1,6 @@
 package com.example.wegyanik
 
+import ShopFragment
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +12,7 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
-        // ✅ Load Home (screen1) fragment by default
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, home_Screen())
             .commit()
@@ -33,7 +34,7 @@ class HomeScreen : AppCompatActivity() {
 
                 R.id.nav_products -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, shop())
+                        .replace(R.id.container, ShopFragment())
                         .commit()
                     true
                 }
