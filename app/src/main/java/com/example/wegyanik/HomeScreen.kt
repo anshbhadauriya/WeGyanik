@@ -28,7 +28,9 @@ class HomeScreen : AppCompatActivity() {
                 }
 
                 R.id.nav_explore -> {
-                    Toast.makeText(this, "Explore clicked", Toast.LENGTH_SHORT).show()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, ProjectFragment())
+                        .commit()
                     true
                 }
 

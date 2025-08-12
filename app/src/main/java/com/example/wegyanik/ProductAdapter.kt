@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.wegyanik.Product
 import com.example.wegyanik.R
 
@@ -37,6 +38,7 @@ class ProductAdapter(private val productList: List<Product>) :
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .placeholder(R.drawable.ic_launcher_background)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
     }
 
