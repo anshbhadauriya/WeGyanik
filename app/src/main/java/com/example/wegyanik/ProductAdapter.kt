@@ -40,6 +40,7 @@ class ProductAdapter(private val productList: List<Product>) :
             .placeholder(R.drawable.ic_launcher_background)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
+
     }
 
     override fun getItemCount(): Int = productList.size

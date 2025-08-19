@@ -29,11 +29,11 @@ class ProjectAdapter(private val projects: List<Project>) :
         holder.title.text = project.title
         holder.description.text = project.description
 
-        // If thumbnailUrl from API starts with "/uploads/..."
+
         Glide.with(holder.itemView.context)
             .load("https://wegyanik.in" + project.coverImage)
             .placeholder(R.drawable.image_placeholder_bg)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)  // Cache both original & resized
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
     }
 

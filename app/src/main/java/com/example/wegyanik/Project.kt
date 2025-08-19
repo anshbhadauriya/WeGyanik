@@ -9,5 +9,6 @@ data class Project(
     @SerializedName("cover_image") val coverImage: String = "",
     val difficulty: String = "",
     val duration: String = "",
-    val cost: String = ""
+    val cost: String = "",
+    @SerializedName("video_url") val videoUrl: String = ""
 )
