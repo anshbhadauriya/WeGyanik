@@ -1,6 +1,5 @@
 package com.example.wegyanik
 
-import ShopFragment
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -27,60 +26,47 @@ class HomeScreen : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
         toolbar = findViewById(R.id.toolbar)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
-        // Set toolbar as the ActionBar
+        // Setup toolbar
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        // Setup ActionBarDrawerToggle (Hamburger icon)
+        // Setup Drawer toggle button (hamburger)
         toggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar, // ✅ pass toolbar here
-            R.string.nav_open,
-            R.string.nav_close
+            this, drawerLayout, toolbar,
+            R.string.nav_open, R.string.nav_close
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Load default fragment
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, home_Screen())
-            .commit()
+        // Load default fragment (adjust fragment class name as per your project)
+        replaceFragment(HomeScreenFragment())
 
-        // Bottom Navigation
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        // Bottom navigation listener
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, home_Screen())
-                        .commit()
+                    replaceFragment(HomeScreenFragment())
                     true
                 }
                 R.id.nav_explore -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, ProjectFragment())
-                        .commit()
+                    replaceFragment(ProjectFragment())
                     true
                 }
                 R.id.nav_products -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, ShopFragment())
-                        .commit()
+                    replaceFragment(ShopFragment())
                     true
                 }
                 R.id.nav_profile -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, ProfileFragment())
-                        .commit()
+                    replaceFragment(ProfileFragment())
                     true
                 }
                 else -> false
             }
         }
 
-        // Drawer Navigation
+        // Drawer navigation listener
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_home -> Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show()
@@ -92,14 +78,19 @@ class HomeScreen : AppCompatActivity() {
         }
     }
 
-    // Handle Hamburger icon click
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (toggle.onOptionsItemSelected(item)) {
-            true
-        } else super.onOptionsItemSelected(item)
+    // Utility method for fragment replacement
+    private fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, fragment)
+            .commit()
     }
 
-    // Handle back press to close drawer if open
+    // Handle toolbar menu click events (hamburger-drawer toggle)
+    override fun onOptionsItemSelected(item: MenuItem) =
+        if (toggle.onOptionsItemSelected(item)) true
+        else super.onOptionsItemSelected(item)
+
+    // Back press closes drawer if open, else default behavior
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)

@@ -16,14 +16,13 @@
                     android:id="@+id/toolbar"
                     android:layout_width="0dp"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@color/white"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="?attr/colorSurface"
+                    app:logo="@drawable/wegyaniklogo"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:navigationIconTint="@android:color/white"
-                    app:title="" />
-
-
+                    app:title=""
+                    app:navigationIconTint="?attr/colorOnSurface"/>
 
                 <!-- Fragment Container -->
                 <FrameLayout
@@ -33,7 +32,7 @@
                     app:layout_constraintTop_toBottomOf="@id/toolbar"
                     app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <!-- Bottom Navigation -->
                 <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -44,7 +43,7 @@
                     app:menu="@menu/bottom_nav_menu"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Navigation Drawer -->
@@ -54,6 +53,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:menu="@menu/drawer_menu"
-            app:headerLayout="@layout/drawer_header"/>
+            app:headerLayout="@layout/drawer_header" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
