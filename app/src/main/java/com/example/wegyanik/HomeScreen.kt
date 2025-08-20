@@ -41,58 +41,47 @@ class HomeScreen : AppCompatActivity() {
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // Load default fragment (adjust fragment class name as per your project)
+        // Load default fragment
         replaceFragment(home_Screen())
 
         // Bottom navigation listener
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> {
-                    replaceFragment(home_Screen())
-                    true
-                }
-                R.id.nav_explore -> {
-                    replaceFragment(ProjectFragment())
-                    true
-                }
-                R.id.nav_products -> {
-                    replaceFragment(ShopFragment())
-                    true
-                }
-                R.id.nav_profile -> {
-                    replaceFragment(ProfileFragment())
-                    true
-                }
+                R.id.nav_home -> replaceFragment(home_Screen())
+                R.id.nav_explore -> replaceFragment(ProjectFragment())
+                R.id.nav_products -> replaceFragment(ShopFragment())
+                R.id.nav_profile -> replaceFragment(ProfileFragment())
                 else -> false
             }
+            true
         }
 
         // Drawer navigation listener
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_profile -> Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-                R.id.menu_community -> Toast.makeText(this, "Community", Toast.LENGTH_SHORT).show()
-                R.id.menu_domain -> Toast.makeText(this, "Domain", Toast.LENGTH_SHORT).show()
-                R.id.menu_whatweoffer -> Toast.makeText(this, "What We Offer", Toast.LENGTH_SHORT).show()
+                R.id.menu_community -> Toast.makeText(this, "Community clicked", Toast.LENGTH_SHORT).show()
+                R.id.menu_domain -> Toast.makeText(this, "Domain clicked", Toast.LENGTH_SHORT).show()
+                R.id.menu_whatweoffer -> Toast.makeText(this, "What We Offer clicked", Toast.LENGTH_SHORT).show()
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
     }
 
-    // Utility method for fragment replacement
+    // Fragment replacement utility
     private fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
     }
 
-    // Handle toolbar menu click events (hamburger-drawer toggle)
+    // Handle toolbar menu click events
     override fun onOptionsItemSelected(item: MenuItem) =
         if (toggle.onOptionsItemSelected(item)) true
         else super.onOptionsItemSelected(item)
 
-    // Back press closes drawer if open, else default behavior
+    // Back press closes drawer if open
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
