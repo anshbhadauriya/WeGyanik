@@ -1,5 +1,6 @@
 package com.example.wegyanik
 
+import ShopFragment
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -41,13 +42,13 @@ class HomeScreen : AppCompatActivity() {
         toggle.syncState()
 
         // Load default fragment (adjust fragment class name as per your project)
-        replaceFragment(HomeScreenFragment())
+        replaceFragment(home_Screen())
 
         // Bottom navigation listener
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    replaceFragment(HomeScreenFragment())
+                    replaceFragment(home_Screen())
                     true
                 }
                 R.id.nav_explore -> {

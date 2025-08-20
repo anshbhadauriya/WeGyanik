@@ -1,3 +1,7 @@
+package com.example.wegyanik
+
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,16 +10,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.wegyanik.Project
-import com.example.wegyanik.R
 
-class ProjectAdapter(private val projects: List<Project>) :
-    RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
+class ProjectAdapter(
+    private val projects: List<Project>
+) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     inner class ProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.projectTitle)
         val description: TextView = itemView.findViewById(R.id.projectDescription)
         val image: ImageView = itemView.findViewById(R.id.projectImage)
+        val difficulty: TextView = itemView.findViewById(R.id.projectDifficulty)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
@@ -28,13 +32,20 @@ class ProjectAdapter(private val projects: List<Project>) :
         val project = projects[position]
         holder.title.text = project.title
         holder.description.text = project.description
-
+        holder.difficulty.text = "${project.difficulty} • ${project.duration} • ${project.cost}"
 
         Glide.with(holder.itemView.context)
             .load("https://wegyanik.in" + project.coverImage)
             .placeholder(R.drawable.image_placeholder_bg)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
+
+        // 🔹 Open YouTube video on click
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(project.videoUrl))
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = projects.size
