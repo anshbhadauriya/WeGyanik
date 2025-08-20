@@ -2,18 +2,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_home"
-        android:title="Home"
-        android:icon="@drawable/ic_home" />
-
-    <item
         android:id="@+id/menu_profile"
         android:title="Profile"
-        android:icon="@drawable/ic_products" />
+        android:icon="@drawable/ic_profile"
+        android:onClick="ProfileFragment" />
 
     <item
-        android:id="@+id/menu_settings"
-        android:title="Settings"
-        android:icon="@drawable/ic_settings" />
+        android:id="@+id/menu_community"
+        android:title="Community"
+        android:icon="@drawable/ic_home"
+        android:onClick="openCommunityFragment"/>
 
+    <item
+        android:id="@+id/menu_domain"
+        android:title="Our Domain"
+        android:icon="@drawable/ic_home"
+        android:onClick="openDomainFragment"/>
+
+    <item
+        android:id="@+id/menu_whatweoffer"
+        android:title="What we offer?"
+        android:icon="@drawable/ic_home"
+        android:onClick="openWhatWeOfferFragment"/>
+
+<!--    <item-->
+<!--        android:id="@+id/menu_settings"-->
+<!--        android:title="Settings"-->
+<!--        android:icon="@drawable/ic_settings"-->
+<!--        android:onClick="openSettingsFragment"/>-->
 </menu>

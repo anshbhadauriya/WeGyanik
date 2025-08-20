@@ -70,9 +70,10 @@ class HomeScreen : AppCompatActivity() {
         // Drawer navigation listener
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.menu_home -> Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show()
                 R.id.menu_profile -> Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-                R.id.menu_settings -> Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
+                R.id.menu_community -> Toast.makeText(this, "Community", Toast.LENGTH_SHORT).show()
+                R.id.menu_domain -> Toast.makeText(this, "Domain", Toast.LENGTH_SHORT).show()
+                R.id.menu_whatweoffer -> Toast.makeText(this, "What We Offer", Toast.LENGTH_SHORT).show()
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
