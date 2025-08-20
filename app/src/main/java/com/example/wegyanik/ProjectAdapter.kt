@@ -40,7 +40,7 @@ class ProjectAdapter(
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
 
-        // 🔹 Open YouTube video on click
+        // 🔹 Open YouTube video on click here
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(project.videoUrl))
