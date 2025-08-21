@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-class home_Screen : Fragment() {
-
+class CommunityFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.activity_home, container, false)
+        // Inflate the community page layout
+        return inflater.inflate(R.layout.community, container, false)
     }
 }

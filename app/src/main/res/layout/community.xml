@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeScreen">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Community"
+                android:textStyle="bold"
+                android:textColor="#e95b0b"
+                android:textSize="30sp" />
+
+            <!-- What is Wegyanik Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="59dp"
+                        android:layout_height="51dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/bulbb" />
+
+                    <TextView
+                        android:id="@+id/titleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="What is Wegyanik?"
+                        android:textColor="?attr/colorOnBackground"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+                    <TextView
+                        android:id="@+id/descriptionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="Wegyanik is a platform that empowers students and institutions to innovate, collaborate, and grow through technology and hands-on learning."
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titleText"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Explore Wegyanik"
+                        android:backgroundTint="#e95b0b"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/descriptionText"
+                        app:layout_constraintVertical_bias="0.38"
+                        android:textColor="?attr/colorOnSurface"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Why Join Wegyanik Card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <androidx.cardview.widget.CardView
+                android:id="@+id/whyCard"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="59dp"
+                            android:layout_height="51dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:srcCompat="@drawable/new_account_circle" />
+
+                        <TextView
+                            android:id="@+id/titleTextWhy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Why Join Wegyanik?"
+                            android:textColor="?attr/colorOnBackground"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@id/imageView1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <TextView
+                            android:id="@+id/descriptionTextWhy"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Join to access educational kits, workshops, and a supportive community to bring your ideas to life and build a strong tech future."
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            app:layout_constraintTop_toBottomOf="@id/titleTextWhy"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <Button
+                            android:id="@+id/buttonWhy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Join Wegyanik"
+                            android:backgroundTint="#e95b0b"
+                            app:layout_constraintTop_toBottomOf="@id/descriptionTextWhy"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textColor="?attr/colorOnSurface"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
