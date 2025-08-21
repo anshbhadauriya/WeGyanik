@@ -21,7 +21,7 @@ class HomeScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_screen)
+        setContentView(R.layout.activity_homescreen_ui)
 
         // Initialize views
         drawerLayout = findViewById(R.id.drawerLayout)
@@ -59,10 +59,11 @@ class HomeScreen : AppCompatActivity() {
         // Drawer navigation listener
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.menu_profile -> Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-                R.id.menu_community -> Toast.makeText(this, "Community clicked", Toast.LENGTH_SHORT).show()
-                R.id.menu_domain -> Toast.makeText(this, "Domain clicked", Toast.LENGTH_SHORT).show()
-                R.id.menu_whatweoffer -> Toast.makeText(this, "What We Offer clicked", Toast.LENGTH_SHORT).show()
+                R.id.menu_profile -> replaceFragment(ProfileFragment())
+                R.id.menu_community -> replaceFragment(CommunityFragment())
+                R.id.menu_domain -> replaceFragment(DomainFragment())
+                R.id.menu_whatweoffer -> replaceFragment(WhatWeOfferFragment())
+                else -> false
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true

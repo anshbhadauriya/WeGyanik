@@ -5,4 +5,7 @@
     <color name="background">#121212</color>
     <color name="text_primary">#eeeeee</color>
     <color name="text_secondary">#bbbbbb</color>
+    <color name="wegyanik_orange">#ffab6e</color>
+    <color name="wegyanik_green">#22C55E</color>
+    <color name="wegyanik_purple">#CAB0FF</color>
 </resources>
