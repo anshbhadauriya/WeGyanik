@@ -2,7 +2,6 @@ package com.example.wegyanik
 
 import ShopFragment
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -30,13 +29,15 @@ class HomeScreen : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.navigationIcon = null
         toolbar.setOnClickListener {
-            // Navigate to homepage fragment
+            // Navigate to homepage fragment and update bottom nav selection
             replaceFragment(home_Screen())
+            bottomNav.selectedItemId = R.id.nav_home
         }
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // Load default fragment
         replaceFragment(home_Screen())
+        bottomNav.selectedItemId = R.id.nav_home
 
         // Bottom navigation listener
         bottomNav.setOnItemSelectedListener { item ->
