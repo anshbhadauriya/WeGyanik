@@ -17,34 +17,42 @@
                     android:id="@+id/toolbar"
                     android:layout_width="0dp"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="?attr/colorSurface"
+                    android:background="@color/background"
                     app:logo="@drawable/wegyaniklogo"
+                    app:logoDescription="@string/app_name"
+                    app:title=""
+                    app:navigationIconTint="?attr/colorOnPrimary"
+                    app:titleTextColor="?attr/colorOnPrimary"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:title=""
-                    app:navigationIconTint="?attr/colorOnSurface"/>
+                    android:elevation="4dp"/>
 
                 <!-- Fragment Container -->
                 <FrameLayout
                     android:id="@+id/container"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:background="@color/background"
                     app:layout_constraintTop_toBottomOf="@id/toolbar"
                     app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"/>
 
                 <!-- Bottom Navigation -->
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottomNavigation"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="?android:attr/windowBackground"
+                    android:background="@color/background"
+                    app:itemIconTint="@color/nav_item_color_selector"
+                    app:itemTextColor="@color/nav_item_color_selector"
                     app:menu="@menu/bottom_nav_menu"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:elevation="8dp"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Navigation Drawer -->
@@ -52,8 +60,11 @@
             android:id="@+id/navigationView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:background="?attr/colorSurface"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/drawer_header"
+            app:itemIconTint="@color/nav_item_color_selector"
             app:menu="@menu/drawer_menu"
-            app:headerLayout="@layout/drawer_header" />
+            android:layout_gravity="start"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
