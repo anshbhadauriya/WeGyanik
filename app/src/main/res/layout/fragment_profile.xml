@@ -68,16 +68,23 @@
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
-                        android:id="@+id/myAddress"
+                        android:id="@+id/community1"
                         style="@style/ProfileOptionText"
-                        android:text="My Address" />
+                        android:text="Community" />
 
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
                         android:id="@+id/notifications"
                         style="@style/ProfileOptionText"
-                        android:text="Notifications" />
+                        android:text="Domains" />
+
+                    <View style="@style/ProfileOptionDivider" />
+
+                    <TextView
+                        android:id="@+id/dom"
+                        style="@style/ProfileOptionText"
+                        android:text="What we offer?" />
 
                     <View style="@style/ProfileOptionDivider" />
 
