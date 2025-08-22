@@ -15,5 +15,3 @@ class HomeScreenFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home_screen, container, false)
     }
 }
-
-// Similarly create ProjectFragment.kt, ShopFragment.kt, ProfileFragment.kt

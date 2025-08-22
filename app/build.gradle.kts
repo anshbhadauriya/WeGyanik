@@ -54,6 +54,6 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation("com.github.bumptech.glide:glide:4.15.1")
     kapt("com.github.bumptech.glide:compiler:4.15.1")
-
-
+    implementation("me.relex:circleindicator:2.1.6")
+    implementation("com.tbuonomo:dotsindicator:5.0")
 }

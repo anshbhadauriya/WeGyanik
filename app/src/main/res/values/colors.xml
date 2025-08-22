@@ -8,4 +8,6 @@
     <color name="wegyanik_orange">#e95b0b</color>
     <color name="wegyanik_green">#22C55E</color>
     <color name="wegyanik_purple">#9810fa</color>
+    <color name="dot_color">#999999</color>
+    <color name="selected_dot_color">#505050</color>
 </resources>

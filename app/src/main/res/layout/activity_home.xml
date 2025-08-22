@@ -42,7 +42,7 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="Previous"
                     android:src="@drawable/ic_arrow_left"
-                    android:tint="?attr/colorOnPrimary"/>
+                    app:tint="@color/selected_dot_color"/>
 
                 <!-- Right Arrow for Manual Scroll -->
                 <ImageButton
@@ -54,7 +54,19 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="Next"
                     android:src="@drawable/ic_arrow_right"
-                    android:tint="?attr/colorOnPrimary"/>
+                    app:tint="@color/selected_dot_color"/>
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/bannerDots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="8dp"
+                    app:dotsColor="@color/dot_color"
+                    app:dotsStrokeWidth="2dp"
+                    app:dotsSize="8dp"
+                    app:dotsSpacing="6dp"
+                    app:selectedDotColor="@color/selected_dot_color" />
             </FrameLayout>
 
             <!-- Products Section -->
@@ -74,7 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:overScrollMode="never"
-                android:scrollbars="none">
+                android:scrollbars="none"
+                android:contentDescription="products">
 
                 <LinearLayout
                     android:id="@+id/productsContainer"
@@ -103,7 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:overScrollMode="never"
-                android:scrollbars="none">
+                android:scrollbars="none"
+                android:contentDescription="projects">
 
                 <LinearLayout
                     android:id="@+id/projectsContainer"
@@ -116,33 +130,34 @@
             </HorizontalScrollView>
 
             <!-- Advertisements Section -->
-            <TextView
-                android:id="@+id/sectionAds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Advertisements"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnBackground"
-                android:paddingBottom="8dp"
-                android:layout_marginTop="24dp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/sectionAds"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Advertisements"-->
+<!--                android:textSize="22sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="?attr/colorOnBackground"-->
+<!--                android:paddingBottom="8dp"-->
+<!--                android:layout_marginTop="24dp"/>-->
 
-            <HorizontalScrollView
-                android:id="@+id/adsScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:overScrollMode="never"
-                android:scrollbars="none">
+<!--            <HorizontalScrollView-->
+<!--                android:id="@+id/adsScrollView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:overScrollMode="never"-->
+<!--                android:scrollbars="none"-->
+<!--                android:contentDescription="ads">-->
 
-                <LinearLayout
-                    android:id="@+id/adsContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="8dp">
-                    <!-- Advertisement cards here -->
-                </LinearLayout>
-            </HorizontalScrollView>
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/adsContainer"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingHorizontal="8dp">-->
+<!--                    &lt;!&ndash; Advertisement cards here &ndash;&gt;-->
+<!--                </LinearLayout>-->
+<!--            </HorizontalScrollView>-->
 
         </LinearLayout>
     </ScrollView>
