@@ -1,7 +1,9 @@
 package com.example.wegyanik
+
 import android.os.Handler
 import android.os.Looper
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 
@@ -17,7 +19,7 @@ class screen1 : AppCompatActivity() {
                 currentPage = 0
             }
             bannerViewPager.setCurrentItem(currentPage++, true)
-            handler.postDelayed(this, 15000)
+            handler.postDelayed(this, 15000) // 15 seconds delay
         }
     }
 
@@ -27,6 +29,8 @@ class screen1 : AppCompatActivity() {
 
         bannerViewPager = findViewById(R.id.bannerViewPager)
 
+
+        // List of images to show in banner carousel
         val images = listOf(
             R.drawable.robobanner,
             R.drawable.robobanner2,
@@ -34,24 +38,26 @@ class screen1 : AppCompatActivity() {
             R.drawable.drone,
             R.drawable.vamann,
             R.drawable.wegyanik_kit,
-            R.drawable.wegyanik_kit2,
-
+            R.drawable.wegyanik_kit2
         )
-
         adapter = BannerAdapter(images)
+        Log.d("screen1", "Before setting adapter")
         bannerViewPager.adapter = adapter
+        Log.d("screen1", "After setting adapter")
 
+        // Start automatic sliding
         handler.post(runnable)
     }
 
     override fun onPause() {
         super.onPause()
+        // Stop auto sliding to prevent memory leak
         handler.removeCallbacks(runnable)
     }
 
     override fun onResume() {
         super.onResume()
+        // Resume auto sliding
         handler.post(runnable)
     }
 }
-

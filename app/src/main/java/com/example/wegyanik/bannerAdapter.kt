@@ -1,5 +1,6 @@
 package com.example.wegyanik
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,7 @@ class BannerAdapter(private val images: List<Int>) :
     }
 
     override fun onBindViewHolder(holder: BannerViewHolder, position: Int) {
+        Log.d("BannerAdapter", "Binding image at position: $position")
         holder.bannerImage.setImageResource(images[position])
     }
 
