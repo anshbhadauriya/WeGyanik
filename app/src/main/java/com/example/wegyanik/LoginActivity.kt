@@ -6,14 +6,14 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        val registerprompt=findViewById<TextView>(R.id.registerprompt)
-        registerprompt.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
+        val loginPromptTextView = findViewById<TextView>(R.id.registerprompt)
+        loginPromptTextView.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
     }
