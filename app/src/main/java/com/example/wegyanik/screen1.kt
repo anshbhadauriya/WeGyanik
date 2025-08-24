@@ -1,57 +1,30 @@
 package com.example.wegyanik
-import android.os.Handler
-import android.os.Looper
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.models.SlideModel
+import com.denzcoskun.imageslider.constants.ScaleTypes
 
-class screen1 : AppCompatActivity() {
-    private lateinit var bannerViewPager: ViewPager2
-    private lateinit var adapter: BannerAdapter
-    private val handler = Handler(Looper.getMainLooper())
-    private var currentPage = 0
-
-    private val runnable = object : Runnable {
-        override fun run() {
-            if (currentPage == adapter.itemCount) {
-                currentPage = 0
-            }
-            bannerViewPager.setCurrentItem(currentPage++, true)
-            handler.postDelayed(this, 15000)
-        }
-    }
+class Screen1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        bannerViewPager = findViewById(R.id.bannerViewPager)
+        // Initialize ImageSlider
+        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
 
-        val images = listOf(
-            R.drawable.robobanner,
-            R.drawable.robobanner2,
-            R.drawable.trishul,
-            R.drawable.drone,
-            R.drawable.vamann,
-            R.drawable.wegyanik_kit,
-            R.drawable.wegyanik_kit2,
-
+        // Prepare list of images
+        val slideModels = arrayListOf(
+            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
+            SlideModel(R.drawable.trii, ScaleTypes.FIT),
+            SlideModel(R.drawable.drone, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT)
         )
 
-        adapter = BannerAdapter(images)
-        bannerViewPager.adapter = adapter
-
-        handler.post(runnable)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        handler.removeCallbacks(runnable)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        handler.post(runnable)
+        // Set images to slider
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
     }
 }
-
