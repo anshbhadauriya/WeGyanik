@@ -12,7 +12,7 @@ class Screen1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Initialize ImageSlider
+        // Initialize ImageSliders
         val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
 
         // Prepare list of images
