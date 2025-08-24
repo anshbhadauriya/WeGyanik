@@ -63,42 +63,47 @@
                     <TextView
                         android:id="@+id/myOrders"
                         style="@style/ProfileOptionText"
-                        android:text="My Orders" />
+                        android:text="My Orders"
+                        android:gravity="center"/>
 
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
                         android:id="@+id/community1"
                         style="@style/ProfileOptionText"
-                        android:text="Community" />
+                        android:text="Community"
+                        android:gravity="center"/>
 
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
                         android:id="@+id/notifications"
                         style="@style/ProfileOptionText"
-                        android:text="Domains" />
+                        android:text="Domains"
+                        android:gravity="center"/>
 
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
                         android:id="@+id/dom"
                         style="@style/ProfileOptionText"
-                        android:text="What we offer?" />
+                        android:text="What we offer?"
+                        android:gravity="center"/>
 
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
                         android:id="@+id/needHelp"
                         style="@style/ProfileOptionText"
-                        android:text="Need Help?" />
+                        android:text="Need Help?"
+                        android:gravity="center"/>
 
                     <View style="@style/ProfileOptionDivider" />
 
                     <TextView
                         android:id="@+id/logout"
                         style="@style/ProfileOptionText"
-                        android:text="Logout"
+                        android:text="Login"
                         android:textColor="?attr/colorError"
                         android:gravity="center" />
                 </LinearLayout>

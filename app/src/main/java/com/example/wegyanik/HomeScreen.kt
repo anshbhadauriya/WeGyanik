@@ -1,10 +1,16 @@
 package com.example.wegyanik
 
 import ShopFragment
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -19,6 +25,18 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homescreen_ui)
 
+        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
+
+        val slideModels = arrayListOf(
+            SlideModel(R.drawable.robobanner2, ScaleTypes.CENTER_INSIDE),
+            SlideModel(R.drawable.robobanner, ScaleTypes.CENTER_INSIDE),
+            SlideModel(R.drawable.trii, ScaleTypes.CENTER_INSIDE),
+            SlideModel(R.drawable.drone, ScaleTypes.CENTER_INSIDE),
+            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.CENTER_INSIDE),
+        )
+
+        imageSlider.setImageList(slideModels, ScaleTypes.CENTER_INSIDE)
+
         // Initialize views
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
@@ -29,7 +47,6 @@ class HomeScreen : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.navigationIcon = null
         toolbar.setOnClickListener {
-            // Navigate to homepage fragment and update bottom nav selection
             replaceFragment(home_Screen())
             bottomNav.selectedItemId = R.id.nav_home
         }
@@ -39,7 +56,7 @@ class HomeScreen : AppCompatActivity() {
         replaceFragment(home_Screen())
         bottomNav.selectedItemId = R.id.nav_home
 
-        // Bottom navigation listener
+        // Bottom nav listener
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> replaceFragment(home_Screen())
@@ -51,7 +68,7 @@ class HomeScreen : AppCompatActivity() {
             true
         }
 
-        // Drawer navigation listener
+        // Drawer nav listener
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.menu_profile -> {
@@ -83,14 +100,12 @@ class HomeScreen : AppCompatActivity() {
         }
     }
 
-    // Utility to replace fragments in the container
     private fun replaceFragment(fragment: androidx.fragment.app.Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
     }
 
-    // Back press closes drawer if open, otherwise performs default action
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)

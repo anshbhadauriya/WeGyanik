@@ -3,6 +3,9 @@
     <style name="Base.Theme.Wegyanik" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/background</item>
+        <!-- Choose icon contrast: true = dark icons (for light bg), false = light icons (for dark bg) -->
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="Theme.Wegyanik" parent="Base.Theme.Wegyanik" />
