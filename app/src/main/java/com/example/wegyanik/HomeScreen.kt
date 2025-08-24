@@ -28,14 +28,14 @@ class HomeScreen : AppCompatActivity() {
         val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
 
         val slideModels = arrayListOf(
-            SlideModel(R.drawable.robobanner2, ScaleTypes.CENTER_INSIDE),
-            SlideModel(R.drawable.robobanner, ScaleTypes.CENTER_INSIDE),
-            SlideModel(R.drawable.trii, ScaleTypes.CENTER_INSIDE),
-            SlideModel(R.drawable.drone, ScaleTypes.CENTER_INSIDE),
-            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.CENTER_INSIDE),
+            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
+            SlideModel(R.drawable.trii, ScaleTypes.FIT),
+            SlideModel(R.drawable.drone, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
         )
 
-        imageSlider.setImageList(slideModels, ScaleTypes.CENTER_INSIDE)
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
         // Initialize views
         drawerLayout = findViewById(R.id.drawerLayout)
