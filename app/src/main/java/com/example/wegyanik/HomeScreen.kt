@@ -24,18 +24,18 @@ class HomeScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homescreen_ui)
-
-        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
-
-        val slideModels = arrayListOf(
-            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
-            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
-            SlideModel(R.drawable.trii, ScaleTypes.FIT),
-            SlideModel(R.drawable.drone, ScaleTypes.FIT),
-            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
-        )
-
-        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
+//
+//        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
+//
+//        val slideModels = arrayListOf(
+//            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+//            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
+//            SlideModel(R.drawable.trii, ScaleTypes.FIT),
+//            SlideModel(R.drawable.drone, ScaleTypes.FIT),
+//            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
+//        )
+//
+//        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
         // Initialize views
         drawerLayout = findViewById(R.id.drawerLayout)
@@ -65,31 +65,6 @@ class HomeScreen : AppCompatActivity() {
                 R.id.nav_profile -> replaceFragment(ProfileFragment())
                 else -> return@setOnItemSelectedListener false
             }
-            true
-        }
-
-        // Drawer nav listener
-        navigationView.setNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.menu_profile -> {
-                    replaceFragment(ProfileFragment())
-                    setBottomNavSelectedItem(R.id.nav_profile, bottomNav)
-                }
-                R.id.menu_community -> {
-                    replaceFragment(CommunityFragment())
-                    bottomNav.selectedItemId = R.id.nav_home
-                }
-                R.id.menu_domain -> {
-                    replaceFragment(DomainFragment())
-                    bottomNav.selectedItemId = R.id.nav_home
-                }
-                R.id.menu_whatweoffer -> {
-                    replaceFragment(WhatWeOfferFragment())
-                    bottomNav.selectedItemId = R.id.nav_home
-                }
-                else -> return@setNavigationItemSelectedListener false
-            }
-            drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
     }

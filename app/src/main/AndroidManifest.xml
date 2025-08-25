@@ -19,9 +19,9 @@
 <!--            android:name=".shop"-->
 <!--            android:exported="false" />-->
 
-<!--        <activity-->
-<!--            android:name=".screen1"-->
-<!--            android:exported="true" />-->
+        <activity
+            android:name=".screen"
+            android:exported="true" />
 
         <activity
             android:name=".HomeScreen"
