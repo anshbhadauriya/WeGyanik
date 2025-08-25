@@ -1,12 +1,11 @@
 package com.example.wegyanik
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -40,11 +39,33 @@ class ProjectAdapter(
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
 
-        // 🔹 Open YouTube video on click here
+        // Handle clicks based on position
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(project.videoUrl))
-            context.startActivity(intent)
+            val activity = holder.itemView.context as AppCompatActivity
+            when (position) {
+                0 -> {
+                    val fragment = InstallationForMACFragment()
+                    activity.supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+                1 -> {
+                    val fragment = InstallationForWindowsFragment()
+                    activity.supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+                else -> {
+                    // For other projects, just open YouTube
+                    val intent = android.content.Intent(
+                        android.content.Intent.ACTION_VIEW,
+                        android.net.Uri.parse(project.videoUrl)
+                    )
+                    holder.itemView.context.startActivity(intent)
+                }
+            }
         }
     }
 
