@@ -57,6 +57,14 @@ class ProjectAdapter(
                         .addToBackStack(null)
                         .commit()
                 }
+                2 -> {
+                    val fragment = IotTutorial()
+                    activity.supportFragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+
                 else -> {
                     // For other projects, just open YouTube
                     val intent = android.content.Intent(
