@@ -38,7 +38,7 @@ class ProjectFragment : Fragment() {
                 coverImage = "/api/images/1751696215267-Wegyanik.png",
                 difficulty = "Beginner",
                 duration = "10 min",
-                cost = "0",
+                cost = "Rs. 0",
                 videoUrl = "https://www.youtube.com/watch?v=xmGVYPbQqYk&t=1s&ab_channel=Wegyanik"
             )
         )
@@ -48,8 +48,8 @@ class ProjectFragment : Fragment() {
                 description = "Learn how to install the Arduino IDE on your Windows PC",
                 coverImage = "/api/images/1751694231249-Snapshot_7.PNG",
                 difficulty = "Beginner",
-                duration = "10 Minutes",
-                cost = "0",
+                duration = "10 min",
+                cost = "Rs. 0",
                 videoUrl = "https://www.youtube.com/watch?v=CIUAcUKC5k8&ab_channel=Wegyanik"
             )
         )
@@ -59,8 +59,8 @@ class ProjectFragment : Fragment() {
                 description = "Exploring everything about the Wegyanik Basic Kit.",
                 coverImage = "/api/images/1751023991812-4894c7a4-d807-4bfb-972f-c025843e2cc9.jpg",
                 difficulty = "Beginner",
-                duration = "48 Hours",
-                cost = "1600",
+                duration = "48 hrs",
+                cost = "Rs. 1600",
                 videoUrl = "https://www.youtube.com/watch?v=-VBw0u68t_E&ab_channel=Wegyanik"
             )
         )

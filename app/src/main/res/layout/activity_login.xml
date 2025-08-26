@@ -25,28 +25,17 @@
             android:layout_height="match_parent"
             android:padding="32dp">
 
-            <!-- Logo centered near top -->
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="220dp"
-                android:layout_height="66dp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/wegyaniklogo"
-                android:scaleType="fitCenter"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
             <!-- Email Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailInputLayout"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@id/imageView2"
+                android:layout_marginTop="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteY="122dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/usernameInput"
@@ -63,9 +52,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/emailInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordInput"
@@ -82,11 +71,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Login"
+                app:backgroundTint="@color/primary_accent"
                 app:cornerRadius="24dp"
-                app:layout_constraintTop_toBottomOf="@id/passwordInputLayout"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:backgroundTint="@color/primary_accent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passwordInputLayout" />
 
             <!-- Google Login Button -->
             <ImageButton
@@ -105,15 +94,17 @@
             <!-- Register Prompt -->
             <TextView
                 android:id="@+id/registerprompt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
                 android:text="Register"
+                android:gravity="center_horizontal"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="14sp"
-                app:layout_constraintTop_toBottomOf="@id/googleLoginButton"
-                app:layout_constraintStart_toStartOf="parent"
+                android:clickable="true"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="24dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/googleLoginButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

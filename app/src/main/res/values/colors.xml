@@ -11,4 +11,5 @@
     <color name="dot_color">#999999</color>
     <color name="Lavender">#8692f7</color>
     <color name="selected_dot_color">#505050</color>
+    <color name="colorError">#B00020</color>
 </resources>
