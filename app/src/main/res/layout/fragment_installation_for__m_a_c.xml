@@ -10,7 +10,7 @@
         android:id="@+id/tutorialTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Arduino IDE Installation for Windows"
+        android:text="Arduino IDE Installation for MAC"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Step 1: Gather Materials and tools"
+            android:text="Step 1: Gather Materials and Tools"
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 
@@ -54,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Step 2: Arduino IDE Installation for Windows"
+            android:text="Step 2: Installation"
             android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 
