@@ -1,215 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:padding="0dp">
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/background">
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="195dp"
+        android:layout_height="65dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="0dp">
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
-        <!-- Profile Card with Shadow -->
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginHorizontal="24dp"
-            app:cardBackgroundColor="#e5e5e5"
-            app:cardCornerRadius="32dp">
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-            <LinearLayout
+            <!-- Profile Card with Shadow -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="28dp">
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginHorizontal="24dp"
+                app:cardBackgroundColor="#e5e5e5"
+                app:cardCornerRadius="32dp">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/profileImage"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:src="@drawable/ic_profile"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circular"
-                    android:layout_gravity="center_horizontal" />
-
-                <TextView
-                    android:id="@+id/profileName"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Username"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#000000"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="8dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-        <!-- Options Card -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginBottom="32dp"
-            app:cardCornerRadius="28dp"
-            app:cardBackgroundColor="@color/background">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_profile"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circular"
+                        android:layout_gravity="center_horizontal" />
 
-            <LinearLayout
+                    <TextView
+                        android:id="@+id/profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Username"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#000000"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Options Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="28dp"
+                app:cardBackgroundColor="@color/background">
 
-                <!-- My Orders -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:gravity="center_vertical">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_orders"/>
-                    <TextView
-                        android:id="@+id/myOrders"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="0dp"
+                    <!-- My Orders -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="My Orders"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"/>
-                </LinearLayout>
-                <View android:layout_width="match_parent" android:layout_height="1dp"
-                    android:background="#D3D3D3" />
+                        android:padding="18dp"
+                        android:gravity="center_vertical">
 
-                <!-- Community -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_orders"/>
+                        <TextView
+                            android:id="@+id/myOrders"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="My Orders"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#D3D3D3" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_community"/>
-                    <TextView
-                        android:id="@+id/community1"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="0dp"
+                    <!-- Community -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Community"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"/>
-                </LinearLayout>
-                <View android:layout_width="match_parent" android:layout_height="1dp"
-                    android:background="#D3D3D3" />
+                        android:padding="18dp"
+                        android:gravity="center_vertical">
 
-                <!-- Domains -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_community"/>
+                        <TextView
+                            android:id="@+id/community1"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Community"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#D3D3D3" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_domains"/>
-                    <TextView
-                        android:id="@+id/notifications"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="0dp"
+                    <!-- Domains -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Domains"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"/>
-                </LinearLayout>
-                <View android:layout_width="match_parent" android:layout_height="1dp"
-                    android:background="#D3D3D3" />
+                        android:padding="18dp"
+                        android:gravity="center_vertical">
 
-                <!-- What we offer? -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_domains"/>
+                        <TextView
+                            android:id="@+id/notifications"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Domains"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#D3D3D3" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_offers"/>
-                    <TextView
-                        android:id="@+id/dom"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="0dp"
+                    <!-- What we offer? -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="What we offer?"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#D3D3D3" />
+                        android:padding="18dp"
+                        android:gravity="center_vertical">
 
-                <!-- Need Help? -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_offers"/>
+                        <TextView
+                            android:id="@+id/dom"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="What we offer?"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D3D3D3" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:src="@drawable/ic_help"/>
-                    <TextView
-                        android:id="@+id/needHelp"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="0dp"
+                    <!-- Need Help? -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Need Help?"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textColor="@color/text_primary"/>
-                </LinearLayout>
-                <View android:layout_width="match_parent" android:layout_height="1dp"
-                    android:background="#D3D3D3" />
+                        android:padding="18dp"
+                        android:gravity="center_vertical">
 
-                <!-- Login/Logout -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="18dp"
-                    android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:src="@drawable/ic_help"/>
+                        <TextView
+                            android:id="@+id/needHelp"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Need Help?"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="#D3D3D3" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"/>
-                    <TextView
-                        android:id="@+id/logout"
-                        android:layout_marginStart="16dp"
-                        android:layout_width="0dp"
+                    <!-- Login/Logout -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Login"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:textColor="@color/colorError"/>
+                        android:padding="18dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"/>
+                        <TextView
+                            android:id="@+id/logout"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Login"
+                            android:layout_weight="1"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorError"/>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

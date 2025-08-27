@@ -19,7 +19,7 @@ class HomeScreen : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
-    private lateinit var toolbar: MaterialToolbar
+//    private lateinit var toolbar: MaterialToolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,17 +28,17 @@ class HomeScreen : AppCompatActivity() {
         // Initialize views
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
-        toolbar = findViewById(R.id.toolbar)
+//        toolbar = findViewById(R.id.toolbar)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
         // Setup toolbar with no navigation icon (no hamburger)
-        setSupportActionBar(toolbar)
-        toolbar.navigationIcon = null
-        toolbar.setOnClickListener {
-            replaceFragment(home_Screen())
-            bottomNav.selectedItemId = R.id.nav_home
-        }
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+//        setSupportActionBar(toolbar)
+//        toolbar.navigationIcon = null
+//        toolbar.setOnClickListener {
+//            replaceFragment(home_Screen())
+//            bottomNav.selectedItemId = R.id.nav_home
+//        }
+//        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // Load default fragment
         replaceFragment(home_Screen())
