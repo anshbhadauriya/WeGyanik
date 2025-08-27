@@ -36,7 +36,7 @@ class ShopFragment : Fragment() {
                 val response = RetrofitInstance.api.getProducts()
                 if (response.isSuccessful && response.body() != null) {
                     val productList = response.body()!!.data
-                    recyclerView.adapter = ProductAdapter(productList)
+                    recyclerView.adapter = ProductAdapter(productList.toMutableList())
                 } else {
                     Log.e("API", "API call failed with code ${response.code()}")
                 }

@@ -80,12 +80,14 @@
                 android:scrollbars="none"
                 android:contentDescription="products">
 
-                <LinearLayout
-                    android:id="@+id/productsContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/productsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="8dp"/>
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+
             </HorizontalScrollView>
 
             <!-- Projects Section -->
@@ -108,12 +110,14 @@
                 android:scrollbars="none"
                 android:contentDescription="projects">
 
-                <LinearLayout
-                    android:id="@+id/projectsContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/projectsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="8dp"/>
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
             </HorizontalScrollView>
 
         </LinearLayout>

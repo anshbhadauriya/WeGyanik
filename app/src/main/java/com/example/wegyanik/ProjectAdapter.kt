@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 class ProjectAdapter(
-    private val projects: List<Project>
+    private val projectList: MutableList<Project> = mutableListOf()
 ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     inner class ProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,7 +28,7 @@ class ProjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
-        val project = projects[position]
+        val project = projectList[position]
         holder.title.text = project.title
         holder.description.text = project.description
         holder.difficulty.text = "${project.difficulty} • ${project.duration} • ${project.cost}"
@@ -39,34 +39,22 @@ class ProjectAdapter(
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
 
-        // Handle clicks based on position
         holder.itemView.setOnClickListener {
             val activity = holder.itemView.context as AppCompatActivity
             when (position) {
-                0 -> {
-                    val fragment = InstallationForMACFragment()
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
-                        .addToBackStack(null)
-                        .commit()
-                }
-                1 -> {
-                    val fragment = InstallationForWindowsFragment()
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
-                        .addToBackStack(null)
-                        .commit()
-                }
-                2 -> {
-                    val fragment = IotTutorial()
-                    activity.supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, fragment)
-                        .addToBackStack(null)
-                        .commit()
-                }
-
+                0 -> activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, InstallationForMACFragment())
+                    .addToBackStack(null)
+                    .commit()
+                1 -> activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, InstallationForWindowsFragment())
+                    .addToBackStack(null)
+                    .commit()
+                2 -> activity.supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, IotTutorial())
+                    .addToBackStack(null)
+                    .commit()
                 else -> {
-                    // For other projects, just open YouTube
                     val intent = android.content.Intent(
                         android.content.Intent.ACTION_VIEW,
                         android.net.Uri.parse(project.videoUrl)
@@ -77,5 +65,11 @@ class ProjectAdapter(
         }
     }
 
-    override fun getItemCount() = projects.size
+    override fun getItemCount() = projectList.size
+
+    fun updateData(newList: List<Project>) {
+        projectList.clear()
+        projectList.addAll(newList)
+        notifyDataSetChanged()
+    }
 }

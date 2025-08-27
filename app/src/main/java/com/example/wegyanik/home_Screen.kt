@@ -1,20 +1,68 @@
 package com.example.wegyanik
 
-import android.os.Build
+import ProductAdapter
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.view.WindowInsetsController
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.launch
 
-class home_Screen : Fragment() {
+class home_Screen : Fragment(R.layout.activity_home) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.activity_home, container, false)
+    private lateinit var productAdapter: HomeProductAdapter
+    private lateinit var projectAdapter: HomeProjectAdapter
+
+    private val apiService = RetrofitInstance.api
+    private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Initialize with empty mutable lists
+        productAdapter = HomeProductAdapter(mutableListOf())
+        projectAdapter = HomeProjectAdapter(mutableListOf())
+
+        val productsRecyclerView = view.findViewById<RecyclerView>(R.id.productsRecyclerView)
+        productsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        productsRecyclerView.adapter = productAdapter
+
+        val projectsRecyclerView = view.findViewById<RecyclerView>(R.id.projectsRecyclerView)
+        projectsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        projectsRecyclerView.adapter = projectAdapter
+
+        // Fetch product data
+        lifecycleScope.launch {
+            try {
+                val response = apiService.getProducts()
+                if (response.isSuccessful) {
+                    val productResponse = response.body()
+                    val products = productResponse?.data ?: emptyList()
+                    productAdapter.updateData(products)
+                } else {
+                    Log.e("API", "Error response: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                Log.e("API", "Exception: ${e.localizedMessage}")
+            }
+        }
+
+        // Fetch projects data
+        lifecycleScope.launch {
+            try {
+                val response = projectApiService.getProjects()
+                if (response.isSuccessful) {
+                    val projects = response.body() ?: emptyList()
+                    projectAdapter.updateData(projects)
+                } else {
+                    Log.e("API", "Error response: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                Log.e("API", "Exception: ${e.localizedMessage}")
+            }
+        }
     }
 }
