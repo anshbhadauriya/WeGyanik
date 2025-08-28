@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:fitsSystemWindows="true"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".HomeScreen">
+    android:padding="8dp"
+    tools:context=".HomeScreen"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="195dp"
+        android:layout_height="65dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Our Domains"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,37 +34,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:gravity="center_horizontal">
-
-            <TextView
-                android:id="@+id/domain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:drawableStart="@drawable/earth_green"
-                android:text=" Our Domain"
-                android:textColor="#22C55E"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/whyCard" />
 
             <!-- Robotics Card-->
             <androidx.cardview.widget.CardView
                 android:id="@+id/RoboticsCard"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginTop="20dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="8dp"
-                app:cardUseCompatPadding="true"
-                app:layout_constraintTop_toBottomOf="@id/domain"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:cardUseCompatPadding="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -57,8 +53,9 @@
 
                     <ImageView
                         android:id="@+id/roboticsIcon"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="59dp"
+                        android:layout_height="51dp"
+                        android:layout_marginTop="12dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -68,144 +65,152 @@
                         android:id="@+id/roboticstext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:text="Robotics"
-                        android:textColor="#22C55E"
+                        android:textColor="?attr/colorOnBackground"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/roboticsText"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.493"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/roboticsIcon"
-                        app:layout_constraintVertical_bias="0.5" />
+                        app:layout_constraintTop_toBottomOf="@id/roboticsIcon"/>
 
                     <TextView
                         android:id="@+id/roboticsText"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="72dp"
+                        android:layout_marginTop="12dp"
                         android:gravity="center"
                         android:text="We aim to inspire students by introducing them to robotics, nurturing creativity, problem-solving, and confidence through hands-on technology and fun experiences."
                         android:textColor="?attr/colorOnSurface"
-                        android:textSize="14sp"
+                        android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/roboticsIcon" />
+                        app:layout_constraintTop_toBottomOf="@id/roboticstext" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-    <!-- Artificial Intelligence Card -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/AIcard"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true">
+            <!-- Artificial Intelligence Card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="12dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/AIcard"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/roboticsIconAI"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_ai" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp">
 
-            <TextView
-                android:id="@+id/AItext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Artificial Intelligence"
-                android:textColor="#22C55E"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/roboticsTextAI"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/roboticsIconAI"
-                app:layout_constraintVertical_bias="0.5" />
+                        <ImageView
+                            android:id="@+id/roboticsIconAI"
+                            android:layout_width="59dp"
+                            android:layout_height="51dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_ai" />
 
-            <TextView
-                android:id="@+id/roboticsTextAI"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:gravity="center"
-                android:text="We make AI simple and fun for school students by helping them build creativity, critical thinking, and future-ready tech skills through hands-on learning."
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/AItext" />
+                        <TextView
+                            android:id="@+id/AItext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Artificial Intelligence"
+                            android:textColor="?attr/colorOnBackground"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/roboticsTextAI"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/roboticsIconAI"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/roboticsTextAI"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center"
+                            android:text="We make AI simple and fun for school students by helping them build creativity, critical thinking, and future-ready tech skills through hands-on learning."
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/AItext" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Space Science Card -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/spaceCard"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="20dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        app:cardUseCompatPadding="true">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="12dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/spaceCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageView
-                android:id="@+id/spaceIcon"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_space" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="12dp">
 
-            <TextView
-                android:id="@+id/spaceText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Space Science"
-                android:textColor="#22C55E"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/spaceDesc"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spaceIcon"
-                app:layout_constraintVertical_bias="0.5" />
+                        <ImageView
+                            android:id="@+id/spaceIcon"
+                            android:layout_width="59dp"
+                            android:layout_height="51dp"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_space" />
 
-            <TextView
-                android:id="@+id/spaceDesc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:gravity="center"
-                android:text="With space technology emerging faster than ever, we're committed to preparing bright young learners to shape the future of space research and exploration."
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spaceText" />
+                        <TextView
+                            android:id="@+id/spaceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Space Science"
+                            android:textColor="?attr/colorOnBackground"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@+id/spaceDesc"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/spaceIcon"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/spaceDesc"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center"
+                            android:text="With space technology emerging faster than ever, we're committed to preparing bright young learners to shape the future of space research and exploration."
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/spaceText" />
 
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

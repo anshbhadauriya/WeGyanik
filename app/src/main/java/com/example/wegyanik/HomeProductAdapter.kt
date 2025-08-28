@@ -33,7 +33,6 @@ class HomeProductAdapter(private val products: MutableList<Product>) :
         val imageUrl = product.gallery.firstOrNull()?.let {
             "https://wegyanik.in$it"
         }
-        // Load image with Glide or similar
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .placeholder(R.drawable.ic_launcher_background)

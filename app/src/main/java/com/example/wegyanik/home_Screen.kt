@@ -9,6 +9,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import kotlinx.coroutines.launch
 
 class home_Screen : Fragment(R.layout.activity_home) {
@@ -21,6 +24,18 @@ class home_Screen : Fragment(R.layout.activity_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val imageSlider = view.findViewById<ImageSlider>(R.id.imageSlider)
+
+        val slideModels = arrayListOf(
+            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
+            SlideModel(R.drawable.trii, ScaleTypes.FIT),
+            SlideModel(R.drawable.drone, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
+        )
+
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
         // Initialize with empty mutable lists
         productAdapter = HomeProductAdapter(mutableListOf())

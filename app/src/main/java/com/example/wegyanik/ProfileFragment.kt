@@ -35,7 +35,7 @@ class ProfileFragment : Fragment() {
         domain.setOnClickListener { openFragment(DomainFragment()) }
         offer.setOnClickListener { openFragment(WhatWeOfferFragment()) }
         myOrders.setOnClickListener { openFragment(MyOrdersFragment()) }
-//        needHelp.setOnClickListener { openFragment(NeedHelpFragment()) }
+        needHelp.setOnClickListener { openFragment(NeedHelpFragment()) }
 
         updateLoginLogoutText(loginLogout)
         loginLogout.setOnClickListener {

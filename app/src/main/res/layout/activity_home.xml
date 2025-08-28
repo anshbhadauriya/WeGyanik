@@ -57,8 +57,8 @@
                         android:layout_height="match_parent"
                         app:iss_auto_cycle="true"
                         app:iss_corner_radius="20"
-                        app:iss_delay="1000"
-                        app:iss_period="1000" />
+                        app:iss_delay="2500"
+                        app:iss_period="2500" />
 
                     <!-- Dots Indicator -->
                     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
