@@ -33,7 +33,6 @@
                 android:id="@+id/projectTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Project Title"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -44,7 +43,6 @@
                 android:id="@+id/projectDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Short description here"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp"
                 android:maxLines="2"
@@ -55,7 +53,6 @@
                 android:id="@+id/projectDifficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beginner • 10 min • Free"
                 android:textColor="@android:color/holo_blue_dark"
                 android:textSize="12sp"
                 android:layout_marginTop="6dp" />

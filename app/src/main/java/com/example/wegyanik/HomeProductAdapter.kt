@@ -28,7 +28,10 @@ class HomeProductAdapter(private val products: MutableList<Product>) :
         val product = products[position]
         holder.name.text = product.name
         holder.price.text = "₹${product.discountedPrice}"
-        holder.stock.text = "Stock: ${product.stock}"
+        holder.stock.text = when (product.stock) {
+            0 -> "Out of stock"
+            else -> "Stock: ${product.stock}"
+        }
 
         val imageUrl = product.gallery.firstOrNull()?.let {
             "https://wegyanik.in$it"

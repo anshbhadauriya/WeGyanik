@@ -7,7 +7,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
@@ -36,7 +35,6 @@ class home_Screen : Fragment(R.layout.activity_home) {
         )
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT)
-
         // Initialize with empty mutable lists
         productAdapter = HomeProductAdapter(mutableListOf())
         projectAdapter = HomeProjectAdapter(mutableListOf())

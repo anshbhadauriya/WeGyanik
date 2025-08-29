@@ -58,7 +58,7 @@
                         app:iss_auto_cycle="true"
                         app:iss_corner_radius="20"
                         app:iss_delay="2500"
-                        app:iss_period="2500" />
+                        app:iss_period="3000" />
 
                     <!-- Dots Indicator -->
                     <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
