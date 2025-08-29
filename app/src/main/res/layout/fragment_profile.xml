@@ -101,7 +101,7 @@
                             android:layout_height="wrap_content"
                             android:text="My Orders"
                             android:layout_weight="1"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"/>
                     </LinearLayout>
                     <View
@@ -127,7 +127,7 @@
                             android:layout_height="wrap_content"
                             android:text="Community"
                             android:layout_weight="1"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"/>
                     </LinearLayout>
                     <View
@@ -153,7 +153,7 @@
                             android:layout_height="wrap_content"
                             android:text="Domains"
                             android:layout_weight="1"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"/>
                     </LinearLayout>
                     <View
@@ -179,7 +179,7 @@
                             android:layout_height="wrap_content"
                             android:text="What we offer?"
                             android:layout_weight="1"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"/>
                     </LinearLayout>
                     <View
@@ -205,7 +205,7 @@
                             android:layout_height="wrap_content"
                             android:text="Need Help?"
                             android:layout_weight="1"
-                            android:textSize="18sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"/>
                     </LinearLayout>
                     <View

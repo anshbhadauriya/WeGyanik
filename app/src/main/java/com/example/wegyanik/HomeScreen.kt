@@ -27,7 +27,6 @@ class HomeScreen : AppCompatActivity() {
 
         // Initialize views
         drawerLayout = findViewById(R.id.drawerLayout)
-        navigationView = findViewById(R.id.navigationView)
 //        toolbar = findViewById(R.id.toolbar)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
