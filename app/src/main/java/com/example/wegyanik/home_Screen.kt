@@ -28,9 +28,14 @@ class home_Screen : Fragment(R.layout.activity_home) {
 
         val slideModels = arrayListOf(
             SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
             SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
             SlideModel(R.drawable.trii, ScaleTypes.FIT),
+            SlideModel(R.drawable.trii, ScaleTypes.FIT),
             SlideModel(R.drawable.drone, ScaleTypes.FIT),
+            SlideModel(R.drawable.drone, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
             SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
         )
 

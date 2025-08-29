@@ -15,7 +15,6 @@
         android:background="@color/background"
         android:fitsSystemWindows="true"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/wegyaniklogo"
         app:logoDescription="@string/app_name"
