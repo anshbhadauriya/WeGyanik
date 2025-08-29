@@ -10,12 +10,11 @@
     <!-- Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        android:layout_width="195dp"
-        android:layout_height="65dp"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
         android:background="@color/background"
         android:fitsSystemWindows="true"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/wegyaniklogo"
         app:logoDescription="@string/app_name"
@@ -84,7 +83,7 @@
                 android:text="Products"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnBackground"
+                android:textColor="@color/text_primary"
                 android:paddingBottom="8dp"
                 android:layout_marginTop="24dp"/>
 
@@ -114,7 +113,7 @@
                 android:text="Projects"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnBackground"
+                android:textColor="@color/text_primary"
                 android:paddingBottom="8dp"
                 android:layout_marginTop="24dp"/>
 
