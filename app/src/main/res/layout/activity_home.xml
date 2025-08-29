@@ -122,9 +122,9 @@
                 android:id="@+id/projectsScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:contentDescription="projects"
                 android:overScrollMode="never"
-                android:scrollbars="none"
-                android:contentDescription="projects">
+                android:scrollbars="none">
 
 
                 <androidx.recyclerview.widget.RecyclerView
