@@ -16,6 +16,6 @@ class splashscreen : AppCompatActivity() {
             startActivity(Intent(this, HomeScreen::class.java))
             finish()
         }, 2500)
-//
+//a
     }
 }
