@@ -28,15 +28,10 @@ class home_Screen : Fragment(R.layout.activity_home) {
 
         val slideModels = arrayListOf(
             SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
-            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
-            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
-            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
-            SlideModel(R.drawable.trii, ScaleTypes.FIT),
-            SlideModel(R.drawable.trii, ScaleTypes.FIT),
-            SlideModel(R.drawable.drone, ScaleTypes.FIT),
-            SlideModel(R.drawable.drone, ScaleTypes.FIT),
-            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
-            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_kit1, ScaleTypes.FIT),
+            SlideModel(R.drawable.trishul_new, ScaleTypes.FIT),
+            SlideModel(R.drawable.drone_new, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_new_kit, ScaleTypes.FIT),
         )
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT)
@@ -48,9 +43,9 @@ class home_Screen : Fragment(R.layout.activity_home) {
         productsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         productsRecyclerView.adapter = productAdapter
 
-        val projectsRecyclerView = view.findViewById<RecyclerView>(R.id.projectsRecyclerView)
-        projectsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        projectsRecyclerView.adapter = projectAdapter
+//        val projectsRecyclerView = view.findViewById<RecyclerView>(R.id.projectsRecyclerView)
+//        projectsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+//        projectsRecyclerView.adapter = projectAdapter
 
         // Fetch product data
         lifecycleScope.launch {
