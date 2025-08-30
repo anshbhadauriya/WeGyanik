@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("org.jetbrains.kotlin.kapt")
-
 }
 
 
@@ -40,6 +39,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    packagingOptions {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/DEPENDENCIES"
+            excludes += "META-INF/LICENSE" // Be cautious with license files
+            excludes += "META-INF/*.kotlin_module" // For Kotlin module conflicts
+            excludes += "META-INF/io.netty.versions.properties"
+        }
+    }
 }
 
 dependencies {
@@ -49,11 +58,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.fragment)
+    implementation(libs.firebase.appdistribution.gradle)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
