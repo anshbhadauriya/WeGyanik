@@ -1,12 +1,11 @@
 package com.example.wegyanik
 
 import LoginRequest
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.Toast
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
@@ -25,48 +24,53 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
             android.util.Log.d("LOGIN", "Login button clicked")
+
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
-            Toast.makeText(this@LoginActivity, "Login button clicked!", Toast.LENGTH_SHORT).show()
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this@LoginActivity, "Enter email & password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Enter email & password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            val request = LoginRequest(email,password)
+
             lifecycleScope.launch {
                 try {
-                    val response = RetrofitInstance.authApi.login(email, password)
+                    val response = RetrofitInstance.authApi.login(request)
 
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
-                        if (loginResponse != null) {
-                            if (loginResponse.message.contains("successfully", ignoreCase = true)) {
-                                Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+                        if (loginResponse != null &&
+                            loginResponse.message.contains("successfully", ignoreCase = true)) {
 
-                                val intent = Intent(this@LoginActivity, HomeScreen::class.java)
-                                intent.putExtra("USER_NAME", loginResponse.name)
-                                intent.putExtra("USER_ID", loginResponse.id)
-                                intent.putExtra("USER_EMAIL", loginResponse.email)
-                                intent.putExtra("USER_ROLE", loginResponse.role)
-                                startActivity(intent)
-                                finish()
-                            } else {
-                                Toast.makeText(this@LoginActivity, loginResponse.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                            val intent = Intent(this@LoginActivity, HomeScreen::class.java).apply {
+                                putExtra("USER_NAME", loginResponse.name)
+                                putExtra("USER_ID", loginResponse.id)
+                                putExtra("USER_EMAIL", loginResponse.email)
+                                putExtra("USER_ROLE", loginResponse.role)
                             }
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this@LoginActivity, loginResponse?.message ?: "Unknown error", Toast.LENGTH_SHORT).show()
                         }
                     } else {
-                        Toast.makeText(this@LoginActivity, "Login failed: ${response.message()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Login failed: ${response.code()} - ${response.errorBody()?.string()}",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(this@LoginActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             }
-
         }
 
-        // "Register" prompt
         registerPrompt.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }

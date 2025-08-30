@@ -10,10 +10,9 @@ interface ApiService {
     @POST("api/register")
     suspend fun register(@Body request: RegisterRequest): Response<RegisterResponse>
 
-    @FormUrlEncoded
     @POST("api/auth/signin/credential")
     suspend fun login(
-        @Field("email") email: String,
-        @Field("password") password: String
+        @Body request: LoginRequest
     ): Response<LoginResponse>
 }
+
