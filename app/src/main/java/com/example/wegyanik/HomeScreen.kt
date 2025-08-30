@@ -26,9 +26,14 @@ class HomeScreen : AppCompatActivity() {
         setContentView(R.layout.activity_homescreen_ui)
 
         // Initialize views
+
         drawerLayout = findViewById(R.id.drawerLayout)
 //        toolbar = findViewById(R.id.toolbar)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        val userName = intent.getStringExtra("USER_NAME")
+
+
+
 
         // Setup toolbar with no navigation icon (no hamburger)
 //        setSupportActionBar(toolbar)
@@ -40,6 +45,7 @@ class HomeScreen : AppCompatActivity() {
 //        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // Load default fragment
+
         replaceFragment(home_Screen())
         bottomNav.selectedItemId = R.id.nav_home
 
@@ -49,7 +55,13 @@ class HomeScreen : AppCompatActivity() {
                 R.id.nav_home -> replaceFragment(home_Screen())
                 R.id.nav_explore -> replaceFragment(ProjectFragment())
                 R.id.nav_products -> replaceFragment(ShopFragment())
-                R.id.nav_profile -> replaceFragment(ProfileFragment())
+                R.id.nav_profile ->  {
+                    val profileFragment = ProfileFragment()
+                    val bundle = Bundle()
+                    bundle.putString("USER_NAME", userName)
+                    profileFragment.arguments = bundle
+                    replaceFragment(profileFragment)
+                }
                 else -> return@setOnItemSelectedListener false
             }
             true

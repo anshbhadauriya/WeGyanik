@@ -36,6 +36,12 @@ class ProfileFragment : Fragment() {
         offer.setOnClickListener { openFragment(WhatWeOfferFragment()) }
         myOrders.setOnClickListener { openFragment(MyOrdersFragment()) }
         needHelp.setOnClickListener { openFragment(NeedHelpFragment()) }
+        val userName = arguments?.getString("USER_NAME")
+
+// Example: set to TextView
+        val nameTextView = view.findViewById<TextView>(R.id.profileName)
+        nameTextView.text = userName ?: "Guest"
+
 
         updateLoginLogoutText(loginLogout)
         loginLogout.setOnClickListener {

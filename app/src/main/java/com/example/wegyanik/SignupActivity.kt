@@ -53,7 +53,9 @@ class SignupActivity : AppCompatActivity() {
 
                     if (message.contains("successfully", ignoreCase = true)) {
                         Toast.makeText(this@SignupActivity, "Registration Successful", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this@SignupActivity, HomeScreen::class.java))
+                        val intent = Intent(this@SignupActivity, HomeScreen::class.java)
+                        intent.putExtra("USER_NAME", name)
+                        startActivity(intent)
                         finish()
                     } else {
                         Toast.makeText(this@SignupActivity, message, Toast.LENGTH_SHORT).show()

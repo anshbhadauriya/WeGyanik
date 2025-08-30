@@ -48,6 +48,8 @@ class home_Screen : Fragment(R.layout.activity_home) {
 //        projectsRecyclerView.adapter = projectAdapter
 
         // Fetch product data
+
+
         lifecycleScope.launch {
             try {
                 val response = apiService.getProducts()
