@@ -64,7 +64,7 @@ class ProjectAdapter(
             }
         }
     }
-
+//push
     override fun getItemCount() = projectList.size
 
     fun updateData(newList: List<Project>) {
