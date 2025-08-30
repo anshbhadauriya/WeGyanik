@@ -31,6 +31,7 @@ class ProjectFragment : Fragment() {
     }
 
     private fun loadProjects() {
+        projectList.clear()
         projectList.add(
             Project(
                 title = "Arduino IDE Installation for MAC",

@@ -126,21 +126,21 @@
                 android:layout_marginStart="-20dp"
                 android:layout_marginEnd="0dp"/>
 
-<!--            <HorizontalScrollView-->
-<!--                android:id="@+id/projectsScrollView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="150dp"-->
-<!--                android:overScrollMode="never"-->
-<!--                android:scrollbars="none"-->
-<!--                android:contentDescription="projects">-->
+            <HorizontalScrollView
+                android:id="@+id/projectsScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:contentDescription="projects">
 
-<!--                <androidx.recyclerview.widget.RecyclerView-->
-<!--                    android:id="@+id/projectsRecyclerView"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="150dp"-->
-<!--                    android:overScrollMode="never"-->
-<!--                    android:scrollbars="none" />-->
-<!--            </HorizontalScrollView>-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/projectsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+            </HorizontalScrollView>
 
         </LinearLayout>
 
