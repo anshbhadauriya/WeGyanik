@@ -45,11 +45,8 @@ class SignupActivity : AppCompatActivity() {
         val request = RegisterRequest(email = email, password = password, name = name)
 
         lifecycleScope.launch {
-
             try {
-
                 val response = RetrofitInstance.authApi.register(request)
-                Toast.makeText(this@SignupActivity, "Testing", Toast.LENGTH_SHORT).show()
                 if (response.isSuccessful) {
                     val body = response.body()
                     val message = body?.message ?: "Unknown response"
@@ -65,7 +62,7 @@ class SignupActivity : AppCompatActivity() {
                     Toast.makeText(this@SignupActivity, "Error: ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@SignupActivity, "Exception: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SignupActivity, "Exception: ${e.localizedMessage ?: "Unknown error"}", Toast.LENGTH_SHORT).show()
             }
         }
     }
