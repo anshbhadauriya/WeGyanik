@@ -37,4 +37,10 @@
         <item name="cornerSize">12dp</item>
     </style>
 
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Roboto regular default for all text -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
+
 </resources>

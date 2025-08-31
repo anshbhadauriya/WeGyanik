@@ -22,7 +22,8 @@
             android:text="Profile"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"/>
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium"/>
     </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.core.widget.NestedScrollView

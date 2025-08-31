@@ -9,16 +9,16 @@
     tools:context=".SignupActivity"
     android:padding="12dp">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:logo="@drawable/ic_arrow_left"
-        app:logoDescription="@string/app_name"
-        app:navigationIconTint="?attr/colorOnPrimary"
-        app:titleTextColor="?attr/colorOnPrimary"/>
+<!--    <com.google.android.material.appbar.MaterialToolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:logo="@drawable/ic_arrow_left"-->
+<!--        app:logoDescription="@string/app_name"-->
+<!--        app:navigationIconTint="?attr/colorOnPrimary"-->
+<!--        app:titleTextColor="?attr/colorOnPrimary"/>-->
 
     <ImageView
         android:id="@+id/logo"
@@ -68,6 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Full Name"
+                    android:fontFamily="sans-serif"
                     android:inputType="textPersonName"
                     android:textColor="#000000"
                     android:textSize="14sp" />
@@ -93,6 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
+                    android:fontFamily="sans-serif"
                     android:inputType="textEmailAddress"
                     android:textColor="#000000"
                     android:textSize="14sp"  />
@@ -118,6 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
+                    android:fontFamily="sans-serif"
                     android:inputType="textPassword"
                     android:textColor="#000000"
                     android:textSize="14sp"  />
@@ -143,6 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password"
+                    android:fontFamily="sans-serif"
                     android:inputType="textPassword"
                     android:textColor="#000000"
                     android:textSize="14sp" />
@@ -155,6 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Register"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="#ffffff"
                 app:cornerRadius="24dp"
                 app:backgroundTint="#35B4E7"

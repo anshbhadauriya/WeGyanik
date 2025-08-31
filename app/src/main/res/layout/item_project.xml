@@ -34,6 +34,7 @@
                 android:id="@+id/projectTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:textColor="@color/text_primary"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -44,7 +45,8 @@
                 android:id="@+id/projectDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_secondary"
+                android:fontFamily="sans-serif"
+                android:textColor="@android:color/darker_gray"
                 android:textSize="14sp"
                 android:maxLines="2"
                 android:ellipsize="end"
@@ -54,7 +56,8 @@
                 android:id="@+id/projectDifficulty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorAccent"
+                android:fontFamily="sans-serif"
+                android:textColor="@android:color/holo_blue_dark"
                 android:textSize="12sp"
                 android:layout_marginTop="6dp" />
 

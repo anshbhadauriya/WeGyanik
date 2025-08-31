@@ -11,6 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Arduino IDE Installation for Windows"
+        android:fontFamily="sans-serif-medium"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -35,6 +36,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 1: Gather Materials and Tools"
+            android:fontFamily="sans-serif-medium"
             android:textSize="16sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
@@ -56,6 +58,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 2: Arduino IDE Installation for Windows"
+            android:fontFamily="sans-serif-medium"
             android:textSize="16sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
@@ -77,6 +80,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 3: View the Output"
+            android:fontFamily="sans-serif-medium"
             android:textSize="16sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
