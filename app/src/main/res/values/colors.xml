@@ -12,4 +12,15 @@
     <color name="Lavender">#8692f7</color>
     <color name="selected_dot_color">#505050</color>
     <color name="colorError">#B00020</color>
+
+    <!-- New Professional Colors -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="colorAccent">#007AFF</color>
+    <color name="colorPrimary">#007AFF</color>
+    <color name="colorPrimaryDark">#0051b8</color>
+    <color name="icon_tint">#616161</color>
+    <color name="error_background">#FDECEA</color>
+    <color name="ripple_color">#22007AFF</color>
+    <color name="toolbar_bg">#FFFFFF</color>
 </resources>

@@ -24,11 +24,11 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val community = view.findViewById<TextView>(R.id.community1)
-        val domain = view.findViewById<TextView>(R.id.notifications)
-        val offer = view.findViewById<TextView>(R.id.dom)
-        val myOrders = view.findViewById<TextView>(R.id.myOrders)
-        val needHelp = view.findViewById<TextView>(R.id.needHelp)
+        val community = view.findViewById<View>(R.id.community1)
+        val domain = view.findViewById<View>(R.id.notifications)
+        val offer = view.findViewById<View>(R.id.dom)
+        val myOrders = view.findViewById<View>(R.id.myOrders)
+        val needHelp = view.findViewById<View>(R.id.needHelp)
         val loginLogout = view.findViewById<TextView>(R.id.logout)
 
         community.setOnClickListener { openFragment(CommunityFragment()) }

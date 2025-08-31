@@ -1,9 +1,11 @@
 package com.example.wegyanik
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -12,15 +14,12 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import kotlinx.coroutines.launch
-import android.content.Intent
-import androidx.core.net.toUri
 
 class home_Screen : Fragment(R.layout.activity_home) {
 
     private lateinit var productAdapter: HomeProductAdapter
     private lateinit var projectAdapter: HomeProjectAdapter
 
-//    private val apiService = RetrofitInstance.api
     private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,6 +37,7 @@ class home_Screen : Fragment(R.layout.activity_home) {
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
+        // Initialize product adapter with click listener
         productAdapter = HomeProductAdapter(mutableListOf()) { url ->
             if (url.isNotEmpty()) {
                 val intent = Intent(Intent.ACTION_VIEW, url.toUri())
@@ -47,7 +47,11 @@ class home_Screen : Fragment(R.layout.activity_home) {
             }
         }
 
-        projectAdapter = HomeProjectAdapter(mutableListOf()) // <-- Initialize here!
+        // Initialize project adapter (add click listener if desired)
+        projectAdapter = HomeProjectAdapter(mutableListOf()) { project ->
+            // Handle project click if needed (e.g., open project details)
+            Toast.makeText(requireContext(), "Clicked: ${project.title}", Toast.LENGTH_SHORT).show()
+        }
 
         val productsRecyclerView = view.findViewById<RecyclerView>(R.id.productsRecyclerView)
         productsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
@@ -57,18 +61,22 @@ class home_Screen : Fragment(R.layout.activity_home) {
 //        projectsRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 //        projectsRecyclerView.adapter = projectAdapter
 
-        // Fetch product data
+        // Fetch product data asynchronously
         lifecycleScope.launch {
-            val response = RetrofitInstance.api.getProducts()
-            if (response.isSuccessful) {
-                val products = response.body()?.data ?: emptyList()
-                productAdapter.updateData(products)
-            } else {
-                Log.e("API", "Error response: ${response.code()}")
+            try {
+                val response = RetrofitInstance.api.getProducts()
+                if (response.isSuccessful) {
+                    val products = response.body()?.data ?: emptyList()
+                    productAdapter.updateData(products)
+                } else {
+                    Log.e("API", "Error fetching products response: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                Log.e("API", "Exception fetching products: ${e.localizedMessage}")
             }
         }
 
-        // Fetch projects data
+        // Fetch projects data asynchronously
         lifecycleScope.launch {
             try {
                 val response = projectApiService.getProjects()
@@ -77,10 +85,10 @@ class home_Screen : Fragment(R.layout.activity_home) {
                     val projects = projectResponse ?: emptyList()
                     projectAdapter.updateData(projects)
                 } else {
-                    Log.e("API", "Error response: ${response.code()}")
+                    Log.e("API", "Error fetching projects response: ${response.code()}")
                 }
             } catch (e: Exception) {
-                Log.e("API", "Exception: ${e.localizedMessage}")
+                Log.e("API", "Exception fetching projects: ${e.localizedMessage}")
             }
         }
     }

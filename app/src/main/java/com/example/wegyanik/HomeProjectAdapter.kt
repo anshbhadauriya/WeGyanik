@@ -8,14 +8,23 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class HomeProjectAdapter(private val projects: MutableList<Project>) :
-    RecyclerView.Adapter<HomeProjectAdapter.HomeProjectViewHolder>() {
+class HomeProjectAdapter(
+    private val projects: MutableList<Project>,
+    private val onProjectClick: (Project) -> Unit  // Added click listener lambda
+) : RecyclerView.Adapter<HomeProjectAdapter.HomeProjectViewHolder>() {
 
-    class HomeProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class HomeProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image: ImageView = itemView.findViewById(R.id.projectImage)
         val title: TextView = itemView.findViewById(R.id.projectTitle)
         val description: TextView = itemView.findViewById(R.id.projectDescription)
         val difficulty: TextView = itemView.findViewById(R.id.projectDifficulty)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition.takeIf { it != RecyclerView.NO_POSITION } ?: return@setOnClickListener
+                onProjectClick(projects[position])
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeProjectViewHolder {
