@@ -1,5 +1,7 @@
 package com.example.wegyanik
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,15 +29,21 @@ class ProfileFragment : Fragment() {
         val community = view.findViewById<View>(R.id.community1)
         val domain = view.findViewById<View>(R.id.notifications)
         val offer = view.findViewById<View>(R.id.dom)
-        val myOrders = view.findViewById<View>(R.id.myOrders)
+//        val myOrders = view.findViewById<View>(R.id.myOrders)
         val needHelp = view.findViewById<View>(R.id.needHelp)
         val loginLogout = view.findViewById<TextView>(R.id.logout)
+
+        needHelp.setOnClickListener {
+            val url="https://wegyanik.in/contact"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
 
         community.setOnClickListener { openFragment(CommunityFragment()) }
         domain.setOnClickListener { openFragment(DomainFragment()) }
         offer.setOnClickListener { openFragment(WhatWeOfferFragment()) }
-        myOrders.setOnClickListener { openFragment(MyOrdersFragment()) }
-        needHelp.setOnClickListener { openFragment(NeedHelpFragment()) }
+//        myOrders.setOnClickListener { openFragment(MyOrdersFragment()) }
+//        needHelp.setOnClickListener { openFragment(NeedHelpFragment()) }
         val userName = arguments?.getString("USER_NAME")
 
 // Example: set to TextView
