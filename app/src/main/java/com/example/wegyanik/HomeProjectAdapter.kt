@@ -30,9 +30,8 @@ class HomeProjectAdapter(private val projects: MutableList<Project>) :
         holder.description.text = project.description
         holder.difficulty.text = "${project.difficulty} • ${project.duration} • ${project.cost}"
 
-        val imageUrl = project.coverImage.firstOrNull()?.let {
-            "https://wegyanik.in$it"
-        }
+        val imageUrl = "https://wegyanik.in${project.coverImage}"
+
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .placeholder(R.drawable.ic_launcher_background)

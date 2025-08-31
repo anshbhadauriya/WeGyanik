@@ -24,7 +24,8 @@
             android:id="@+id/productName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textSize="16sp"
             android:textColor="@color/text_primary"
             android:maxLines="2"
             android:ellipsize="end"
@@ -34,8 +35,7 @@
             android:id="@+id/productPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
-            android:textStyle="bold"
+            android:textSize="14sp"
             android:textColor="@color/wegyanik_orange"
             android:layout_marginTop="2dp"/>
 

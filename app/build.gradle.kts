@@ -79,4 +79,6 @@ dependencies {
     // ✅ Fixed ImageSlider dependency
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.0")
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }

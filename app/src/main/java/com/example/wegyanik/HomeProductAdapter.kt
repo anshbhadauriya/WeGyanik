@@ -1,5 +1,7 @@
 package com.example.wegyanik
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class HomeProductAdapter(private val products: MutableList<Product>) :
-    RecyclerView.Adapter<HomeProductAdapter.HomeProductViewHolder>() {
+class HomeProductAdapter(
+    private val products: MutableList<Product>,
+    private val onProductClick: (String) -> Unit  // Pass URL on click
+) : RecyclerView.Adapter<HomeProductAdapter.HomeProductViewHolder>() {
 
     class HomeProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image: ImageView = itemView.findViewById(R.id.productImage)
@@ -40,6 +44,11 @@ class HomeProductAdapter(private val products: MutableList<Product>) :
             .load(imageUrl)
             .placeholder(R.drawable.ic_launcher_background)
             .into(holder.image)
+
+        holder.itemView.setOnClickListener {
+            val url = product.detailUrl ?: ""
+            onProductClick(url)
+        }
     }
 
     override fun getItemCount(): Int = products.size

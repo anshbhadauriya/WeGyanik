@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="12dp"
+    android:paddingTop="10dp"
     android:background="@color/background">
 
     <!-- Toolbar -->
@@ -13,7 +13,6 @@
         android:layout_width="170dp"
         android:layout_height="50dp"
         android:background="@color/background"
-        android:fitsSystemWindows="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/wegyaniklogo"
@@ -84,7 +83,6 @@
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary"
-                android:paddingBottom="8dp"
                 android:layout_marginTop="24dp"/>
 
             <HorizontalScrollView
@@ -122,25 +120,14 @@
                 android:name="com.example.wegyanik.ProjectFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="-20dp"
-                android:layout_marginEnd="0dp"/>
+                android:layout_marginStart="-20dp"/>
 
-            <HorizontalScrollView
-                android:id="@+id/projectsScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:overScrollMode="never"
-                android:scrollbars="none"
-                android:contentDescription="projects">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/projectsRecyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:overScrollMode="never"
-                    android:scrollbars="none" />
-            </HorizontalScrollView>
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/projectsRecyclerView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:overScrollMode="never"-->
+<!--                    android:scrollbars="none" />-->
 
         </LinearLayout>
 
