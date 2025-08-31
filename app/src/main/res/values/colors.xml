@@ -4,7 +4,7 @@
     <color name="secondary_accent">#999810FA</color>
     <color name="background">#FFFFFF</color>
     <color name="text_primary">#333333</color>
-    <color name="text_secondary">#666666</color>
+    <color name="text_secondary">#ffffff</color>
     <color name="wegyanik_orange">#e95b0b</color>
     <color name="wegyanik_green">#22C55E</color>
     <color name="wegyanik_purple">#9810fa</color>
