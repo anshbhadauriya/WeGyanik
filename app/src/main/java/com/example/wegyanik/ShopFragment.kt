@@ -1,3 +1,5 @@
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import kotlinx.coroutines.launch
 class ShopFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var productAdapter: ProductAdapter  // Keep adapter as property
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +30,16 @@ class ShopFragment : Fragment() {
         recyclerView = view.findViewById(R.id.productRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        productAdapter = ProductAdapter(mutableListOf()) { url ->
+            if (url.isNotEmpty()) {
+                val intent = Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse(url)
+                }
+                startActivity(intent)
+            }
+        }
+        recyclerView.adapter = productAdapter
+
         fetchProductData()
     }
 
@@ -36,7 +49,7 @@ class ShopFragment : Fragment() {
                 val response = RetrofitInstance.api.getProducts()
                 if (response.isSuccessful && response.body() != null) {
                     val productList = response.body()!!.data
-                    recyclerView.adapter = ProductAdapter(productList.toMutableList())
+                    productAdapter.updateData(productList)
                 } else {
                     Log.e("API", "API call failed with code ${response.code()}")
                 }

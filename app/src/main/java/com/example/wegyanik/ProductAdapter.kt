@@ -9,8 +9,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.wegyanik.Product
 import com.example.wegyanik.R
 
-class ProductAdapter(private val productList: MutableList<Product>) :
-    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(
+    private val productList: MutableList<Product>,
+    private val onProductClick: (String) -> Unit  // Lambda to handle clicks, passes URL
+) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image: ImageView = itemView.findViewById(R.id.productImage)
@@ -44,6 +46,13 @@ class ProductAdapter(private val productList: MutableList<Product>) :
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
 
+        // Set click listener to open URL
+        holder.itemView.setOnClickListener {
+            val url = product.detailUrl  // Assuming detailUrl property exists in Product
+            if (!url.isNullOrEmpty()) {
+                onProductClick(url)
+            }
+        }
     }
 
     override fun getItemCount(): Int = productList.size
