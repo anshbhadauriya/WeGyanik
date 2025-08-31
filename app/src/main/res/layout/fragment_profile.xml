@@ -150,7 +150,7 @@
                         android:focusable="true"
                         android:background="?attr/selectableItemBackground"
                         android:paddingStart="18dp"
-                        android:paddingEnd="10dp">
+                        android:paddingEnd="18dp">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -167,11 +167,6 @@
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/ic_arrow_right"
-                            app:tint="@color/text_secondary" />
                     </LinearLayout>
 
                     <View
@@ -190,7 +185,7 @@
                         android:focusable="true"
                         android:background="?attr/selectableItemBackground"
                         android:paddingStart="18dp"
-                        android:paddingEnd="10dp">
+                        android:paddingEnd="18dp">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -207,11 +202,6 @@
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/ic_arrow_right"
-                            app:tint="@color/text_secondary" />
                     </LinearLayout>
 
                     <View
@@ -230,7 +220,7 @@
                         android:focusable="true"
                         android:background="?attr/selectableItemBackground"
                         android:paddingStart="18dp"
-                        android:paddingEnd="10dp">
+                        android:paddingEnd="18dp">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -247,11 +237,6 @@
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/ic_arrow_right"
-                            app:tint="@color/text_secondary" />
                     </LinearLayout>
 
                     <View
@@ -269,7 +254,7 @@
                         android:focusable="true"
                         android:background="?attr/selectableItemBackground"
                         android:paddingStart="18dp"
-                        android:paddingEnd="10dp">
+                        android:paddingEnd="18dp">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -281,16 +266,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Need help?"
+                            android:text="Contact"
                             android:textSize="15sp"
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/ic_arrow_right"
-                            app:tint="@color/text_secondary" />
                     </LinearLayout>
 
                     <View
@@ -305,17 +285,19 @@
                         android:gravity="center_vertical"
                         android:clickable="true"
                         android:focusable="true"
-                        android:background="?attr/selectableItemBackground">
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp">
 
                         <TextView
                             android:id="@+id/logout"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Logout"
-                            android:textSize="16sp"
+                            android:textSize="18sp"
                             android:textColor="@color/colorError"
                             android:paddingStart="18dp"
-                            android:paddingEnd="10dp"
+                            android:paddingEnd="18dp"
                             android:textStyle="bold"
                             android:gravity="center_vertical"/>
                     </LinearLayout>
