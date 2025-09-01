@@ -1,3 +1,4 @@
+import com.google.gson.annotations.SerializedName
 
 data class LoginRequest(
     val email: String,
@@ -6,9 +7,9 @@ data class LoginRequest(
 
 
 data class LoginResponse(
-    val message: String,
-    val id: String,
-    val name: String,
-    val email: String,
-    val role: String
+    @SerializedName("message") val message: String,
+    @SerializedName("id") val id: String,
+    @SerializedName("name") val name: String,
+    @SerializedName("email") val email: String,
+    @SerializedName("role") val role: String
 )
