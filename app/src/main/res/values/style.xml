@@ -43,4 +43,13 @@
         <item name="fontFamily">sans-serif</item>
     </style>
 
+    <style name="CustomActiveIndicator">
+        <item name="android:color">@color/wegyanik_orange</item>
+        <item name="android:height">8dp</item> <!-- Increase the height here (was e.g. 3dp) -->
+        <item name="android:width">40dp</item> <!-- Optional: adjust width too -->
+        <item name="android:shape">rectangle</item>
+        <item name="android:radius">4dp</item>
+    </style>
+
+
 </resources>
