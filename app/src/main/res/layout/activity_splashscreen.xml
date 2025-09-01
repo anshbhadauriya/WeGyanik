@@ -8,7 +8,7 @@
     tools:context=".splashscreen"
     android:background="@color/background">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/sp"
         android:layout_width="270dp"
         android:layout_height="90dp"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.99"
         app:srcCompat="@drawable/wegyaniklogo" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:textColor="@color/text_primary"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

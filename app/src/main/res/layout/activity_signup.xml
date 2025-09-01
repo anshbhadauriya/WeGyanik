@@ -20,7 +20,7 @@
 <!--        app:navigationIconTint="?attr/colorOnPrimary"-->
 <!--        app:titleTextColor="?attr/colorOnPrimary"/>-->
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/logo"
         android:layout_width="250dp"
         android:layout_height="80dp"
@@ -61,7 +61,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.138">
+                app:layout_constraintVertical_bias="0.138"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameInput"
@@ -87,7 +91,11 @@
                 app:helperTextTextColor="#000000"
                 app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/usernameInput"
@@ -113,7 +121,11 @@
                 app:helperTextTextColor="#000000"
                 app:layout_constraintTop_toBottomOf="@id/usernameInputLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordInput"
@@ -139,7 +151,11 @@
                 app:helperTextTextColor="#000000"
                 app:layout_constraintTop_toBottomOf="@id/passwordInputLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:boxCornerRadiusBottomEnd="18dp"
+                app:boxCornerRadiusBottomStart="18dp"
+                app:boxCornerRadiusTopEnd="18dp"
+                app:boxCornerRadiusTopStart="18dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/confirmPasswordInput"
@@ -161,20 +177,19 @@
                 android:text="Register"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="#ffffff"
-                app:cornerRadius="24dp"
+                app:cornerRadius="18dp"
                 app:backgroundTint="#35B4E7"
                 app:layout_constraintTop_toBottomOf="@id/confirmPasswordInputLayout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Google Register Button -->
-            <ImageButton
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/googleLoginButton"
                 android:layout_width="175dp"
                 android:layout_height="50dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Register with Google"
-                android:padding="8dp"
                 android:src="@drawable/btngooglelight"
                 app:layout_constraintTop_toBottomOf="@id/registerButton"
                 app:layout_constraintStart_toStartOf="parent"

@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <!-- Title -->
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tutorialTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -25,14 +25,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="18dp"
         app:layout_constraintTop_toBottomOf="@id/tutorialTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:cardBackgroundColor="@color/background"
         app:strokeColor="@color/divider">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
@@ -42,46 +42,48 @@
     </com.google.android.material.card.MaterialCardView>
 
     <!-- Step 2 -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/step2Card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="6dp"
+        app:cardCornerRadius="18dp"
         app:layout_constraintTop_toBottomOf="@id/step1Card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/background"
+        app:strokeColor="@color/divider">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 2: Installation"
             android:fontFamily="sans-serif-medium"
             android:textSize="16sp" />
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Step 3 -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/step3Card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="6dp"
+        app:cardCornerRadius="18dp"
         app:layout_constraintTop_toBottomOf="@id/step2Card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/background"
+        app:strokeColor="@color/divider">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 3: View the output"
             android:fontFamily="sans-serif-medium"
             android:textSize="16sp" />
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
     <WebView
         android:id="@+id/webView"
@@ -94,6 +96,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step3Card"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintVertical_bias="0.32999998"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

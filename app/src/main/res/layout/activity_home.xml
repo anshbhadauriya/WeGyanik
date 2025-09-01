@@ -36,7 +36,7 @@
             android:orientation="vertical">
 
             <!-- Banner Section -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 app:cardCornerRadius="18dp"
@@ -44,7 +44,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginEnd="16dp"
-                android:elevation="3dp">
+                android:elevation="3dp"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -72,10 +74,10 @@
                         app:selectedDotColor="@color/selected_dot_color"/>
 
                 </FrameLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Products Section Header -->
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/sectionProducts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
