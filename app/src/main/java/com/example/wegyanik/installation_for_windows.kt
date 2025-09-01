@@ -22,6 +22,7 @@ class InstallationForWindowsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val webView = view.findViewById<WebView>(R.id.webView)
+        //debug
 
         val videoId = "CIUAcUKC5k8"
         val htmlData = """

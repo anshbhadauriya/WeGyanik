@@ -13,7 +13,7 @@ class splashscreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_splashscreen)
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, HomeScreen::class.java))
+            startActivity(Intent(this, SignupActivity::class.java))
             finish()
         }, 2500)
     }
