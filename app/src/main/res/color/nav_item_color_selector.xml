@@ -3,7 +3,7 @@
     <!-- Checked (selected) state -->
     <item android:color="#FF6800" android:state_checked="true" /> <!-- Orange accent -->
     <!-- Pressed state -->
-    <item android:color="#0B2A87" android:state_pressed="true" /> <!-- Blue gear dark -->
+<!--    <item android:color="#0B2A87" android:state_pressed="true" /> &lt;!&ndash; Blue gear dark &ndash;&gt;-->
     <!-- Default -->
     <item android:color="#8E8E93" /> <!-- Neutral for unselected -->
 </selector>
