@@ -30,9 +30,9 @@ class HomeFragment : Fragment(R.layout.activity_home) {
 //        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
         // Setup RecyclerView with Grid Layout for card grid
-        val cardGrid = view.findViewById<RecyclerView>(R.id.cardGrid)
-        cardGrid.layoutManager = GridLayoutManager(requireContext(), 2)
-        cardGrid.adapter = HomeCardAdapter(getHomeCards()) // You need to implement this adapter and data source
+//        val cardGrid = view.findViewById<RecyclerView>(R.id.cardGrid)
+//        cardGrid.layoutManager = GridLayoutManager(requireContext(), 2)
+//        cardGrid.adapter = HomeCardAdapter(getHomeCards()) // You need to implement this adapter and data source
 
         val cards = listOf(
             HomeCard("Internships", "Gain Practical Experience", R.drawable.ic_internship),
@@ -43,19 +43,19 @@ class HomeFragment : Fragment(R.layout.activity_home) {
 //            HomeCard("More", "Explore Additional Options", R.drawable.ic_more)
         )
 
-        cardGrid.adapter = HomeCardAdapter(cards)
+//        cardGrid.adapter = HomeCardAdapter(cards)
 
 
         // Setup search bar text changed listener to filter cards
-        val searchEditText = view.findViewById<TextInputEditText>(R.id.searchEditText)
-        searchEditText.addTextChangedListener { text ->
-            // TODO: Add filter logic in your adapter
-            cardGrid.adapter?.let {
-                if (it is FilterableAdapter) {
-                    it.filter(text.toString())
-                }
-            }
-        }
+//        val searchEditText = view.findViewById<TextInputEditText>(R.id.searchEditText)
+//        searchEditText.addTextChangedListener { text ->
+//            // TODO: Add filter logic in your adapter
+//            cardGrid.adapter?.let {
+//                if (it is FilterableAdapter) {
+//                    it.filter(text.toString())
+//                }
+//            }
+//        }
 
         // Setup bottom navigation item selection
         val bottomNav = view.findViewById<BottomNavigationView>(R.id.bottomNav)

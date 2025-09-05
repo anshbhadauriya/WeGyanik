@@ -21,8 +21,7 @@ class HomeCardAdapter(
     private var filteredCards = cards.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_home_card, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_home_card, parent, false)
         return ViewHolder(view)
     }
 
@@ -32,7 +31,7 @@ class HomeCardAdapter(
         val card = filteredCards[position]
         holder.title.text = card.title
         holder.subtitle.text = card.subtitle
-        holder.icon.setImageResource(card.iconResId)
+//        holder.icon.setImageResource(card.iconResId)
     }
 
     // Simple filter method
@@ -49,7 +48,7 @@ class HomeCardAdapter(
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val icon: ImageView = itemView.findViewById(R.id.icon)
+//        val icon: ImageView = itemView.findViewById(R.id.icon)
         val title: TextView = itemView.findViewById(R.id.title)
         val subtitle: TextView = itemView.findViewById(R.id.subtitle)
     }
