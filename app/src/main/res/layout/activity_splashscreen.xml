@@ -13,22 +13,22 @@
         android:layout_width="270dp"
         android:layout_height="90dp"
         android:contentDescription="Wegyanik logo"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.99"
+        app:layout_constraintVertical_bias="0.45"
         app:srcCompat="@drawable/wegyaniklogo" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="324dp"
         android:text="Fueling Minds for a Tech Powered Tomorrow."
         android:fontFamily="sans-serif-light"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/sp"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="@color/text_primary"
         app:layout_constraintStart_toStartOf="parent" />

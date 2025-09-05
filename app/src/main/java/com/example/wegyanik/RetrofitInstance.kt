@@ -16,13 +16,13 @@ object RetrofitInstance {
     }
 
     // Specific APIs
-    val productApi: ProductApiService by lazy {
-        retrofit.create(ProductApiService::class.java)
-    }
+//    val productApi: ProductApiService by lazy {
+//        retrofit.create(ProductApiService::class.java)
+//    }
 
-    val projectApi: ProjectApiService by lazy {
-        retrofit.create(ProjectApiService::class.java)
-    }
+//    val projectApi: ProjectApiService by lazy {
+//        retrofit.create(ProjectApiService::class.java)
+//    }
     val authApi: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
