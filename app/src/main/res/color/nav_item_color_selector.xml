@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Checked (selected) state -->
-    <item android:color="?attr/colorPrimary" android:state_checked="true" />
+    <item android:color="#FF6800" android:state_checked="true" /> <!-- Orange accent -->
     <!-- Pressed state -->
-    <item android:color="?attr/colorPrimaryContainer" android:state_pressed="true" />
+    <item android:color="#0B2A87" android:state_pressed="true" /> <!-- Blue gear dark -->
     <!-- Default -->
-    <item android:color="?attr/colorOnSurfaceVariant" />
+    <item android:color="#8E8E93" /> <!-- Neutral for unselected -->
 </selector>

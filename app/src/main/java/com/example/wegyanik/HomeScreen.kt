@@ -29,7 +29,7 @@ class HomeScreen : AppCompatActivity() {
 
         drawerLayout = findViewById(R.id.drawerLayout)
 //        toolbar = findViewById(R.id.toolbar)
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         val userName = intent.getStringExtra("USER_NAME")
 
 
@@ -53,7 +53,7 @@ class HomeScreen : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> replaceFragment(home_Screen())
-                R.id.nav_explore -> replaceFragment(ProjectFragment())
+                R.id.nav_projects -> replaceFragment(ProjectFragment())
                 R.id.nav_products -> replaceFragment(ShopFragment())
                 R.id.nav_profile ->  {
                     val profileFragment = ProfileFragment()

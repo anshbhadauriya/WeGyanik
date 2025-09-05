@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/background"
-            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            app:layout_constraintBottom_toTopOf="@id/bottomNav"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -41,20 +41,20 @@
 <!--            app:itemActiveIndicatorStyle="@style/CustomActiveIndicator" />-->
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigation"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:background="#FFFFFF"
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_nav_menu"
-            app:itemIconTint="#000000"
-            app:itemIconSize="27.5dp"
-            app:itemTextColor="@color/text_primary"
             app:labelVisibilityMode="labeled"
-            app:itemHorizontalTranslationEnabled="false"
-            app:itemActiveIndicatorStyle="@style/CustomActiveIndicator" />
+            app:itemIconTint="@color/nav_item_color_selector"
+            app:itemTextColor="@color/nav_item_color_selector"
+            app:layout_insetEdge="bottom"
+            app:itemBackground="@color/background"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
