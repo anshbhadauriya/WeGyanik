@@ -1,7 +1,8 @@
 package com.example.wegyanik
 
-import android.content.Intent
-import android.net.Uri
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StrikethroughSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,22 +32,40 @@ class HomeProductAdapter(
     override fun onBindViewHolder(holder: HomeProductViewHolder, position: Int) {
         val product = products[position]
         holder.name.text = product.name
-        holder.price.text = "₹${product.discountedPrice}"
+
+        val rupeeFormat = java.text.NumberFormat.getCurrencyInstance(java.util.Locale("en", "IN"))
+        val discounted = rupeeFormat.format(product.discountedPrice)
+        val original = rupeeFormat.format(product.originalPrice)
+
+        if (product.originalPrice > product.discountedPrice) {
+            val priceText = "$discounted  $original"
+            val spannable = SpannableString(priceText)
+            val start = discounted.length + 2  // position where original price starts
+            spannable.setSpan(
+                StrikethroughSpan(),
+                start,
+                priceText.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            holder.price.text = spannable
+        } else {
+            holder.price.text = discounted
+        }
+
         holder.stock.text = when (product.stock) {
             0 -> "Out of stock"
             else -> "${product.stock} items left"
         }
 
-        val imageUrl = product.gallery.firstOrNull()?.let {
-            "https://wegyanik.in$it"
-        }
+        val imageUrl = product.gallery.firstOrNull()?.let { "https://wegyanik.in$it" }
+
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .placeholder(R.drawable.ic_launcher_background)
             .into(holder.image)
 
         holder.itemView.setOnClickListener {
-            val url = product.detailUrl ?: ""
+            val url = product.detailUrl
             onProductClick(url)
         }
     }

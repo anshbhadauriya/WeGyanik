@@ -1,13 +1,16 @@
+package com.example.wegyanik
+
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.wegyanik.Product
 import com.example.wegyanik.R
+import com.google.android.material.textview.MaterialTextView
+import java.text.NumberFormat
+import java.util.Locale
 
 class ProductAdapter(
     private val productList: MutableList<Product>,
@@ -16,9 +19,10 @@ class ProductAdapter(
 
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image: ImageView = itemView.findViewById(R.id.productImage)
-        val name: TextView = itemView.findViewById(R.id.productName)
-        val price: TextView = itemView.findViewById(R.id.productPrice)
-        val stock: TextView = itemView.findViewById(R.id.productStock)
+        val name: MaterialTextView = itemView.findViewById(R.id.productName)
+        val currentPrice: MaterialTextView = itemView.findViewById(R.id.productCurrentPrice)
+        val originalPrice: MaterialTextView = itemView.findViewById(R.id.productOriginalPrice)
+        val stock: MaterialTextView = itemView.findViewById(R.id.productStock)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -30,12 +34,36 @@ class ProductAdapter(
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = productList[position]
         holder.name.text = product.name
-        holder.price.text = "₹${product.discountedPrice}"
+
+        // Format prices in Indian Rupees format
+        val rupeeFormat = NumberFormat.getCurrencyInstance(Locale("en", "IN"))
+        val discounted = rupeeFormat.format(product.discountedPrice)
+        val original = rupeeFormat.format(product.originalPrice)
+
+        // Set current price text
+        holder.currentPrice.text = discounted
+
+        // Set original price with strikethrough if discounted
+        if (product.originalPrice > product.discountedPrice) {
+            holder.originalPrice.apply {
+                visibility = View.VISIBLE
+                text = original
+                paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            }
+        } else {
+            holder.originalPrice.apply {
+                visibility = View.GONE
+                paintFlags = paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+            }
+        }
+
+        // Set stock text and color
         holder.stock.text = when (product.stock) {
             0 -> "Out of stock"
             else -> "${product.stock} items left"
         }
 
+        // Load image with Glide
         val imageUrl = product.gallery.firstOrNull()?.let {
             "https://wegyanik.in$it"
         }
@@ -43,13 +71,12 @@ class ProductAdapter(
         Glide.with(holder.itemView.context)
             .load(imageUrl)
             .placeholder(R.drawable.ic_launcher_background)
-            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(holder.image)
 
-        // Set click listener to open URL
+        // Click listener to open product detail URL
         holder.itemView.setOnClickListener {
-            val url = product.detailUrl  // Assuming detailUrl property exists in Product
-            if (!url.isNullOrEmpty()) {
+            val url = product.detailUrl
+            if (url.isNotEmpty()) {
                 onProductClick(url)
             }
         }

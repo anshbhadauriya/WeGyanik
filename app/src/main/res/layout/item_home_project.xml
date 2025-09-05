@@ -10,7 +10,7 @@ app:cardCornerRadius="18dp">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="8dp"
+    android:padding="12dp"
     android:background="@color/background">
 
     <com.google.android.material.imageview.ShapeableImageView

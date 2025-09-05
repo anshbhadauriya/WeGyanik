@@ -23,6 +23,18 @@ data class Product(
 ) {
     val detailUrl: String
         get() = "https://wegyanik.in/products/$slug"
+
+    // Helper to check if product has a discount
+    val hasDiscount: Boolean
+        get() = discountedPrice < originalPrice
+
+    // Discount percentage, 0 if no discount
+    val discountPercent: Int
+        get() = if (!hasDiscount) 0 else ((originalPrice - discountedPrice) * 100) / originalPrice
+
+    // Stock status flags
+    val isOutOfStock: Boolean
+        get() = stock <= 0
 }
 
 data class Specification(
