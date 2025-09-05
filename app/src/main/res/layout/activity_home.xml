@@ -24,22 +24,56 @@
             app:titleTextColor="?attr/colorOnPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Scrollable content with 2-column card grid -->
+    <!-- Scrollable content with banner and 2-column card grid -->
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:clipToPadding="false"
         android:fillViewport="true"
         android:padding="16dp"
         android:layout_marginBottom="72dp">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <!-- Auto-scrolling Banner -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="18dp"
+            android:layout_marginBottom="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:iss_auto_cycle="true"
+                app:iss_delay="3000"
+                app:iss_corner_radius="16"
+                app:iss_period="2500"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Title text -->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👋 Time to #BeWegyanik"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="@color/text_primary"
+            android:textStyle="italic|bold"
+            android:textSize="14sp"/>
+
+        <!-- 2-column card grid -->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
-            android:rowCount="3"
             android:orientation="horizontal"
             android:alignmentMode="alignMargins"
             android:useDefaultMargins="true">
@@ -49,14 +83,90 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 app:cardCornerRadius="18dp"
-                app:cardElevation="4dp"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/background"
+                app:cardBackgroundColor="#e8f6e8"
                 app:strokeColor="@color/divider"
                 app:strokeWidth="1dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Products card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Products"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Explore Dream Careers"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="18dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="#fce8d6"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Mentorships card">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Projects"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Build Skills Daily"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="18dp"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="#e8f2fc"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Products card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -71,90 +181,22 @@
                         android:textColor="@color/text_primary"
                         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                         android:textStyle="bold"
-                        android:fontFamily="@font/calsansregular"/>
+                        android:layout_marginBottom="5dp"/>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/text_primary"
                         android:text="Gain Practical Experience"
-                        android:textAppearance="@style/TextAppearance.Material3.BodySmall"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Card 2 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardCornerRadius="18dp"
-                app:cardElevation="4dp"
-                android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/background"
-                app:strokeColor="@color/divider"
-                app:strokeWidth="1dp"
-                android:clickable="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mentorships"
-                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        android:text="(Upcoming)"
+                        android:textStyle="italic"
                         android:textColor="@color/text_primary"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/calsansregular"/>
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/text_primary"
-                        android:text="Guidance from Top Mentors"
-                        android:textAppearance="@style/TextAppearance.Material3.BodySmall"/>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Card 3 -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardCornerRadius="18dp"
-                app:cardElevation="4dp"
-                android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/background"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/divider"
-                android:clickable="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Products"
-                        android:textColor="@color/text_primary"
-                        android:fontFamily="@font/calsansregular"
-                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                        android:textStyle="bold" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Explore Dream Careers"
-                        android:textColor="@color/text_primary"
-                        android:textAppearance="@style/TextAppearance.Material3.BodySmall"/>
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -163,14 +205,14 @@
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 app:cardCornerRadius="18dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/background"
+                app:cardBackgroundColor="#f0e8fc"
                 app:strokeColor="@color/divider"
                 app:strokeWidth="1dp"
                 android:layout_margin="8dp"
-                android:clickable="true">
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Projects card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -178,25 +220,35 @@
                     android:orientation="vertical"
                     android:padding="12dp">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Projects"
-                        android:fontFamily="@font/calsansregular"
+                        android:text="Competitions"
                         android:textColor="@color/text_primary"
                         android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginBottom="5dp"/>
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Build Skills Daily"
+                        android:text="Guidance from Top Mentors"
                         android:textColor="@color/text_primary"
-                        android:textAppearance="@style/TextAppearance.Material3.BodySmall"/>
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(Upcoming)"
+                        android:textStyle="italic"
+                        android:textColor="@color/text_primary"
+                        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+
         </GridLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -19,17 +19,17 @@ class HomeFragment : Fragment(R.layout.activity_home) {
         super.onViewCreated(view, savedInstanceState)
 
         // Setup image slider with slide models
-//        val imageSlider = view.findViewById<ImageSlider>(R.id.imageSlider)
-//        val slideModels = arrayListOf(
-//            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
-//            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
-//            SlideModel(R.drawable.trii, ScaleTypes.FIT),
-//            SlideModel(R.drawable.drone, ScaleTypes.FIT),
-//            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT)
-//        )
-//        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
+        val imageSlider = view.findViewById<ImageSlider>(R.id.imageSlider)
+        val slideModels = arrayListOf(
+            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.robobanner, ScaleTypes.FIT),
+            SlideModel(R.drawable.trii, ScaleTypes.FIT),
+            SlideModel(R.drawable.drone, ScaleTypes.FIT),
+            SlideModel(R.drawable.wegyanik_kit, ScaleTypes.FIT)
+        )
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
-        // Setup RecyclerView with Grid Layout for card grid
+//         Setup RecyclerView with Grid Layout for card grid
 //        val cardGrid = view.findViewById<RecyclerView>(R.id.cardGrid)
 //        cardGrid.layoutManager = GridLayoutManager(requireContext(), 2)
 //        cardGrid.adapter = HomeCardAdapter(getHomeCards()) // You need to implement this adapter and data source
