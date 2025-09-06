@@ -11,7 +11,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Arduino IDE Installation for Windows"
-        android:fontFamily="sans-serif-medium"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -25,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tutorialTitle"
@@ -37,52 +36,53 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 1: Gather Materials and Tools"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"/>
     </com.google.android.material.card.MaterialCardView>
 
     <!-- Step 2 -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/step2Card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/step1Card">
+        app:layout_constraintTop_toBottomOf="@id/step1Card"
+        app:cardBackgroundColor="@color/background"
+        app:strokeColor="@color/divider">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Step 2: Arduino IDE Installation for Windows"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Step 3 -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/step3Card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/step2Card">
+        app:layout_constraintTop_toBottomOf="@id/step2Card"
+        app:cardBackgroundColor="@color/background"
+        app:strokeColor="@color/divider">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            android:textColor="@color/text_primary"
             android:text="Step 3: View the Output"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+            android:textSize="16sp" />
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- WebView -->
     <WebView

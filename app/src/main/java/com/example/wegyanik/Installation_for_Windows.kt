@@ -15,13 +15,14 @@ class InstallationForWindowsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_installation_for__windows, container, false)
+        return inflater.inflate(R.layout.fragment_installation_for_windows, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val webView = view.findViewById<WebView>(R.id.webView)
+        //debug
 
         val videoId = "CIUAcUKC5k8"
         val htmlData = """

@@ -24,7 +24,6 @@
             android:id="@+id/productTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
             android:textStyle="bold"
             android:textSize="18sp"
             android:paddingTop="8dp"
@@ -35,9 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
-            android:fontFamily="sans-serif"
             android:textSize="14sp"
-            android:textColor="@color/text_primary"/>
+            android:textColor="@color/text_secondary"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

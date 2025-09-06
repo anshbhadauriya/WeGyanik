@@ -3,8 +3,8 @@
     <color name="primary_accent">#e95b0b</color>
     <color name="secondary_accent">#999810FA</color>
     <color name="background">#FFFFFF</color>
-    <color name="text_primary">#333333</color>
-    <color name="text_secondary">#ffffff</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#333333</color>
     <color name="wegyanik_orange">#e95b0b</color>
     <color name="wegyanik_green">#22C55E</color>
     <color name="wegyanik_purple">#9810fa</color>
@@ -23,4 +23,15 @@
     <color name="error_background">#FDECEA</color>
     <color name="ripple_color">#22007AFF</color>
     <color name="toolbar_bg">#FFFFFF</color>
+
+    <!-- Texts -->
+    <color name="card_text_dark">#102027</color>
+    <color name="card_text_accent">#4169E1</color> <!-- Royal blue accent -->
+
+    <!-- Cards (use unique bg per category or per item as needed, similar to home cards) -->
+    <color name="card_products_bg">#B8F2C2</color>
+    <color name="card_projects_bg">#FFC09F</color>
+    <color name="card_internships_bg">#A0CED9</color>
+    <color name="card_competitions_bg">#EAD9FF</color>
+
 </resources>

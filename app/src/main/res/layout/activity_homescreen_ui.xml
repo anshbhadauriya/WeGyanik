@@ -40,12 +40,22 @@
 <!--            app:itemHorizontalTranslationEnabled="false"-->
 <!--            app:itemActiveIndicatorStyle="@style/CustomActiveIndicator" />-->
 
+        <View
+            android:id="@+id/bottom_nav_separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toTopOf="@id/bottomNav"/>
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
-            android:background="#ffffff"
+            android:background="@color/background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,9 +63,10 @@
             app:labelVisibilityMode="labeled"
             app:itemIconTint="@color/nav_item_color_selector"
             app:itemTextColor="@color/nav_item_color_selector"
+            app:itemBackground="@drawable/nav_item_background_clear"
+            app:itemActiveIndicatorStyle="@style/BottomNav.ActiveIndicator.None"
             app:layout_insetEdge="bottom"
-            app:itemBackground="@color/background"/>
-
+            app:itemTextAppearanceActiveBoldEnabled="true"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

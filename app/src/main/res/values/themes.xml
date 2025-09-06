@@ -8,5 +8,7 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="Theme.Wegyanik" parent="Base.Theme.Wegyanik" />
+    <style name="Theme.Wegyanik" parent="Base.Theme.Wegyanik" >
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
 </resources>

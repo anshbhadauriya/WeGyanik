@@ -72,7 +72,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Full Name"
-                    android:fontFamily="sans-serif"
                     android:inputType="textPersonName"
                     android:textColor="#000000"
                     android:textSize="14sp" />
@@ -102,7 +101,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:fontFamily="sans-serif"
                     android:inputType="textEmailAddress"
                     android:textColor="#000000"
                     android:textSize="14sp"  />
@@ -132,10 +130,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:fontFamily="sans-serif"
                     android:inputType="textPassword"
                     android:textColor="#000000"
-                    android:textSize="14sp"  />
+                    android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Confirm Password Input -->
@@ -162,7 +159,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password"
-                    android:fontFamily="sans-serif"
                     android:inputType="textPassword"
                     android:textColor="#000000"
                     android:textSize="14sp" />
@@ -175,7 +171,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Register"
-                android:fontFamily="sans-serif-medium"
                 android:textColor="#ffffff"
                 app:cornerRadius="18dp"
                 app:backgroundTint="#35B4E7"
@@ -184,17 +179,17 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Google Register Button -->
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/googleLoginButton"
-                android:layout_width="175dp"
-                android:layout_height="50dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Register with Google"
-                android:src="@drawable/btngooglelight"
-                app:layout_constraintTop_toBottomOf="@id/registerButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="12dp" />
+<!--            <com.google.android.material.imageview.ShapeableImageView-->
+<!--                android:id="@+id/googleLoginButton"-->
+<!--                android:layout_width="175dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:contentDescription="Register with Google"-->
+<!--                android:src="@drawable/btngooglelight"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/registerButton"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:layout_marginTop="12dp" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
