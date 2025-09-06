@@ -1,17 +1,10 @@
 package com.example.wegyanik
 
 import ShopFragment
-import android.os.Build
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.constants.ScaleTypes
-import com.denzcoskun.imageslider.models.SlideModel
-import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -46,13 +39,13 @@ class HomeScreen : AppCompatActivity() {
 
         // Load default fragment
 
-        replaceFragment(home_Screen())
+        replaceFragment(HomeFragment())
         bottomNav.selectedItemId = R.id.nav_home
 
         // Bottom nav listener
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> replaceFragment(home_Screen())
+                R.id.nav_home -> replaceFragment(HomeFragment())
                 R.id.nav_projects -> replaceFragment(ProjectFragment())
                 R.id.nav_products -> replaceFragment(ShopFragment())
                 R.id.nav_profile ->  {
