@@ -33,5 +33,4 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:paddingTop="6dp"/>
-
 </LinearLayout>

@@ -1,8 +1,9 @@
-import com.example.wegyanik.Project
+package com.example.wegyanik
+
 import retrofit2.Response
 import retrofit2.http.GET
 
 interface ProjectApiService {
-    @GET("api/project")
-    suspend fun getProjects(): Response<List<Project>>
+    @GET("api/projects")
+    suspend fun getProjects(): Response<ProjectResponse>
 }

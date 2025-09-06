@@ -1,7 +1,5 @@
 package com.example.wegyanik
 
-import com.google.gson.annotations.SerializedName
-
 data class ProductApiResponse(
     val success: Boolean,
     val data: List<Product>,

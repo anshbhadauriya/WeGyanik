@@ -5,13 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 class ProjectAdapter(
-    private val projectList: MutableList<Project> = mutableListOf()
+    private val projectList: MutableList<Project> = mutableListOf(),
+    private val onProjectClick: (Project) -> Unit
 ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     inner class ProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -30,8 +30,8 @@ class ProjectAdapter(
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
         val project = projectList[position]
         holder.title.text = project.title
-        holder.description.text = project.description
-        holder.difficulty.text = "${project.difficulty} • ${project.duration} • ${project.cost}"
+        holder.description.text = android.text.Html.fromHtml(project.description) // fallback
+        holder.difficulty.text = "${project.difficulty} • ${project.duration} • Rs. ${project.cost}"
 
         Glide.with(holder.itemView.context)
             .load("https://wegyanik.in" + project.coverImage)
@@ -40,28 +40,7 @@ class ProjectAdapter(
             .into(holder.image)
 
         holder.itemView.setOnClickListener {
-            val activity = holder.itemView.context as AppCompatActivity
-            when (position) {
-                0 -> activity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, InstallationForMACFragment())
-                    .addToBackStack(null)
-                    .commit()
-                1 -> activity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, InstallationForWindowsFragment())
-                    .addToBackStack(null)
-                    .commit()
-                2 -> activity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, IotTutorial())
-                    .addToBackStack(null)
-                    .commit()
-                else -> {
-                    val intent = android.content.Intent(
-                        android.content.Intent.ACTION_VIEW,
-                        android.net.Uri.parse(project.videoUrl)
-                    )
-                    holder.itemView.context.startActivity(intent)
-                }
-            }
+            onProjectClick(project)
         }
     }
 

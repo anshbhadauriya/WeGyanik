@@ -1,44 +1,26 @@
 package com.example.wegyanik
 
-import ShopFragment
+import ProductFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 
 class HomeScreen : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var navigationView: NavigationView
-//    private lateinit var toolbar: MaterialToolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homescreen_ui)
 
         // Initialize views
-
         drawerLayout = findViewById(R.id.drawerLayout)
-//        toolbar = findViewById(R.id.toolbar)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         val userName = intent.getStringExtra("USER_NAME")
 
-
-
-
-        // Setup toolbar with no navigation icon (no hamburger)
-//        setSupportActionBar(toolbar)
-//        toolbar.navigationIcon = null
-//        toolbar.setOnClickListener {
-//            replaceFragment(home_Screen())
-//            bottomNav.selectedItemId = R.id.nav_home
-//        }
-//        supportActionBar?.setDisplayShowTitleEnabled(false)
-
         // Load default fragment
-
         replaceFragment(HomeFragment())
         bottomNav.selectedItemId = R.id.nav_home
 
@@ -47,7 +29,7 @@ class HomeScreen : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> replaceFragment(HomeFragment())
                 R.id.nav_projects -> replaceFragment(ProjectFragment())
-                R.id.nav_products -> replaceFragment(ShopFragment())
+                R.id.nav_products -> replaceFragment(ProductFragment())
                 R.id.nav_profile ->  {
                     val profileFragment = ProfileFragment()
                     val bundle = Bundle()
@@ -58,12 +40,6 @@ class HomeScreen : AppCompatActivity() {
                 else -> return@setOnItemSelectedListener false
             }
             true
-        }
-    }
-
-    private fun setBottomNavSelectedItem(itemId: Int, bottomNav: BottomNavigationView) {
-        if (bottomNav.selectedItemId != itemId) {
-            bottomNav.selectedItemId = itemId
         }
     }
 

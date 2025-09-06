@@ -110,7 +110,7 @@
                             android:layout_marginBottom="5dp"
                             android:text="Products"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                            android:textColor="#333333"
+                            android:textColor="@color/text_primary"
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
@@ -118,7 +118,7 @@
                             android:layout_height="wrap_content"
                             android:text="Explore Dream Careers"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="#616161 " />
+                            android:textColor="@color/text_secondary" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -130,7 +130,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
-                    android:contentDescription="Mentorships card"
+                    android:contentDescription="Projects card"
                     android:focusable="true"
                     app:cardBackgroundColor="#FFC09F"
                     app:cardCornerRadius="8dp"
@@ -157,7 +157,7 @@
                             android:layout_height="wrap_content"
                             android:text="Build Skills Daily"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_primary" />
+                            android:textColor="@color/text_secondary" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -169,7 +169,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
-                    android:contentDescription="Products card"
+                    android:contentDescription="Internships card"
                     android:focusable="true"
                     app:cardBackgroundColor="#A0CED9"
                     app:cardCornerRadius="8dp"
@@ -196,14 +196,14 @@
                             android:layout_height="wrap_content"
                             android:text="Gain Practical Experience"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_primary" />
+                            android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="(Upcoming)"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_primary"
+                            android:textColor="@color/text_secondary"
                             android:textStyle="italic" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -216,7 +216,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
-                    android:contentDescription="Projects card"
+                    android:contentDescription="Competitions card"
                     android:focusable="true"
                     app:cardBackgroundColor="#EAD9FF"
                     app:cardCornerRadius="8dp"
@@ -243,14 +243,14 @@
                             android:layout_height="wrap_content"
                             android:text="Guidance from Top Mentors"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_primary" />
+                            android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="(Upcoming)"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_primary"
+                            android:textColor="@color/text_secondary"
                             android:textStyle="italic" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>

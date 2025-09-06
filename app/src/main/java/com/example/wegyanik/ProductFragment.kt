@@ -13,7 +13,7 @@ import com.example.wegyanik.ProductAdapter
 import com.example.wegyanik.R
 import kotlinx.coroutines.launch
 
-class ShopFragment : Fragment() {
+class ProductFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var productAdapter: ProductAdapter  // Keep adapter as property
@@ -30,7 +30,6 @@ class ShopFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.productRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         productAdapter = ProductAdapter(mutableListOf()) { url ->
             if (url.isNotEmpty()) {
                 val intent = Intent(Intent.ACTION_VIEW).apply {

@@ -1,29 +1,23 @@
 package com.example.wegyanik
 
-import ProjectApiService
-import RetrofitInstance
-import android.content.Intent
+import ProductFragment
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
-import kotlinx.coroutines.launch
+import com.google.android.material.card.MaterialCardView
 
 class HomeFragment : Fragment(R.layout.activity_home) {
 
-    private lateinit var productAdapter: HomeProductAdapter
-    private lateinit var projectAdapter: HomeProjectAdapter
-    private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
+//    private lateinit var productAdapter: HomeProductAdapter
+//    private lateinit var projectAdapter: HomeProjectAdapter
+//    private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,50 +60,45 @@ class HomeFragment : Fragment(R.layout.activity_home) {
             }
         })
 
-        // Initialize product adapter with click listener (launch URLs)
-        productAdapter = HomeProductAdapter(mutableListOf()) { url ->
-            if (url.isNotEmpty()) {
-                val intent = Intent(Intent.ACTION_VIEW, url.toUri())
-                startActivity(intent)
-            } else {
-                Toast.makeText(requireContext(), "URL not available", Toast.LENGTH_SHORT).show()
-            }
-        }
+        val cardProducts = view.findViewById<MaterialCardView>(R.id.productsCard)
+        val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
+        val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
+        val cardCompetitions = view.findViewById<MaterialCardView>(R.id.competitionsCard)
 
-        // Initialize project adapter with click listener (show toast or open details)
-        projectAdapter = HomeProjectAdapter(mutableListOf()) { project ->
-            Toast.makeText(requireContext(), "Clicked: ${project.title}", Toast.LENGTH_SHORT).show()
-        }
+        cardProducts.setOnClickListener { openFragment(ProductFragment()) }
+        cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
+        cardInternships?.setOnClickListener {  }
+        cardCompetitions?.setOnClickListener {  }
 
         // Fetch product data asynchronously
-        lifecycleScope.launch {
-            try {
-                val response = RetrofitInstance.api.getProducts()
-                if (response.isSuccessful) {
-                    val products = response.body()?.data ?: emptyList()
-                    productAdapter.updateData(products)
-                } else {
-                    Log.e("API", "Error fetching products response: ${response.code()}")
-                }
-            } catch (e: Exception) {
-                Log.e("API", "Exception fetching products: ${e.localizedMessage}")
-            }
-        }
+//        lifecycleScope.launch {
+//            try {
+//                val response = RetrofitInstance.api.getProducts()
+//                if (response.isSuccessful) {
+//                    val products = response.body()?.data ?: emptyList()
+//                    productAdapter.updateData(products)
+//                } else {
+//                    Log.e("API", "Error fetching products response: ${response.code()}")
+//                }
+//            } catch (e: Exception) {
+//                Log.e("API", "Exception fetching products: ${e.localizedMessage}")
+//            }
+//        }
 
         // Fetch projects data asynchronously
-        lifecycleScope.launch {
-            try {
-                val response = projectApiService.getProjects()
-                if (response.isSuccessful) {
-                    val projects = response.body() ?: emptyList()
-                    projectAdapter.updateData(projects)
-                } else {
-                    Log.e("API", "Error fetching projects response: ${response.code()}")
-                }
-            } catch (e: Exception) {
-                Log.e("API", "Exception fetching projects: ${e.localizedMessage}")
-            }
-        }
+//        lifecycleScope.launch {
+//            try {
+//                val response = projectApiService.getProjects()
+//                if (response.isSuccessful) {
+//                    val projects = response.body() ?: emptyList()
+//                    projectAdapter.updateData(projects)
+//                } else {
+//                    Log.e("API", "Error fetching projects response: ${response.code()}")
+//                }
+//            } catch (e: Exception) {
+//                Log.e("API", "Exception fetching projects: ${e.localizedMessage}")
+//            }
+//        }
     }
 
     private fun openFragment(fragment: Fragment) {
@@ -138,4 +127,6 @@ class HomeFragment : Fragment(R.layout.activity_home) {
         }
         dialog.show()
     }
+
+
 }
