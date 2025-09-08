@@ -16,10 +16,6 @@ import com.google.android.material.card.MaterialCardView
 
 class HomeFragment : Fragment(R.layout.activity_home) {
 
-//    private lateinit var productAdapter: HomeProductAdapter
-//    private lateinit var projectAdapter: HomeProjectAdapter
-//    private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -65,22 +61,15 @@ class HomeFragment : Fragment(R.layout.activity_home) {
         val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
         val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
         val cardCompetitions = view.findViewById<MaterialCardView>(R.id.competitionsCard)
-        val internship=view.findViewById<LinearLayout>(R.id.internshipsCard1)
-        val competition=view.findViewById<LinearLayout>(R.id.competitionsCard1)
         val wegyanik_for_students=view.findViewById<TextView>(R.id.wegyanik_for_students)
         val wegyanik_for_academia_industry=view.findViewById<TextView>(R.id.wegyanik_for_academia_industry)
-        wegyanik_for_academia_industry.setOnClickListener { openFragment(UpComingFragment()) }
 
-        wegyanik_for_students.setOnClickListener { openFragment(UpComingFragment()) }
-
-        internship.setOnClickListener { openFragment(UpComingFragment()) }
-        competition.setOnClickListener { openFragment(UpComingFragment()) }
-
-        cardProducts.setOnClickListener { openFragment(ProductFragment()) }
+        cardProducts?.setOnClickListener { openFragment(ProductFragment()) }
         cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
-        cardInternships?.setOnClickListener {  }
-        cardCompetitions?.setOnClickListener {  }
-
+        cardInternships?.setOnClickListener { openFragment(UpComingFragment()) }
+        cardCompetitions?.setOnClickListener { openFragment(UpComingFragment()) }
+        wegyanik_for_students?.setOnClickListener { openFragment(UpComingFragment()) }
+        wegyanik_for_academia_industry?.setOnClickListener { openFragment(UpComingFragment()) }
     }
 
     private fun openFragment(fragment: Fragment) {
