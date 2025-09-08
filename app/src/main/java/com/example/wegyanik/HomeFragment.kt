@@ -4,6 +4,7 @@ import ProductFragment
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
@@ -64,41 +65,22 @@ class HomeFragment : Fragment(R.layout.activity_home) {
         val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
         val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
         val cardCompetitions = view.findViewById<MaterialCardView>(R.id.competitionsCard)
+        val internship=view.findViewById<LinearLayout>(R.id.internshipsCard1)
+        val competition=view.findViewById<LinearLayout>(R.id.competitionsCard1)
+        val wegyanik_for_students=view.findViewById<TextView>(R.id.wegyanik_for_students)
+        val wegyanik_for_academia_industry=view.findViewById<TextView>(R.id.wegyanik_for_academia_industry)
+        wegyanik_for_academia_industry.setOnClickListener { openFragment(UpComingFragment()) }
+
+        wegyanik_for_students.setOnClickListener { openFragment(UpComingFragment()) }
+
+        internship.setOnClickListener { openFragment(UpComingFragment()) }
+        competition.setOnClickListener { openFragment(UpComingFragment()) }
 
         cardProducts.setOnClickListener { openFragment(ProductFragment()) }
         cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
         cardInternships?.setOnClickListener {  }
         cardCompetitions?.setOnClickListener {  }
 
-        // Fetch product data asynchronously
-//        lifecycleScope.launch {
-//            try {
-//                val response = RetrofitInstance.api.getProducts()
-//                if (response.isSuccessful) {
-//                    val products = response.body()?.data ?: emptyList()
-//                    productAdapter.updateData(products)
-//                } else {
-//                    Log.e("API", "Error fetching products response: ${response.code()}")
-//                }
-//            } catch (e: Exception) {
-//                Log.e("API", "Exception fetching products: ${e.localizedMessage}")
-//            }
-//        }
-
-        // Fetch projects data asynchronously
-//        lifecycleScope.launch {
-//            try {
-//                val response = projectApiService.getProjects()
-//                if (response.isSuccessful) {
-//                    val projects = response.body() ?: emptyList()
-//                    projectAdapter.updateData(projects)
-//                } else {
-//                    Log.e("API", "Error fetching projects response: ${response.code()}")
-//                }
-//            } catch (e: Exception) {
-//                Log.e("API", "Exception fetching projects: ${e.localizedMessage}")
-//            }
-//        }
     }
 
     private fun openFragment(fragment: Fragment) {

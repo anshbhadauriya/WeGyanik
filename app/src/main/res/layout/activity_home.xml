@@ -179,6 +179,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:id="@+id/internshipsCard1"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -226,6 +227,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:id="@+id/competitionsCard1"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -259,7 +261,7 @@
             </GridLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/wegyanik_for_students"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -269,7 +271,7 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/wegyanik_for_academia_industry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

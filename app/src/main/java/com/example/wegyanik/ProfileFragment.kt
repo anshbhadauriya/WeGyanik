@@ -64,19 +64,19 @@ class ProfileFragment : Fragment() {
     private fun updateLoginLogoutText(textView: TextView) {
         if (isUserLoggedIn) {
             textView.text = "Logout"
-            textView.setTextColor(requireContext().getColor(R.color.colorError)) // Use your error color
+            textView.setTextColor(requireContext().getColor(R.color.colorError))
         } else {
             textView.text = "Login"
-            textView.setTextColor(requireContext().getColor(R.color.primary_accent)) // Use your accent color
+            textView.setTextColor(requireContext().getColor(R.color.primary_accent))
         }
     }
 
     private fun performLogout(textView: TextView) {
-        // Clear your user session, tokens, preferences here
+
         isUserLoggedIn = false
         updateLoginLogoutText(textView)
         Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()
-        // Optionally navigate away or refresh UI
+
     }
 
     private fun openFragment(fragment: Fragment) {
