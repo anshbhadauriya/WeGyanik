@@ -30,6 +30,7 @@ class HomeScreen : AppCompatActivity() {
                 R.id.nav_home -> replaceFragment(HomeFragment())
                 R.id.nav_projects -> replaceFragment(ProjectFragment())
                 R.id.nav_products -> replaceFragment(ProductFragment())
+                R.id.nav_glimpses -> replaceFragment(GlimpsesFragment())
                 R.id.nav_profile ->  {
                     val profileFragment = ProfileFragment()
                     val bundle = Bundle()

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/reelContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/background">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Glimpses"
+            android:textColor="@color/text_primary"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- RecyclerView for vertical reels feed -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reelRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:paddingTop="65dp"
+        android:paddingBottom="48dp"/>
+
+    <!-- Overlay: Optionally show loading or interactive UI -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/reelLoading"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:indicatorSize="48dp"
+        app:trackThickness="4dp"/>
+
+    <!-- Overlay: for title or other info, positioned bottom -->
+    <LinearLayout
+        android:id="@+id/reelInfoOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="visible">
+
+        <!-- Title -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/reelTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reel Title"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:shadowColor="#80000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="4"/>
+
+        <!-- Subtitle or description -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/reelSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subtitle/Description"
+            android:textColor="@color/text_secondary"
+            android:shadowColor="#80000000"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+</FrameLayout>

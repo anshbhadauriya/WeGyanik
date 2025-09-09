@@ -165,7 +165,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Community"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
@@ -199,7 +199,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Domains"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
@@ -233,7 +233,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="What we offer?"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
@@ -266,7 +266,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Contact"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textColor="@color/text_primary"
                             android:paddingStart="20dp" />
 
