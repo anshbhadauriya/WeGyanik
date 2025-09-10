@@ -61,7 +61,7 @@
                         android:id="@+id/profileImage"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/avatar"
+                        android:src="@drawable/download"
                         android:layout_gravity="center"
                         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.Circular" />
 
@@ -211,38 +211,38 @@
                         app:dividerColor="@color/divider" />
 
                     <!-- Option: What we offer? -->
-                    <LinearLayout
-                        android:id="@+id/dom"
-                        android:layout_width="match_parent"
-                        android:layout_height="52dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:background="?attr/selectableItemBackground"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp">
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/dom"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="52dp"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:clickable="true"-->
+<!--                        android:focusable="true"-->
+<!--                        android:background="?attr/selectableItemBackground"-->
+<!--                        android:paddingStart="18dp"-->
+<!--                        android:paddingEnd="18dp">-->
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_what_we_offer"/>
+<!--                        <com.google.android.material.imageview.ShapeableImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@drawable/ic_what_we_offer"/>-->
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="What we offer?"
-                            android:textSize="14sp"
-                            android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+<!--                        <com.google.android.material.textview.MaterialTextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:text="What we offer?"-->
+<!--                            android:textSize="14sp"-->
+<!--                            android:textColor="@color/text_primary"-->
+<!--                            android:paddingStart="20dp" />-->
 
-                    </LinearLayout>
+<!--                    </LinearLayout>-->
 
-                    <com.google.android.material.divider.MaterialDivider
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        app:dividerColor="@color/divider" />
+<!--                    <com.google.android.material.divider.MaterialDivider-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        app:dividerColor="@color/divider" />-->
 
                     <LinearLayout
                         android:id="@+id/needHelp"

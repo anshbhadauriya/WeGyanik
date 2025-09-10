@@ -28,7 +28,7 @@ class ProfileFragment : Fragment() {
 
         val community = view.findViewById<View>(R.id.community1)
         val domain = view.findViewById<View>(R.id.notifications)
-        val offer = view.findViewById<View>(R.id.dom)
+//        val offer = view.findViewById<View>(R.id.dom)
 //        val myOrders = view.findViewById<View>(R.id.myOrders)
         val needHelp = view.findViewById<View>(R.id.needHelp)
         val loginLogout = view.findViewById<TextView>(R.id.logout)
@@ -41,7 +41,7 @@ class ProfileFragment : Fragment() {
 
         community.setOnClickListener { openFragment(CommunityFragment()) }
         domain.setOnClickListener { openFragment(DomainFragment()) }
-        offer.setOnClickListener { openFragment(WhatWeOfferFragment()) }
+//        offer.setOnClickListener { openFragment(WhatWeOfferFragment()) }
 //        myOrders.setOnClickListener { openFragment(MyOrdersFragment()) }
 //        needHelp.setOnClickListener { openFragment(NeedHelpFragment()) }
         val userName = arguments?.getString("USER_NAME")
@@ -63,7 +63,7 @@ class ProfileFragment : Fragment() {
 
     private fun updateLoginLogoutText(textView: TextView) {
         if (isUserLoggedIn) {
-            textView.text = "Logout"
+            textView.text = "Sign Out"
             textView.setTextColor(requireContext().getColor(R.color.colorError))
         } else {
             textView.text = "Login"

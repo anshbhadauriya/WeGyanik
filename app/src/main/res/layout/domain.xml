@@ -19,10 +19,11 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Our Domains"
+            android:text="Domain"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"/>
+            android:textColor="@color/text_primary"
+            tools:ignore="HardcodedText"/>
     </com.google.android.material.appbar.MaterialToolbar>
 
     <ScrollView
@@ -36,63 +37,6 @@
             android:orientation="vertical"
             android:paddingBottom="15dp"
             android:gravity="center_horizontal">
-
-            <!-- Robotics Card-->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/RoboticsCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="18dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/background"
-                app:strokeColor="@color/divider"
-                android:padding="12dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="12dp">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/roboticsIcon"
-                        android:layout_width="59dp"
-                        android:layout_height="51dp"
-                        android:layout_marginTop="12dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_robot" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/roboticstext"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Robotics"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/roboticsIcon"/>
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/roboticsText"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:gravity="center"
-                        android:text="We aim to inspire students by introducing them to robotics, nurturing creativity, problem-solving, and confidence through hands-on technology and fun experiences."
-                        android:textColor="@color/text_secondary"
-                        android:textSize="13sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/roboticstext" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.card.MaterialCardView>
 
             <!-- Artificial Intelligence Card -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -118,13 +62,13 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/roboticsIconAI"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="173dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_ai" />
+                            app:srcCompat="@drawable/ai_domain_image" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/AItext"
@@ -133,19 +77,19 @@
                             android:layout_marginTop="8dp"
                             android:text="Artificial Intelligence"
                             android:textColor="@color/text_primary"
-                            android:textSize="16sp"
+                            android:textSize="25sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@+id/roboticsTextAI"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/roboticsIconAI"/>
+                            app:layout_constraintTop_toBottomOf="@id/roboticsIconAI"
+                            tools:ignore="HardcodedText"/>
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/roboticsTextAI"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
                             android:gravity="center"
                             android:text="We make AI simple and fun for school students by helping them build creativity, critical thinking, and future-ready tech skills through hands-on learning."
                             android:textColor="@color/text_secondary"
@@ -153,12 +97,13 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/AItext" />
+                            app:layout_constraintTop_toBottomOf="@id/AItext"
+                            tools:ignore="HardcodedText"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Space Science Card -->
+            <!-- Space Science Card -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -182,13 +127,13 @@
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:id="@+id/spaceIcon"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="173dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/ic_space" />
+                            app:srcCompat="@drawable/sp_domain_image" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/spaceText"
@@ -197,19 +142,19 @@
                             android:layout_marginTop="8dp"
                             android:text="Space Science"
                             android:textColor="@color/text_primary"
-                            android:textSize="16sp"
+                            android:textSize="25sp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toTopOf="@+id/spaceDesc"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/spaceIcon"/>
+                            app:layout_constraintTop_toBottomOf="@id/spaceIcon"
+                            tools:ignore="HardcodedText"/>
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/spaceDesc"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
                             android:gravity="center"
                             android:text="With space technology emerging faster than ever, we're committed to preparing bright young learners to shape the future of space research and exploration."
                             android:textColor="@color/text_secondary"
@@ -217,11 +162,129 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/spaceText" />
+                            app:layout_constraintTop_toBottomOf="@id/spaceText"
+                            tools:ignore="HardcodedText"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Robotics Card-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/RoboticsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                android:padding="12dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/roboticsIcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="173dp"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/robo_domain_image" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roboticstext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Robotics"
+                        android:textColor="@color/text_primary"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roboticsIcon"
+                        tools:ignore="HardcodedText"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roboticsText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="We aim to inspire students by introducing them to robotics, nurturing creativity, problem-solving, and confidence through hands-on technology and fun experiences."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roboticstext"
+                        tools:ignore="HardcodedText"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- IoT Card-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/IotCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                android:padding="12dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iotIcon"
+                        android:layout_width="match_parent"
+                        android:layout_height="173dp"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/iot_domain_image" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/iottext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Internet of Things"
+                        android:textColor="@color/text_primary"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iotIcon"
+                        tools:ignore="HardcodedText"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/iotText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="We make IoT simple and exciting for school students by helping them explore connected devices, problem-solving, and future-ready tech skills through hands-on projects and real-world applications."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iottext"
+                        tools:ignore="HardcodedText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
