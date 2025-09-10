@@ -64,15 +64,13 @@
 
             <!-- Title text -->
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="match_parent"
+                android:id="@+id/gradientTextView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="👋 Time to #BeWegyanik"
+                android:text="Where Innovation meets Creation"
                 android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-                android:textColor="#212121"
                 android:textSize="16sp"
-                android:textStyle="italic|bold"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp" />
+                android:textStyle="italic|bold"/>
 
             <!-- 2-column card grid -->
             <GridLayout
@@ -85,101 +83,30 @@
 
                 <!-- Card 1 -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/productsCard"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:contentDescription="Products card"
-                    android:focusable="true"
-                    app:cardBackgroundColor="#B8F2C2"
-                    app:cardCornerRadius="8dp"
-                    app:strokeColor="@android:color/transparent"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:text="Products"
-                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Explore Dream Careers"
-                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Card 2 -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/projectsCard"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:clickable="true"
-                    android:contentDescription="Projects card"
-                    android:focusable="true"
-                    app:cardBackgroundColor="#FFC09F"
-                    app:cardCornerRadius="8dp"
-                    app:strokeColor="@android:color/transparent"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:text="Projects"
-                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold" />
-
-                        <com.google.android.material.textview.MaterialTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Build Skills Daily"
-                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Card 3 -->
-                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/internshipsCard"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="105dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
                     android:contentDescription="Internships card"
                     android:focusable="true"
-                    app:cardBackgroundColor="#A0CED9"
+                    app:cardBackgroundColor="#FFF8DB"
                     app:cardCornerRadius="8dp"
-                    app:strokeColor="@android:color/transparent"
+                    app:strokeColor="#F7BD3A"
                     app:strokeWidth="1dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_internship_home"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="25dp"
+                        android:contentDescription="@null"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/internshipsCard1"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -189,45 +116,58 @@
                             android:layout_marginBottom="5dp"
                             android:text="Internships"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                            android:textColor="@color/text_primary"
+                            android:textColor="#F7BD3A"
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gain Practical Experience"
+                            android:text="Learning"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="(Upcoming)"
+                            android:text="Experience"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary"
-                            android:textStyle="italic" />
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opportunities"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Card 4 -->
+                <!-- Card 2 -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/competitionsCard"
+                    android:id="@+id/workshopsCard"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="105dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
-                    android:contentDescription="Competitions card"
+                    android:contentDescription="Workshops card"
                     android:focusable="true"
-                    app:cardBackgroundColor="#EAD9FF"
+                    app:cardBackgroundColor="#E2FBE6"
                     app:cardCornerRadius="8dp"
-                    app:strokeColor="@android:color/transparent"
+                    app:strokeColor="#2BC46D"
                     app:strokeWidth="1dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_workshop_home"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@null"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/competitionsCard1"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -235,25 +175,283 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="Competitions"
+                            android:text="Workshops"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                            android:textColor="@color/text_primary"
+                            android:textColor="#2BC46D"
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Guidance from Top Mentors"
+                            android:text="Practice"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="(Upcoming)"
+                            android:text="Innovation"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary"
-                            android:textStyle="italic" />
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Collaboration"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 3 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/projectsCard"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:contentDescription="Projects card"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#EBF3FF"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="#3C8DFF"
+                    app:strokeWidth="1dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Background Image: covers the card -->
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_project_home"
+                            android:contentDescription="@null"/>
+
+                        <!-- Overlay all text content -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:text="Projects"
+                                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                                android:textColor="#3C8DFF"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Result"
+                                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                                android:textColor="@color/text_secondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Planning"
+                                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                                android:textColor="@color/text_secondary" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Execution"
+                                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                                android:textColor="@color/text_secondary" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 4 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/opportunitiesCard"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:contentDescription="Opportunities card"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#FFE4F4"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="#EA4992"
+                    app:strokeWidth="1dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_workshop_home"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@null"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="Opportunities"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textColor="#EA4992"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hope"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Growth"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Advancements"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 5 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/jobsCard"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:contentDescription="Jobs card"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#F1E8FF"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="#A87EFF"
+                    app:strokeWidth="1dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_internship_home"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="25dp"
+                        android:contentDescription="@null"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="Jobs"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textColor="#A87EFF"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hope"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Growth"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Advancements"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 6 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/wegyanikCard"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:clickable="true"
+                    android:contentDescription="Wegyanik card"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#D7FBFF"
+                    app:cardCornerRadius="8dp"
+                    app:strokeColor="#37D6F2"
+                    app:strokeWidth="1dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_workshop_home"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@null"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:text="Wegyanik"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            android:textColor="#37D6F2"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hope"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Growth"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Advancements"
+                            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                            android:textColor="@color/text_secondary" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 

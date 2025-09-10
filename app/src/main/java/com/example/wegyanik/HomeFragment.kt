@@ -1,10 +1,11 @@
 package com.example.wegyanik
 
-import ProductFragment
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Shader
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
@@ -12,7 +13,7 @@ import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
-import com.google.android.material.card.MaterialCardView
+import com.google.android.material.textview.MaterialTextView
 
 class HomeFragment : Fragment(R.layout.activity_home) {
 
@@ -27,6 +28,23 @@ class HomeFragment : Fragment(R.layout.activity_home) {
             SlideModel(R.drawable.drone_new, ScaleTypes.FIT),
             SlideModel(R.drawable.wegyanik_new_kit, ScaleTypes.FIT)
         )
+
+        val textView = view.findViewById<MaterialTextView>(R.id.gradientTextView)
+        val text = textView.text.toString()
+        val width = textView.paint.measureText(text)
+
+        val shader = LinearGradient(
+            0f, 0f, width, 0f,
+            intArrayOf(
+                Color.parseColor("#02BC6A"),  // Green for "Where Innovation"
+                Color.parseColor("#5DACFA")   // Blue for "meets Creation"
+            ),
+            null,
+            Shader.TileMode.CLAMP
+        )
+
+        textView.paint.shader = shader
+        textView.invalidate()
 
         imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
@@ -57,17 +75,17 @@ class HomeFragment : Fragment(R.layout.activity_home) {
             }
         })
 
-        val cardProducts = view.findViewById<MaterialCardView>(R.id.productsCard)
-        val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
-        val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
-        val cardCompetitions = view.findViewById<MaterialCardView>(R.id.competitionsCard)
+//        val cardProducts = view.findViewById<MaterialCardView>(R.id.productsCard)
+//        val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
+//        val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
+//        val cardCompetitions = view.findViewById<MaterialCardView>(R.id.competitionsCard)
         val wegyanik_for_students=view.findViewById<TextView>(R.id.wegyanik_for_students)
         val wegyanik_for_academia_industry=view.findViewById<TextView>(R.id.wegyanik_for_academia_industry)
 
-        cardProducts?.setOnClickListener { openFragment(ProductFragment()) }
-        cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
-        cardInternships?.setOnClickListener { openFragment(UpComingFragment()) }
-        cardCompetitions?.setOnClickListener { openFragment(UpComingFragment()) }
+//        cardProducts?.setOnClickListener { openFragment(ProductFragment()) }
+//        cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
+//        cardInternships?.setOnClickListener { openFragment(UpComingFragment()) }
+//        cardCompetitions?.setOnClickListener { openFragment(UpComingFragment()) }
         wegyanik_for_students?.setOnClickListener { openFragment(UpComingFragment()) }
         wegyanik_for_academia_industry?.setOnClickListener { openFragment(UpComingFragment()) }
     }
