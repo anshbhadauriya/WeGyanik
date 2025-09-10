@@ -66,6 +66,7 @@
             app:itemBackground="@drawable/nav_item_background_clear"
             app:itemActiveIndicatorStyle="@style/BottomNav.ActiveIndicator.None"
             app:layout_insetEdge="bottom"
+            app:itemIconSize="23dp"
             app:itemTextAppearanceActiveBoldEnabled="true"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

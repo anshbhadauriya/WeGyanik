@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background">
 
     <!-- Top bar -->
@@ -67,7 +68,8 @@
                 android:layout_height="wrap_content"
                 android:text="Where Innovation meets Creation"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                android:textStyle="italic|bold"/>
+                android:textStyle="italic|bold"
+                tools:ignore="HardcodedText" />
 
             <!-- 2-column card grid -->
             <GridLayout
@@ -91,7 +93,8 @@
                     app:cardBackgroundColor="#FFF8DB"
                     app:cardCornerRadius="8dp"
                     app:strokeColor="#F7BD3A"
-                    app:strokeWidth="1dp">
+                    app:strokeWidth="1dp"
+                    tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
@@ -114,28 +117,32 @@
                             android:text="Internships"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             android:textColor="#F7BD3A"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Learning"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Experience"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Opportunities"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -152,7 +159,8 @@
                     app:cardBackgroundColor="#E2FBE6"
                     app:cardCornerRadius="8dp"
                     app:strokeColor="#2BC46D"
-                    app:strokeWidth="1dp">
+                    app:strokeWidth="1dp"
+                    tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
@@ -175,28 +183,32 @@
                             android:text="Workshops"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             android:textColor="#2BC46D"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Practice"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Innovation"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Collaboration"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -213,7 +225,8 @@
                     app:cardBackgroundColor="#EBF3FF"
                     app:cardCornerRadius="8dp"
                     app:strokeColor="#3C8DFF"
-                    app:strokeWidth="1dp">
+                    app:strokeWidth="1dp"
+                    tools:ignore="HardcodedText" >
 
                     <FrameLayout
                         android:layout_width="match_parent"
@@ -242,28 +255,32 @@
                                 android:text="Projects"
                                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                                 android:textColor="#3C8DFF"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
 
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Result"
                                 android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                                android:textColor="@color/text_secondary" />
+                                android:textColor="@color/text_secondary"
+                                tools:ignore="HardcodedText" />
 
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Planning"
                                 android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                                android:textColor="@color/text_secondary" />
+                                android:textColor="@color/text_secondary"
+                                tools:ignore="HardcodedText" />
 
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Execution"
                                 android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                                android:textColor="@color/text_secondary" />
+                                android:textColor="@color/text_secondary"
+                                tools:ignore="HardcodedText" />
 
                         </LinearLayout>
                     </FrameLayout>
@@ -282,7 +299,8 @@
                     app:cardBackgroundColor="#FFE4F4"
                     app:cardCornerRadius="8dp"
                     app:strokeColor="#EA4992"
-                    app:strokeWidth="1dp">
+                    app:strokeWidth="1dp"
+                    tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
@@ -305,28 +323,32 @@
                             android:text="Opportunities"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             android:textColor="#EA4992"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Hope"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Growth"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Advancements"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -343,7 +365,8 @@
                     app:cardBackgroundColor="#F1E8FF"
                     app:cardCornerRadius="8dp"
                     app:strokeColor="#A87EFF"
-                    app:strokeWidth="1dp">
+                    app:strokeWidth="1dp"
+                    tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
@@ -366,28 +389,32 @@
                             android:text="Jobs"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             android:textColor="#A87EFF"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Work"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Career"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Employment"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -404,7 +431,8 @@
                     app:cardBackgroundColor="#D7FBFF"
                     app:cardCornerRadius="8dp"
                     app:strokeColor="#37D6F2"
-                    app:strokeWidth="1dp">
+                    app:strokeWidth="1dp"
+                    tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
@@ -427,28 +455,32 @@
                             android:text="Wegyanik"
                             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                             android:textColor="#37D6F2"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Aim"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Create"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Discovery"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-                            android:textColor="@color/text_secondary" />
+                            android:textColor="@color/text_secondary"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -461,9 +493,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:backgroundTint="#ffda03"
-                android:text="Wegyanik for Students\n(Upcoming)"
+                android:text="Wegyanik for Students"
                 android:textColor="#000000"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
             <Button
                 android:id="@+id/wegyanik_for_academia_industry"
@@ -471,9 +504,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:backgroundTint="#ffb343"
-                android:text="Wegyanik for Academia/Industry\n(Upcoming)"
+                android:text="Wegyanik for Academia/Industry"
                 android:textColor="#000000"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

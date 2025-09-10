@@ -5,49 +5,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/background"
     tools:context=".UpComingFragment">
 
     <!-- Placeholder Icon -->
     <ImageView
         android:id="@+id/upcomingIcon"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@android:drawable/ic_menu_recent_history"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:contentDescription="Upcoming Icon"
-        app:tint="@android:color/darker_gray"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:foregroundGravity="center"
+        android:src="@drawable/ic_coming_soon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/upcomingText"
-        android:layout_marginBottom="16dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46"
+        tools:ignore="HardcodedText" />
 
     <!-- Coming Soon Text -->
     <TextView
         android:id="@+id/upcomingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🚧 Coming Soon 🚧"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/upcomingIcon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText"/>
-
-    <!-- Sub Text -->
-    <TextView
-        android:id="@+id/upcomingSubText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="We’re working hard to bring this feature to you!"
+        android:text="Coming soon..."
+        android:textColor="@color/text_primary"
         android:textSize="16sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/upcomingText"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/upcomingIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText"/>
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

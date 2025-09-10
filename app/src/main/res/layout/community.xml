@@ -22,7 +22,8 @@
             android:text="Community"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"/>
+            android:textColor="@color/text_primary"
+            tools:ignore="HardcodedText" />
     </com.google.android.material.appbar.MaterialToolbar>
 
     <ScrollView
@@ -52,29 +53,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="12dp">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="59dp"
-                        android:layout_height="51dp"
-                        android:layout_marginTop="12dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                    
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/info1"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/bulbb" />
+                        app:layout_constraintBottom_toTopOf="@id/titleText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        app:cardBackgroundColor="#43A047"
+                        app:strokeColor="@android:color/transparent">
+                        
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Join"
+                            android:textColor="#ffffff"
+                            tools:ignore="HardcodedText"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_gravity="center"/>
+                    </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/titleText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="What is Wegyanik?"
+                        android:layout_marginTop="12dp"
+                        android:text="Step Into Wegyanik"
                         android:textColor="@color/text_primary"
-                        android:textSize="16sp"
                         android:textStyle="bold"
+                        android:textSize="25sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imageView" />
+                        app:layout_constraintTop_toBottomOf="@+id/info1"
+                        tools:ignore="HardcodedText" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/descriptionText"
@@ -82,31 +97,52 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="center"
-                        android:text="Wegyanik is a platform that empowers students and institutions to innovate, collaborate, and grow through technology and hands-on learning."
+                        android:text="A space where curious minds, innovators, and learners come together to exchange knowledge, explore new ideas, and inspire one another. Here you can share your thoughts, ask meaningful questions, and grow collectively with a community of like-minded people."
                         android:textColor="@color/text_secondary"
                         android:textSize="13sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/titleText"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/countText1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="20K+ users"
+                        android:textColor="#43A047"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/descriptionText"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:ignore="HardcodedText" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/exploreButton"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Explore Wegyanik"
-                        android:backgroundTint="#e95b0b"
+                        android:text="Join Now"
+                        android:backgroundTint="#43A047"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="12dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/descriptionText"
+                        app:layout_constraintTop_toBottomOf="@+id/countText1"
                         app:layout_constraintVertical_bias="0.38"
-                        android:textColor="@color/text_primary"
-                        app:cornerRadius="18dp"/>
+                        android:textColor="#ffffff"
+                        app:cornerRadius="18dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        tools:ignore="HardcodedText" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -132,55 +168,90 @@
                         android:layout_height="match_parent"
                         android:padding="12dp">
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/imageView1"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/info2"
                             app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/titleTextWhy"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:srcCompat="@drawable/new_account_circle" />
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="10dp"
+                            app:cardBackgroundColor="#FFA726"
+                            app:strokeColor="@android:color/transparent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Collaborate"
+                                android:textColor="#ffffff"
+                                tools:ignore="HardcodedText"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="20dp"/>
+                        </com.google.android.material.card.MaterialCardView>
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/titleTextWhy"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Why Join Wegyanik?"
+                            android:layout_marginTop="12dp"
+                            android:text="Collaborate Us"
                             android:textColor="@color/text_primary"
-                            android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/imageView1"
+                            android:textSize="25sp"
+                            app:layout_constraintTop_toBottomOf="@+id/info2"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent" />
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/descriptionTextWhy"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Join to access educational kits, workshops, and a supportive community to bring your ideas to life and build a strong tech future."
+                            android:text="Exchange knowledge with peers and experts to gain new perspectives. Showcase your projects and highlight your innovative ideas. Collaborate on meaningful initiatives that inspire growth and creativity. At Wegyanik, your voice plays a vital role in building a stronger scientific community."
                             android:textColor="@color/text_secondary"
                             android:textSize="13sp"
                             android:gravity="center"
                             app:layout_constraintTop_toBottomOf="@id/titleTextWhy"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent" />
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/countText2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center"
+                            android:text="12K+ users"
+                            android:textColor="#FFA726"
+                            android:textSize="35sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/descriptionTextWhy"
+                            app:layout_constraintVertical_bias="0.0"
+                            tools:ignore="HardcodedText" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/joinButton"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:text="Join Wegyanik"
-                            android:backgroundTint="#e95b0b"
-                            app:layout_constraintTop_toBottomOf="@id/descriptionTextWhy"
+                            android:text="Collaborate with Us"
+                            android:backgroundTint="#FFA726"
+                            app:layout_constraintTop_toBottomOf="@id/countText2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            android:textColor="@color/text_primary"
-                            app:cornerRadius="18dp"/>
+                            android:textColor="#ffffff"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            tools:ignore="HardcodedText" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
