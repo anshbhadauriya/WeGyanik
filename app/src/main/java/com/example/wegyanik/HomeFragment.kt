@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.interfaces.ItemClickListener
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.textview.MaterialTextView
+import com.google.android.material.card.MaterialCardView
 
 class HomeFragment : Fragment(R.layout.activity_home) {
 
@@ -75,17 +76,21 @@ class HomeFragment : Fragment(R.layout.activity_home) {
             }
         })
 
-//        val cardProducts = view.findViewById<MaterialCardView>(R.id.productsCard)
-//        val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
-//        val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
-//        val cardCompetitions = view.findViewById<MaterialCardView>(R.id.competitionsCard)
+        val cardInternships = view.findViewById<MaterialCardView>(R.id.internshipsCard)
+        val cardWorkshops = view.findViewById<MaterialCardView>(R.id.workshopsCard)
+        val cardProjects = view.findViewById<MaterialCardView>(R.id.projectsCard)
+        val cardOpportunities = view.findViewById<MaterialCardView>(R.id.opportunitiesCard)
+        val cardJobs = view.findViewById<MaterialCardView>(R.id.jobsCard)
+        val cardWegyanik = view.findViewById<MaterialCardView>(R.id.wegyanikCard)
         val wegyanik_for_students=view.findViewById<TextView>(R.id.wegyanik_for_students)
         val wegyanik_for_academia_industry=view.findViewById<TextView>(R.id.wegyanik_for_academia_industry)
 
-//        cardProducts?.setOnClickListener { openFragment(ProductFragment()) }
-//        cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
-//        cardInternships?.setOnClickListener { openFragment(UpComingFragment()) }
-//        cardCompetitions?.setOnClickListener { openFragment(UpComingFragment()) }
+        cardInternships?.setOnClickListener { openFragment(UpComingFragment()) }
+        cardWorkshops?.setOnClickListener { openFragment(UpComingFragment()) }
+        cardProjects?.setOnClickListener { openFragment(ProjectFragment()) }
+        cardOpportunities?.setOnClickListener { openFragment(UpComingFragment()) }
+        cardJobs?.setOnClickListener { openFragment(UpComingFragment()) }
+        cardWegyanik?.setOnClickListener { openFragment(UpComingFragment()) }
         wegyanik_for_students?.setOnClickListener { openFragment(UpComingFragment()) }
         wegyanik_for_academia_industry?.setOnClickListener { openFragment(UpComingFragment()) }
     }

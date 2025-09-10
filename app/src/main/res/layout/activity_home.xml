@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
@@ -68,8 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Where Innovation meets Creation"
-                android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-                android:textSize="16sp"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                 android:textStyle="italic|bold"/>
 
             <!-- 2-column card grid -->
@@ -85,7 +82,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/internshipsCard"
                     android:layout_width="0dp"
-                    android:layout_height="105dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
@@ -98,11 +95,11 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_internship_home"
+                        android:layout_height="75dp"
+                        android:layout_gravity="bottom|end"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="25dp"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_internship_home" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -146,7 +143,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/workshopsCard"
                     android:layout_width="0dp"
-                    android:layout_height="105dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
@@ -159,11 +156,11 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_workshop_home"
+                        android:layout_height="75dp"
+                        android:layout_gravity="bottom|end"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_workshop_home" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -207,7 +204,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/projectsCard"
                     android:layout_width="0dp"
-                    android:layout_height="105dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
@@ -225,9 +222,9 @@
                         <!-- Background Image: covers the card -->
                         <com.google.android.material.imageview.ShapeableImageView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="75dp"
                             android:layout_marginStart="50dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_gravity="bottom|end"
                             android:src="@drawable/ic_project_home"
                             android:contentDescription="@null"/>
 
@@ -276,7 +273,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/opportunitiesCard"
                     android:layout_width="0dp"
-                    android:layout_height="105dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
@@ -289,10 +286,10 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:src="@drawable/ic_workshop_home"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_gravity="bottom|end"
                         android:contentDescription="@null"/>
 
                     <LinearLayout
@@ -337,7 +334,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/jobsCard"
                     android:layout_width="0dp"
-                    android:layout_height="105dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
@@ -350,10 +347,10 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:src="@drawable/ic_internship_home"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_gravity="bottom|end"
                         android:contentDescription="@null"/>
 
                     <LinearLayout
@@ -374,21 +371,21 @@
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Hope"
+                            android:text="Work"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Growth"
+                            android:text="Career"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Advancements"
+                            android:text="Employment"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
                     </LinearLayout>
@@ -398,7 +395,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/wegyanikCard"
                     android:layout_width="0dp"
-                    android:layout_height="105dp"
+                    android:layout_height="110dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     android:clickable="true"
@@ -411,10 +408,10 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="75dp"
                         android:src="@drawable/ic_workshop_home"
                         android:layout_marginStart="50dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_gravity="bottom|end"
                         android:contentDescription="@null"/>
 
                     <LinearLayout
@@ -435,21 +432,21 @@
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Hope"
+                            android:text="Aim"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Growth"
+                            android:text="Create"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Advancements"
+                            android:text="Discovery"
                             android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                             android:textColor="@color/text_secondary" />
                     </LinearLayout>
@@ -472,7 +469,7 @@
                 android:id="@+id/wegyanik_for_academia_industry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="6dp"
                 android:backgroundTint="#ffb343"
                 android:text="Wegyanik for Academia/Industry\n(Upcoming)"
                 android:textColor="#000000"
