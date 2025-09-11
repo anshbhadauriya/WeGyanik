@@ -6,8 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:paddingTop="8dp"
-    android:paddingStart="8dp"
     android:paddingEnd="8dp"
+    android:paddingStart="8dp"
     tools:context=".HomeScreen"
     android:background="@color/background">
 
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="15dp"
+            android:paddingBottom="8dp"
             android:gravity="center_horizontal">
 
             <!-- Artificial Intelligence Card -->
@@ -66,7 +66,6 @@
                             android:id="@+id/roboticsIconAI"
                             android:layout_width="match_parent"
                             android:layout_height="173dp"
-                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -131,7 +130,6 @@
                             android:id="@+id/spaceIcon"
                             android:layout_width="match_parent"
                             android:layout_height="173dp"
-                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -191,7 +189,6 @@
                         android:id="@+id/roboticsIcon"
                         android:layout_width="match_parent"
                         android:layout_height="173dp"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -249,7 +246,6 @@
                         android:id="@+id/iotIcon"
                         android:layout_width="match_parent"
                         android:layout_height="173dp"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
