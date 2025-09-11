@@ -34,4 +34,11 @@
     <color name="card_internships_bg">#A0CED9</color>
     <color name="card_competitions_bg">#EAD9FF</color>
 
+    <color name="icon_green">#21C274</color>
+    <color name="icon_blue">#247DFD</color>
+    <color name="icon_orange">#FE820A</color>
+    <color name="icon_pink">#EF3D80</color>
+    <color name="icon_purple">#B055FF</color>
+    <color name="icon_teal">#17C1C6</color>
+
 </resources>

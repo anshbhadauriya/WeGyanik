@@ -1,417 +1,470 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="8dp"
-    tools:context=".HomeScreen"
-    android:background="@color/background">
+    android:paddingStart="8dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".HomeScreen">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:fitsSystemWindows="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:fitsSystemWindows="true">
+
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="What we offer?"
+            android:text="Offers provided"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"/>
+            android:textColor="@color/text_primary"
+            tools:ignore="HardcodedText"/>
     </com.google.android.material.appbar.MaterialToolbar>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="15dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:paddingBottom="8dp">
 
-            <!-- Incubation Support Card -->
+            <!-- Incubation Support -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/inccard"
+                android:id="@+id/incubationCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="18dp"
+                app:cardCornerRadius="16dp"
                 app:cardUseCompatPadding="true"
                 app:cardBackgroundColor="@color/background"
-                app:strokeColor="@color/divider">
+                app:strokeColor="@color/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="12dp">
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/incubationLogoContainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/icon_green"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/supp"
-                        android:layout_width="59dp"
-                        android:layout_height="51dp"
-                        android:layout_marginTop="12dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_handshake" />
+                        android:id="@+id/incubationLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintTop_toTopOf="@id/incubationLogoContainer"
+                        app:layout_constraintBottom_toBottomOf="@id/incubationLogoContainer"
+                        app:layout_constraintStart_toStartOf="@id/incubationLogoContainer"
+                        app:layout_constraintEnd_toEndOf="@id/incubationLogoContainer"
+                        app:srcCompat="@drawable/ic_building" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/AItextIncubation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Incubation Support"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/supp"/>
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/roboticsTextIncubation"
+                        android:id="@+id/incubationTitle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:gravity="center"
+                        android:text="Incubation Support"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/incubationLogoContainer"
+                        app:layout_constraintStart_toEndOf="@id/incubationLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/incubationText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:text="Incubation support offers startups mentorship, resources, and funding access to grow and scale effectively."
                         android:textColor="@color/text_secondary"
-                        android:layout_marginBottom="12dp"
                         android:textSize="13sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/incubationTitle"
+                        app:layout_constraintStart_toEndOf="@id/incubationLogoContainer"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/AItextIncubation" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="HardcodedText" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Patent Facilities -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/patentCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/patentCard"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="18dp"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:cardBackgroundColor="@color/background"
-                    app:strokeColor="@color/divider">
+                    android:padding="16dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/patentLogoContainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/icon_blue"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/patent"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:srcCompat="@drawable/ic_tick" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/patentLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintTop_toTopOf="@id/patentLogoContainer"
+                        app:layout_constraintBottom_toBottomOf="@id/patentLogoContainer"
+                        app:layout_constraintStart_toStartOf="@id/patentLogoContainer"
+                        app:layout_constraintEnd_toEndOf="@id/patentLogoContainer"
+                        app:srcCompat="@drawable/ic_tick" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/patentTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Patent Facilities"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/patentText"
-                            app:layout_constraintTop_toBottomOf="@id/patent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/patentTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Patent Facilities"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/patentLogoContainer"
+                        app:layout_constraintStart_toEndOf="@id/patentLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText"/>
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/patentText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:text="Patent facilities help startups protect their innovations through legal guidance, filing support, and IP strategy assistance."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="13sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/patentTitle" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/patentText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Patent facilities help startups protect their innovations through legal guidance, filing support, and IP strategy assistance."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/patentTitle"
+                        app:layout_constraintStart_toEndOf="@id/patentLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Prototyping -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/prototypingCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/prototypingCard"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="18dp"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:cardBackgroundColor="@color/background"
-                    app:strokeColor="@color/divider">
+                    android:padding="16dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/prototypingLogoContainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/icon_orange"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/prototypingLogo"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:srcCompat="@drawable/ic_settings" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/prototypingLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintTop_toTopOf="@id/prototypingLogoContainer"
+                        app:layout_constraintBottom_toBottomOf="@id/prototypingLogoContainer"
+                        app:layout_constraintStart_toStartOf="@id/prototypingLogoContainer"
+                        app:layout_constraintEnd_toEndOf="@id/prototypingLogoContainer"
+                        app:srcCompat="@drawable/ic_settings" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/prototypingTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Prototyping"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/prototypingLogo"
-                            app:layout_constraintBottom_toTopOf="@+id/prototypingText"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/prototypingTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Prototyping"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/prototypingLogoContainer"
+                        app:layout_constraintStart_toEndOf="@id/prototypingLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/prototypingText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="13sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/prototypingTitle" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/prototypingText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/prototypingTitle"
+                        app:layout_constraintStart_toEndOf="@id/prototypingLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Launch Facilities -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/launchFacilitiesCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/launchFacilitiesCard"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="18dp"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:cardBackgroundColor="@color/background"
-                    app:strokeColor="@color/divider">
+                    android:padding="16dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/launchFacilitiesLogoContainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/icon_purple"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/launchFacilitiesLogo"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:srcCompat="@drawable/ic_rocket" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/launchFacilitiesLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintTop_toTopOf="@id/launchFacilitiesLogoContainer"
+                        app:layout_constraintBottom_toBottomOf="@id/launchFacilitiesLogoContainer"
+                        app:layout_constraintStart_toStartOf="@id/launchFacilitiesLogoContainer"
+                        app:layout_constraintEnd_toEndOf="@id/launchFacilitiesLogoContainer"
+                        app:srcCompat="@drawable/ic_rocket" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/launchFacilitiesTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Launch Facilities"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/launchFacilitiesLogo"
-                            app:layout_constraintBottom_toTopOf="@+id/launchFacilitiesText"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/launchFacilitiesTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Launch Facilities"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/launchFacilitiesLogoContainer"
+                        app:layout_constraintStart_toEndOf="@id/launchFacilitiesLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/launchFacilitiesText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="13sp"
-                            app:layout_constraintTop_toBottomOf="@id/launchFacilitiesTitle"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/launchFacilitiesText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/launchFacilitiesTitle"
+                        app:layout_constraintStart_toEndOf="@id/launchFacilitiesLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Internship Opportunity -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/internshipCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/internshipCard"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="18dp"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:cardBackgroundColor="@color/background"
-                    app:strokeColor="@color/divider">
+                    android:padding="16dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/internshipLogoContainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/icon_pink"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/internshipLogo"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:srcCompat="@drawable/ic_internship" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/internshipLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintTop_toTopOf="@id/internshipLogoContainer"
+                        app:layout_constraintBottom_toBottomOf="@id/internshipLogoContainer"
+                        app:layout_constraintStart_toStartOf="@id/internshipLogoContainer"
+                        app:layout_constraintEnd_toEndOf="@id/internshipLogoContainer"
+                        app:srcCompat="@drawable/ic_internship" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/internshipTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Internship Opportunity"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/internshipLogo"
-                            app:layout_constraintBottom_toTopOf="@+id/internshipText"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/internshipTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Internship Opportunity"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/internshipLogoContainer"
+                        app:layout_constraintStart_toEndOf="@id/internshipLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/internshipText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="13sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/internshipTitle"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/internshipText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/internshipTitle"
+                        app:layout_constraintStart_toEndOf="@id/internshipLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <!-- Mentorship -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mentorshipCard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/background"
+                app:strokeColor="@color/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/mentorshipCard"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="18dp"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:cardBackgroundColor="@color/background"
-                    app:strokeColor="@color/divider">
+                    android:padding="16dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="12dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mentorshipLogoContainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="@color/icon_teal"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/mentorshipLogo"
-                            android:layout_width="59dp"
-                            android:layout_height="51dp"
-                            android:layout_marginTop="12dp"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:srcCompat="@drawable/ic_mentorship" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/mentorshipLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintTop_toTopOf="@id/mentorshipLogoContainer"
+                        app:layout_constraintBottom_toBottomOf="@id/mentorshipLogoContainer"
+                        app:layout_constraintStart_toStartOf="@id/mentorshipLogoContainer"
+                        app:layout_constraintEnd_toEndOf="@id/mentorshipLogoContainer"
+                        app:srcCompat="@drawable/ic_mentorship" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/mentorshipTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mentorship"
-                            android:layout_marginTop="8dp"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/mentorshipLogo"
-                            app:layout_constraintBottom_toTopOf="@+id/mentorshipText"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mentorshipTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mentorship"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintTop_toTopOf="@id/mentorshipLogoContainer"
+                        app:layout_constraintStart_toEndOf="@id/mentorshipLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="HardcodedText" />
 
-                        <com.google.android.material.textview.MaterialTextView
-                            android:id="@+id/mentorshipText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="12dp"
-                            android:gravity="center"
-                            android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="13sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/mentorshipTitle"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/mentorshipText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Prototyping support helps startups build and test early versions of their products with access to tools, labs, and technical expertise."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintTop_toBottomOf="@id/mentorshipTitle"
+                        app:layout_constraintStart_toEndOf="@id/mentorshipLogoContainer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>
