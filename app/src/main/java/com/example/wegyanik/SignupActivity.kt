@@ -8,6 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.launch
+import android.widget.TextView
+
 
 class SignupActivity : AppCompatActivity() {
 
@@ -18,24 +20,29 @@ class SignupActivity : AppCompatActivity() {
         val nameInput = findViewById<TextInputEditText>(R.id.nameInput)
         val emailInput = findViewById<TextInputEditText>(R.id.usernameInput)
         val passwordInput = findViewById<TextInputEditText>(R.id.passwordInput)
-        val confirmPasswordInput = findViewById<TextInputEditText>(R.id.confirmPasswordInput)
+//        val confirmPasswordInput = findViewById<TextInputEditText>(R.id.confirmPasswordInput)
         val registerButton = findViewById<MaterialButton>(R.id.registerButton)
+        val alreadyHaveAccount = findViewById<TextView>(R.id.textView3)
+        alreadyHaveAccount.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         registerButton.setOnClickListener {
             val name = nameInput.text.toString().trim()
             val email = emailInput.text.toString().trim()
             val password = passwordInput.text.toString()
-            val confirmPassword = confirmPasswordInput.text.toString()
+//            val confirmPassword = confirmPasswordInput.text.toString()
 
-            if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (password != confirmPassword) {
-                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+//            if (password != confirmPassword) {
+//                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
 
             registerUser(name, email, password)
         }
