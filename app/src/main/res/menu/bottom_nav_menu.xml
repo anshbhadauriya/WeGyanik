@@ -20,10 +20,10 @@
             android:title="Compete"
             android:icon="@drawable/ic_trophy"/>-->
 
-    <item
-        android:id="@+id/nav_glimpses"
-        android:title="Glimpses"
-        android:icon="@drawable/ic_glimpses"/>
+<!--    <item-->
+<!--        android:id="@+id/nav_glimpses"-->
+<!--        android:title="Glimpses"-->
+<!--        android:icon="@drawable/ic_glimpses"/>-->
 
     <item
         android:id="@+id/nav_profile"

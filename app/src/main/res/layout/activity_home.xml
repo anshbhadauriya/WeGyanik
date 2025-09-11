@@ -97,10 +97,9 @@
                     tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
-                        android:layout_gravity="bottom|end"
-                        android:layout_marginStart="50dp"
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="end|bottom"
                         android:contentDescription="@null"
                         android:src="@drawable/ic_internship_home" />
 
@@ -163,10 +162,9 @@
                     tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="75dp"
                         android:layout_gravity="bottom|end"
-                        android:layout_marginStart="50dp"
                         android:contentDescription="@null"
                         android:src="@drawable/ic_workshop_home" />
 
@@ -234,12 +232,11 @@
 
                         <!-- Background Image: covers the card -->
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:layout_width="match_parent"
+                            android:layout_width="80dp"
                             android:layout_height="75dp"
-                            android:layout_marginStart="50dp"
-                            android:layout_gravity="bottom|end"
-                            android:src="@drawable/ic_project_home"
-                            android:contentDescription="@null"/>
+                            android:layout_gravity="end|bottom"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_project_home" />
 
                         <!-- Overlay all text content -->
                         <LinearLayout
@@ -303,12 +300,11 @@
                     tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="75dp"
-                        android:src="@drawable/ic_workshop_home"
-                        android:layout_marginStart="50dp"
-                        android:layout_gravity="bottom|end"
-                        android:contentDescription="@null"/>
+                        android:layout_gravity="end|bottom"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_workshop_home" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -369,12 +365,12 @@
                     tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="75dp"
-                        android:src="@drawable/ic_internship_home"
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="end|bottom"
                         android:layout_marginStart="50dp"
-                        android:layout_gravity="bottom|end"
-                        android:contentDescription="@null"/>
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_internship_home" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -435,7 +431,7 @@
                     tools:ignore="HardcodedText" >
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="75dp"
                         android:src="@drawable/ic_workshop_home"
                         android:layout_marginStart="50dp"
