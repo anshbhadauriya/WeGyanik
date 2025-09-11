@@ -46,7 +46,6 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardCornerRadius="18dp"
                 app:strokeColor="@android:color/transparent">
@@ -69,6 +68,7 @@
                 android:text="Where Innovation meets Creation"
                 android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
                 android:textStyle="italic|bold"
+                android:layout_marginTop="24dp"
                 tools:ignore="HardcodedText" />
 
             <!-- 2-column card grid -->
@@ -491,7 +491,7 @@
                 android:id="@+id/wegyanik_for_students"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="16dp"
                 android:backgroundTint="#ffda03"
                 android:text="Wegyanik for Students"
                 android:textColor="#000000"
