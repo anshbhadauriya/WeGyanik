@@ -24,7 +24,7 @@ class HomeFragment : Fragment(R.layout.activity_home) {
         val imageSlider = view.findViewById<ImageSlider>(R.id.imageSlider)
 
         val slideModels = arrayListOf(
-            SlideModel(R.drawable.robobanner2, ScaleTypes.FIT),
+            SlideModel(R.drawable.new_dog, ScaleTypes.FIT),
             SlideModel(R.drawable.trishul_new, ScaleTypes.FIT),
             SlideModel(R.drawable.drone_new, ScaleTypes.FIT),
             SlideModel(R.drawable.wegyanik_new_kit, ScaleTypes.FIT)
@@ -55,7 +55,7 @@ class HomeFragment : Fragment(R.layout.activity_home) {
                     0 -> showProductInfo(
                         "Vaman",
                         "Meet our Robotic Dog — a smart, agile and interactive four-legged companion built to mimic real canine behavior. Designed for education, exploration, and entertainment, this robotic pet can walk, sit, respond to voice commands, and express emotions via LED eyes. Powered by precise servo motors and sensors, it navigates and avoids obstacles. Perfect for students and hobbyists, supports Arduino and Python programming.",
-                        R.drawable.robobanner2
+                        R.drawable.new_dog
                     )
                     1 -> showProductInfo(
                         "Trishul",
