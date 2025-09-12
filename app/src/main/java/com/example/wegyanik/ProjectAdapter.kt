@@ -29,7 +29,7 @@ class ProjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
-        val project = getItem(position)  // Use ListAdapter’s managed list
+        val project = getItem(position)
 
         holder.title.text = project.title
         holder.description.text = android.text.Html.fromHtml(project.description)
