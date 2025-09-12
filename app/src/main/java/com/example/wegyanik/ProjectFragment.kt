@@ -40,11 +40,25 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private fun fetchProjectData() {
         viewLifecycleOwner.lifecycleScope.launch {
+
+            val cached = ProjectRepository.getCachedProjects()
+            if (cached != null && cached.isNotEmpty()) {
+                projectAdapter.updateData(cached)
+                Log.d("ProjectFragment", "Loaded projects from cache")
+                return@launch
+            }
+
             try {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
                     val projects = response.body()?.projects ?: emptyList()
+
+
+                    ProjectRepository.saveProjects(projects)
+
+                    // Update adapter
                     projectAdapter.updateData(projects)
+                    Log.d("ProjectFragment", "Fetched projects from API")
                 } else {
                     Log.e("ProjectFragment", "Failed to fetch projects: ${response.code()}")
                 }
