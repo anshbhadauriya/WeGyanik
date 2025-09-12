@@ -249,7 +249,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="5dp"
-                                android:text="Comp"
+                                android:text="Projects"
                                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                                 android:textColor="#3C8DFF"
                                 android:textStyle="bold"
@@ -285,7 +285,7 @@
 
                 <!-- Card 4 -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/opportunitiesCard"
+                    android:id="@+id/consultancyCard"
                     android:layout_width="0dp"
                     android:layout_height="110dp"
                     android:layout_columnWeight="1"
@@ -350,7 +350,7 @@
 
                 <!-- Card 5 -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/jobsCard"
+                    android:id="@+id/competitionsCard"
                     android:layout_width="0dp"
                     android:layout_height="110dp"
                     android:layout_columnWeight="1"
@@ -416,7 +416,7 @@
 
                 <!-- Card 6 -->
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/wegyanikCard"
+                    android:id="@+id/donateCard"
                     android:layout_width="0dp"
                     android:layout_height="110dp"
                     android:layout_columnWeight="1"
