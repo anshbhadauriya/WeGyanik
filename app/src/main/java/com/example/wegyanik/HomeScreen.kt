@@ -1,6 +1,6 @@
 package com.example.wegyanik
 
-import ProductFragment
+import com.example.wegyanik.ProductFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat

@@ -14,6 +14,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var projectAdapter: ProjectAdapter
+    private lateinit var progressBar: View
 
     private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
 
@@ -22,6 +23,8 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
         recyclerView = view.findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        progressBar = view.findViewById(R.id.progressBar)
 
         projectAdapter = ProjectAdapter { project ->
             val fragment = ProjectDetailFragment.newInstance(project)
@@ -40,22 +43,23 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
     private fun fetchProjectData() {
         viewLifecycleOwner.lifecycleScope.launch {
 
+            // Show loading
+            progressBar.visibility = View.VISIBLE
+
             val cached = ProjectRepository.getCachedProjects()
             if (cached != null && cached.isNotEmpty()) {
                 projectAdapter.submitList(cached)
+                progressBar.visibility = View.GONE
                 Log.d("ProjectFragment", "Loaded projects from cache")
                 return@launch
             }
-
 
             try {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
                     val projects = response.body()?.projects ?: emptyList()
 
-
                     ProjectRepository.saveProjects(projects)
-
 
                     projectAdapter.submitList(projects)
                     Log.d("ProjectFragment", "Fetched projects from API")
@@ -64,7 +68,11 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
                 }
             } catch (e: Exception) {
                 Log.e("ProjectFragment", "Error fetching projects", e)
+            } finally {
+                // Hide loading
+                progressBar.visibility = View.GONE
             }
         }
     }
 }
+
