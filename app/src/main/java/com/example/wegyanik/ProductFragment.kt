@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wegyanik.ProductAdapter
+import com.example.wegyanik.ProductRepository
 import com.example.wegyanik.R
 import kotlinx.coroutines.launch
 
@@ -38,18 +39,33 @@ class ProductFragment : Fragment(R.layout.fragment_product) {
 
     private fun fetchProductData() {
         viewLifecycleOwner.lifecycleScope.launch {
+
+            val cached = ProductRepository.getCachedProducts()
+            if (cached != null && cached.isNotEmpty()) {
+                productAdapter.submitList(cached)
+                Log.d("ProductFragment", "Loaded products from cache")
+                return@launch
+            }
+
+
             try {
                 val response = RetrofitInstance.api.getProducts()
                 if (response.isSuccessful && response.body() != null) {
-                    response.body()!!.data.let { products ->
-                        productAdapter.submitList(products)
-                    }
+                    val products = response.body()!!.data
+
+
+                    ProductRepository.saveProducts(products)
+
+
+                    productAdapter.submitList(products)
+                    Log.d("ProductFragment", "Fetched products from API")
                 } else {
-                    Log.e("API", "API call failed with code ${response.code()}")
+                    Log.e("ProductFragment", "API call failed with code ${response.code()}")
                 }
             } catch (e: Exception) {
-                Log.e("API", "Exception: ${e.message}")
+                Log.e("ProductFragment", "Exception: ${e.message}")
             }
         }
     }
+
 }

@@ -39,7 +39,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private fun fetchProjectData() {
         viewLifecycleOwner.lifecycleScope.launch {
-            // 1️⃣ Load from cache first
+
             val cached = ProjectRepository.getCachedProjects()
             if (cached != null && cached.isNotEmpty()) {
                 projectAdapter.submitList(cached)
@@ -47,16 +47,16 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
                 return@launch
             }
 
-            // 2️⃣ Fetch from API if cache empty
+
             try {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
                     val projects = response.body()?.projects ?: emptyList()
 
-                    // Save in cache
+
                     ProjectRepository.saveProjects(projects)
 
-                    // Submit to adapter
+
                     projectAdapter.submitList(projects)
                     Log.d("ProjectFragment", "Fetched projects from API")
                 } else {
