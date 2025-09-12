@@ -5,14 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 class ProjectAdapter(
-    private val projectList: MutableList<Project> = mutableListOf(),
     private val onProjectClick: (Project) -> Unit
-) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
+) : ListAdapter<Project, ProjectAdapter.ProjectViewHolder>(DiffCallback()) {
 
     inner class ProjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.projectTitle)
@@ -28,9 +29,10 @@ class ProjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
-        val project = projectList[position]
+        val project = getItem(position)  // Use ListAdapter’s managed list
+
         holder.title.text = project.title
-        holder.description.text = android.text.Html.fromHtml(project.description) // fallback
+        holder.description.text = android.text.Html.fromHtml(project.description)
         holder.difficulty.text = "${project.difficulty} • ${project.duration} • Rs. ${project.cost}"
 
         Glide.with(holder.itemView.context)
@@ -44,11 +46,11 @@ class ProjectAdapter(
         }
     }
 
-    override fun getItemCount() = projectList.size
+    class DiffCallback : DiffUtil.ItemCallback<Project>() {
+        override fun areItemsTheSame(oldItem: Project, newItem: Project): Boolean =
+            oldItem.id == newItem.id
 
-    fun updateData(newList: List<Project>) {
-        projectList.clear()
-        projectList.addAll(newList)
-        notifyDataSetChanged()
+        override fun areContentsTheSame(oldItem: Project, newItem: Project): Boolean =
+            oldItem == newItem
     }
 }

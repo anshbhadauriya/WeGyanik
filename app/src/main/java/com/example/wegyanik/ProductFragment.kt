@@ -13,28 +13,21 @@ import com.example.wegyanik.ProductAdapter
 import com.example.wegyanik.R
 import kotlinx.coroutines.launch
 
-class ProductFragment : Fragment() {
+class ProductFragment : Fragment(R.layout.fragment_product) {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var productAdapter: ProductAdapter  // Keep adapter as property
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_product, container, false)
-    }
+    private lateinit var productAdapter: ProductAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.productRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        productAdapter = ProductAdapter(mutableListOf()) { url ->
+        recyclerView.setHasFixedSize(true)
+
+        productAdapter = ProductAdapter { url ->
             if (url.isNotEmpty()) {
-                val intent = Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(url)
-                }
+                val intent = Intent(Intent.ACTION_VIEW).apply { data = Uri.parse(url) }
                 startActivity(intent)
             }
         }
@@ -48,8 +41,9 @@ class ProductFragment : Fragment() {
             try {
                 val response = RetrofitInstance.api.getProducts()
                 if (response.isSuccessful && response.body() != null) {
-                    val productList = response.body()!!.data
-                    productAdapter.updateData(productList)
+                    response.body()!!.data.let { products ->
+                        productAdapter.submitList(products)
+                    }
                 } else {
                     Log.e("API", "API call failed with code ${response.code()}")
                 }

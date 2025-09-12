@@ -14,25 +14,22 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var projectAdapter: ProjectAdapter
-    private val projectList = mutableListOf<Project>()
-
-    private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
+    private val projectApiService by lazy { RetrofitInstance.retrofit.create(ProjectApiService::class.java) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
 
-        projectAdapter = ProjectAdapter(projectList) { project ->
+        projectAdapter = ProjectAdapter { project ->
             val fragment = ProjectDetailFragment.newInstance(project)
-            val activity = requireActivity() as AppCompatActivity
-            activity.supportFragmentManager.beginTransaction()
+            requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .addToBackStack(null)
                 .commit()
         }
-
         recyclerView.adapter = projectAdapter
 
         fetchProjectData()
@@ -43,8 +40,9 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
             try {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
-                    val projects = response.body()?.projects ?: emptyList()
-                    projectAdapter.updateData(projects)
+                    response.body()?.projects?.let { projects ->
+                        projectAdapter.submitList(projects)
+                    }
                 } else {
                     Log.e("ProjectFragment", "Failed to fetch projects: ${response.code()}")
                 }
