@@ -15,25 +15,23 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
     private lateinit var recyclerView: RecyclerView
     private lateinit var projectAdapter: ProjectAdapter
 
-    // Lazily initialize your API service
-    private val projectApiService by lazy {
-        RetrofitInstance.retrofit.create(ProjectApiService::class.java)
-    }
+    private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.setHasFixedSize(true)  // Optimize fixed size recycler
 
         projectAdapter = ProjectAdapter { project ->
             val fragment = ProjectDetailFragment.newInstance(project)
-            requireActivity().supportFragmentManager.beginTransaction()
+            val activity = requireActivity() as AppCompatActivity
+            activity.supportFragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .addToBackStack(null)
                 .commit()
         }
+
         recyclerView.adapter = projectAdapter
 
         fetchProjectData()
@@ -41,14 +39,26 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private fun fetchProjectData() {
         viewLifecycleOwner.lifecycleScope.launch {
+            // 1️⃣ Load from cache first
+            val cached = ProjectRepository.getCachedProjects()
+            if (cached != null && cached.isNotEmpty()) {
+                projectAdapter.submitList(cached)
+                Log.d("ProjectFragment", "Loaded projects from cache")
+                return@launch
+            }
+
+            // 2️⃣ Fetch from API if cache empty
             try {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
-                    response.body()?.projects?.let { projects ->
-                        projectAdapter.submitList(projects)  // Efficient DiffUtil list update
-                    } ?: run {
-                        projectAdapter.submitList(emptyList())
-                    }
+                    val projects = response.body()?.projects ?: emptyList()
+
+                    // Save in cache
+                    ProjectRepository.saveProjects(projects)
+
+                    // Submit to adapter
+                    projectAdapter.submitList(projects)
+                    Log.d("ProjectFragment", "Fetched projects from API")
                 } else {
                     Log.e("ProjectFragment", "Failed to fetch projects: ${response.code()}")
                 }
