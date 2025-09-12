@@ -31,7 +31,8 @@
             app:cardBackgroundColor="@android:color/transparent"
             app:strokeColor="@android:color/transparent"
             app:cardCornerRadius="16dp"
-            android:layout_marginBottom="12dp">
+            android:layout_marginBottom="12dp"
+            android:visibility="visible">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/projectImage"
@@ -40,6 +41,13 @@
                 android:scaleType="fitCenter"
                 style="@style/ShapeAppearanceOverlay.Rounded16"/>
         </com.google.android.material.card.MaterialCardView>
+
+        <WebView
+            android:id="@+id/videoWebView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/meta"
@@ -60,22 +68,6 @@
             android:layout_marginBottom="20dp"
             android:text="Project description will appear here"
             tools:ignore="HardcodedText"/>
-
-        <WebView
-            android:id="@+id/videoWebView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnOpenYouTube"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Open in YouTube"
-            android:visibility="gone"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/stepsRecyclerView"

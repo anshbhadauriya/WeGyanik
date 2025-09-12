@@ -42,7 +42,6 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
         val descView = view.findViewById<TextView>(R.id.description)
         val imageView = view.findViewById<ImageView>(R.id.projectImage)
         val videoWebView = view.findViewById<WebView>(R.id.videoWebView)
-        val btnOpenYouTube = view.findViewById<MaterialButton>(R.id.btnOpenYouTube)
 
         titleView.text = project.title
         descView.text = HtmlCompat.fromHtml(project.description, HtmlCompat.FROM_HTML_MODE_COMPACT)
@@ -55,7 +54,7 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
         val youtubeUrl = project.extractYouTubeUrl()
         if (!youtubeUrl.isNullOrEmpty()) {
             videoWebView.visibility = View.VISIBLE
-            btnOpenYouTube.visibility = View.VISIBLE
+            imageView.visibility = View.GONE
 
             // Enable JavaScript for YouTube player
             videoWebView.settings.javaScriptEnabled = true
@@ -77,13 +76,9 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
             videoWebView.loadData(embedHtml, "text/html", "utf-8")
 
             // Open official YouTube app or browser when button clicked
-            btnOpenYouTube.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeUrl))
-                startActivity(intent)
-            }
+
         } else {
             videoWebView.visibility = View.GONE
-            btnOpenYouTube.visibility = View.GONE
         }
 
         val stepsRecyclerView = view.findViewById<RecyclerView>(R.id.stepsRecyclerView)
