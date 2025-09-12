@@ -23,6 +23,7 @@ class SignupActivity : AppCompatActivity() {
 //        val confirmPasswordInput = findViewById<TextInputEditText>(R.id.confirmPasswordInput)
         val registerButton = findViewById<MaterialButton>(R.id.registerButton)
         val alreadyHaveAccount = findViewById<TextView>(R.id.textView3)
+
         alreadyHaveAccount.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

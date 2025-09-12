@@ -5,11 +5,10 @@ data class LoginRequest(
     val password: String
 )
 
-
 data class LoginResponse(
-    @SerializedName("message") val message: String,
-    @SerializedName("id") val id: String,
-    @SerializedName("name") val name: String,
-    @SerializedName("email") val email: String,
-    @SerializedName("role") val role: String
+    val message: String,
+    val id: String,
+    val name: String,
+    val email: String,
+    val role: String
 )

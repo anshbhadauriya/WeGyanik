@@ -23,9 +23,9 @@ class HomeFragment : Fragment(R.layout.activity_home) {
     private lateinit var cardInternships: MaterialCardView
     private lateinit var cardWorkshops: MaterialCardView
     private lateinit var cardProjects: MaterialCardView
-    private lateinit var cardOpportunities: MaterialCardView
-    private lateinit var cardJobs: MaterialCardView
-    private lateinit var cardWegyanik: MaterialCardView
+    private lateinit var cardConsultancy: MaterialCardView
+    private lateinit var cardCompetitions: MaterialCardView
+    private lateinit var cardDonate: MaterialCardView
     private lateinit var wegyanikForStudents: TextView
     private lateinit var wegyanikForAcademiaIndustry: TextView
     private lateinit var gradientTextView: MaterialTextView
@@ -45,9 +45,9 @@ class HomeFragment : Fragment(R.layout.activity_home) {
         cardInternships = view.findViewById(R.id.internshipsCard)
         cardWorkshops = view.findViewById(R.id.workshopsCard)
         cardProjects = view.findViewById(R.id.projectsCard)
-        cardOpportunities = view.findViewById(R.id.opportunitiesCard)
-        cardJobs = view.findViewById(R.id.jobsCard)
-        cardWegyanik = view.findViewById(R.id.wegyanikCard)
+        cardConsultancy = view.findViewById(R.id.consultancyCard)
+        cardCompetitions = view.findViewById(R.id.competitionsCard)
+        cardDonate = view.findViewById(R.id.donateCard)
         wegyanikForStudents = view.findViewById(R.id.wegyanik_for_students)
         wegyanikForAcademiaIndustry = view.findViewById(R.id.wegyanik_for_academia_industry)
         gradientTextView = view.findViewById(R.id.gradientTextView)
@@ -113,9 +113,9 @@ class HomeFragment : Fragment(R.layout.activity_home) {
             openFragment(ProjectFragment())
             requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav).selectedItemId = R.id.nav_projects
         }
-        cardOpportunities.setOnClickListener { openFragment(UpComingFragment()) }
-        cardJobs.setOnClickListener { openFragment(UpComingFragment()) }
-        cardWegyanik.setOnClickListener { openFragment(UpComingFragment()) }
+        cardConsultancy.setOnClickListener { openFragment(UpComingFragment()) }
+        cardCompetitions.setOnClickListener { openFragment(UpComingFragment()) }
+        cardDonate.setOnClickListener { openFragment(UpComingFragment()) }
         wegyanikForStudents.setOnClickListener { openFragment(UpComingFragment()) }
         wegyanikForAcademiaIndustry.setOnClickListener { openFragment(UpComingFragment()) }
     }

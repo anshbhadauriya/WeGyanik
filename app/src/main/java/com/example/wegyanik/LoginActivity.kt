@@ -13,66 +13,73 @@ import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var emailInput: EditText
+    private lateinit var passwordInput: EditText
+    private lateinit var loginButton: MaterialButton
+    private lateinit var registerPrompt: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val emailInput = findViewById<EditText>(R.id.usernameInput)
-        val passwordInput = findViewById<EditText>(R.id.passwordInput)
-        val loginButton = findViewById<MaterialButton>(R.id.loginButton)
-        val registerPrompt = findViewById<TextView>(R.id.registerprompt)
+        bindViews()
 
-        loginButton.setOnClickListener {
-            android.util.Log.d("LOGIN", "Login button clicked")
-
-            val email = emailInput.text.toString().trim()
-            val password = passwordInput.text.toString().trim()
-
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Enter email & password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            val request = LoginRequest(email,password)
-
-            lifecycleScope.launch {
-                try {
-                    val response = RetrofitInstance.authApi.login(request)
-
-                    if (response.isSuccessful) {
-                        val loginResponse = response.body()
-                        if (loginResponse != null &&
-                            loginResponse.message.contains("successfully", ignoreCase = true)) {
-
-                            Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
-
-                            val intent = Intent(this@LoginActivity, HomeScreen::class.java).apply {
-                                putExtra("USER_NAME", loginResponse.name)
-                                putExtra("USER_ID", loginResponse.id)
-                                putExtra("USER_EMAIL", loginResponse.email)
-                                putExtra("USER_ROLE", loginResponse.role)
-                            }
-                            startActivity(intent)
-                            finish()
-                        } else {
-                            Toast.makeText(this@LoginActivity, loginResponse?.message ?: "Unknown error", Toast.LENGTH_SHORT).show()
-                        }
-                    } else {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            "Login failed: ${response.code()} - ${response.errorBody()?.string()}",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Toast.makeText(this@LoginActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
-                }
-            }
-        }
+        loginButton.setOnClickListener { onLoginClicked() }
 
         registerPrompt.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
+        }
+    }
+
+    private fun bindViews() {
+        emailInput = findViewById(R.id.usernameInput)
+        passwordInput = findViewById(R.id.passwordInput)
+        loginButton = findViewById(R.id.loginButton)
+        registerPrompt = findViewById(R.id.registerprompt)
+    }
+
+    private fun onLoginClicked() {
+        val email = emailInput.text.toString().trim()
+        val password = passwordInput.text.toString().trim()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        performLogin(email, password)
+    }
+
+    private fun performLogin(email: String, password: String) {
+        val request = LoginRequest(email, password)
+
+        lifecycleScope.launch {
+            try {
+                val response = RetrofitInstance.authApi.login(request)
+
+                if (response.isSuccessful) {
+                    val loginResponse = response.body()
+                    if (loginResponse != null && loginResponse.message.contains("success", ignoreCase = true)) {
+                        Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this@LoginActivity, HomeScreen::class.java).apply {
+                            putExtra("USER_NAME", loginResponse.name)
+                            putExtra("USER_ID", loginResponse.id)
+                            putExtra("USER_EMAIL", loginResponse.email)
+                            putExtra("USER_ROLE", loginResponse.role)
+                        }
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this@LoginActivity, loginResponse?.message ?: "Unknown error", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    val errorBody = response.errorBody()?.string()
+                    println("Login failed: code=${response.code()}, errorBody=$errorBody")
+                }
+            } catch (e: Exception) {
+                Toast.makeText(this@LoginActivity, "Error: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
+            }
         }
     }
 }

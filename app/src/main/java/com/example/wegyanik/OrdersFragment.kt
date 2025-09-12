@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 import com.google.android.material.button.MaterialButton
 import android.widget.LinearLayout
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class OrdersFragment : Fragment(R.layout.fragment_orders) {
@@ -19,6 +20,9 @@ class OrdersFragment : Fragment(R.layout.fragment_orders) {
 
     private val orders = mutableListOf<Order>()
     private val adapter = OrderAdapter(orders)
+
+    // Initialize your API service instance (example)
+    private val orderApiService = RetrofitInstance.retrofit.create(OrderApiService::class.java)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,26 +44,27 @@ class OrdersFragment : Fragment(R.layout.fragment_orders) {
 
     private fun fetchOrders() {
         viewLifecycleOwner.lifecycleScope.launch {
-//            try {
-//                // Replace with your Retrofit call
-//                val response = apiService.getOrders()
-//                if (response.isSuccessful && response.body() != null) {
-//                    orders.clear()
-//                    orders.addAll(response.body()!!)
-//                    adapter.notifyDataSetChanged()
-//                } else {
-//                    Toast.makeText(context, "Failed to load orders", Toast.LENGTH_SHORT).show()
-//                }
-//            } catch (e: Exception) {
-//                Toast.makeText(context, "Network error: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
-//            }
+            try {
+                val response = orderApiService.getUserOrders()
+                if (response.isSuccessful && response.body() != null) {
+                    val ordersResponse = response.body()!!
+                    orders.clear()
+                    orders.addAll(ordersResponse.orders)
+                    adapter.notifyDataSetChanged()
 
-            if (orders.isEmpty()) {
-                recyclerView.visibility = View.GONE
-                emptyContainer.visibility = View.VISIBLE
-            } else {
-                recyclerView.visibility = View.VISIBLE
-                emptyContainer.visibility = View.GONE
+                    // Show empty layout if orders list is empty
+                    if (orders.isEmpty()) {
+                        recyclerView.visibility = View.GONE
+                        emptyContainer.visibility = View.VISIBLE
+                    } else {
+                        recyclerView.visibility = View.VISIBLE
+                        emptyContainer.visibility = View.GONE
+                    }
+                } else {
+                    Toast.makeText(context, "Failed to load orders", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(context, "Network error: ${e.localizedMessage}", Toast.LENGTH_SHORT).show()
             }
         }
     }

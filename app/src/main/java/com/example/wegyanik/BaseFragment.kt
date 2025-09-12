@@ -18,7 +18,6 @@ open class BaseFragment(layoutId: Int) : Fragment(layoutId) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // ProgressBar must have the same ID in all fragment layouts
         progressBar = view.findViewById(R.id.progressBar)
     }
 }
