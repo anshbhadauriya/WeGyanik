@@ -31,6 +31,12 @@ class ProfileFragment : Fragment() {
         val myOrders = view.findViewById<View>(R.id.myOrders)
         val needHelp = view.findViewById<View>(R.id.needHelp)
         val loginLogout = view.findViewById<TextView>(R.id.logout)
+        val visitMore = view.findViewById<View>(R.id.visit_more)
+        visitMore.setOnClickListener {
+            val url = "https://wegyanik.in/"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
 
         needHelp.setOnClickListener {
             val url = "https://wegyanik.in/contact"

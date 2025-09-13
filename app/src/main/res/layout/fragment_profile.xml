@@ -271,6 +271,33 @@
                             android:paddingStart="20dp" />
 
                     </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/visit_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingStart="18dp"
+                        android:paddingEnd="18dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_web"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Visit us"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_primary"
+                            android:paddingStart="20dp" />
+
+                    </LinearLayout>
 
                     <com.google.android.material.divider.MaterialDivider
                         android:layout_width="match_parent"
