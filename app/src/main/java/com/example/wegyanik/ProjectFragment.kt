@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.facebook.shimmer.ShimmerFrameLayout
 import kotlinx.coroutines.launch
 
 class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var projectAdapter: ProjectAdapter
-    private lateinit var progressBar: View
+    private lateinit var shimmerLayout: ShimmerFrameLayout
 
     private val projectApiService = RetrofitInstance.retrofit.create(ProjectApiService::class.java)
 
@@ -23,8 +24,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
         recyclerView = view.findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-        progressBar = view.findViewById(R.id.progressBar)
+        shimmerLayout = view.findViewById(R.id.shimmerLayout)
 
         projectAdapter = ProjectAdapter { project ->
             val fragment = ProjectDetailFragment.newInstance(project)
@@ -42,14 +42,15 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
     private fun fetchProjectData() {
         viewLifecycleOwner.lifecycleScope.launch {
-
-            // Show loading
-            progressBar.visibility = View.VISIBLE
+            // Show shimmer
+            shimmerLayout.startShimmer()
+            shimmerLayout.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
 
             val cached = ProjectRepository.getCachedProjects()
             if (cached != null && cached.isNotEmpty()) {
                 projectAdapter.submitList(cached)
-                progressBar.visibility = View.GONE
+                stopLoading()
                 Log.d("ProjectFragment", "Loaded projects from cache")
                 return@launch
             }
@@ -58,9 +59,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
                     val projects = response.body()?.projects ?: emptyList()
-
                     ProjectRepository.saveProjects(projects)
-
                     projectAdapter.submitList(projects)
                     Log.d("ProjectFragment", "Fetched projects from API")
                 } else {
@@ -69,10 +68,14 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
             } catch (e: Exception) {
                 Log.e("ProjectFragment", "Error fetching projects", e)
             } finally {
-                // Hide loading
-                progressBar.visibility = View.GONE
+                stopLoading()
             }
         }
     }
-}
 
+    private fun stopLoading() {
+        shimmerLayout.stopShimmer()
+        shimmerLayout.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
+    }
+}

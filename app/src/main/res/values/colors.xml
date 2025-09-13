@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary -->
     <color name="primary_accent">#e95b0b</color>
-    <color name="background">#FAFAFA</color>
-    <color name="text_primary">#2D2D2D</color>
-    <color name="text_secondary">#6D6D6D</color>
     <color name="wegyanik_orange">#e95b0b</color>
-    <color name="colorError">#D32F2F</color>
 
-    <!-- New Professional Colors -->
+    <!-- Backgrounds -->
+    <color name="background">#FAFAFA</color>
     <color name="card_background">#FFFFFF</color>
     <color name="divider">#DDDDDD</color>
 
     <!-- Texts -->
+    <color name="text_primary">#2D2D2D</color>
+    <color name="text_secondary">#6D6D6D</color>
     <color name="card_text_accent">#4169E1</color>
+    <color name="colorError">#D32F2F</color>
 
+    <!-- Shimmer -->
+    <color name="shimmer_gray">#E0E0E0</color>
+    <color name="shimmer_light">#F5F5F5</color>
+
+    <!-- Icons -->
     <color name="icon_green">#21C274</color>
     <color name="icon_blue">#247DFD</color>
     <color name="icon_orange">#FE820A</color>
     <color name="icon_pink">#EF3D80</color>
     <color name="icon_purple">#B055FF</color>
     <color name="icon_teal">#17C1C6</color>
-
 </resources>

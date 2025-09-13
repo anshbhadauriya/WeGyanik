@@ -37,8 +37,10 @@ class ProjectAdapter(
 
         Glide.with(holder.itemView.context)
             .load("https://wegyanik.in" + project.coverImage)
+            .thumbnail(0.1f)
             .placeholder(R.drawable.image_placeholder_bg)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .dontAnimate()
             .into(holder.image)
 
         holder.itemView.setOnClickListener {

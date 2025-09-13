@@ -83,6 +83,7 @@ dependencies {
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
 
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 //
 //    // ViewModel
 //    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
