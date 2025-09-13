@@ -62,12 +62,19 @@ class LoginActivity : AppCompatActivity() {
                     if (loginResponse != null && loginResponse.message.contains("success", ignoreCase = true)) {
                         Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this@LoginActivity, HomeScreen::class.java).apply {
-                            putExtra("USER_NAME", loginResponse.name)
-                            putExtra("USER_ID", loginResponse.id)
-                            putExtra("USER_EMAIL", loginResponse.email)
-                            putExtra("USER_ROLE", loginResponse.role)
+                        // Save login state in SharedPreferences
+                        val sharedPref = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                        sharedPref.edit().apply {
+                            putBoolean("IS_LOGGED_IN", true)
+                            putString("USER_NAME", loginResponse.name)
+                            putString("USER_EMAIL", loginResponse.email)
+                            putString("USER_ID", loginResponse.id)
+                            putString("USER_ROLE", loginResponse.role)
+                            apply()
                         }
+
+                        // Navigate to HomeScreen
+                        val intent = Intent(this@LoginActivity, HomeScreen::class.java)
                         startActivity(intent)
                         finish()
                     } else {
@@ -82,4 +89,5 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
 }
