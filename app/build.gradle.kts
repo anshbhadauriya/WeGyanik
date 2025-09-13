@@ -83,4 +83,9 @@ dependencies {
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
 
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+//
+//    // ViewModel
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+//    // If you are using fragments, use this extension for ViewModels
+//    implementation("androidx.fragment:fragment-ktx:1.6.2")
 }

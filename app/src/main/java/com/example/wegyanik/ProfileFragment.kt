@@ -43,11 +43,9 @@ class ProfileFragment : Fragment() {
         offer.setOnClickListener { openFragment(WhatWeOfferFragment()) }
         myOrders.setOnClickListener { openFragment(OrdersFragment()) }
 
-        // Retrieve arguments passed to fragment
+        // READ login state and user info from FRAGMENT ARGUMENTS
         val userName = arguments?.getString("USER_NAME") ?: "User"
         val email = arguments?.getString("USER_EMAIL") ?: ""
-
-        // Retrieve login state argument, default to false if not passed
         isUserLoggedIn = arguments?.getBoolean("IS_LOGGED_IN") ?: false
 
         val nameTextView = view.findViewById<TextView>(R.id.profileName)
@@ -61,8 +59,10 @@ class ProfileFragment : Fragment() {
 
         loginLogoutTextView.setOnClickListener {
             if (isUserLoggedIn) {
-                performLogout(loginLogoutTextView)
+                performLogout()
             } else {
+                // OPEN LoginActivity, and after login success,
+                // refresh ProfileFragment with NEW arguments (see below)
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 startActivity(intent)
             }
@@ -79,9 +79,18 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun performLogout(textView: TextView) {
-        isUserLoggedIn = false
-        updateLoginLogoutText(textView)
+    private fun performLogout() {
+        val profileFragment = ProfileFragment().apply {
+            arguments = Bundle().apply {
+                putBoolean("IS_LOGGED_IN", false)        // Set logged out state
+                putString("USER_NAME", "User")           // Reset name to default
+                putString("USER_EMAIL", "")               // Clear email
+            }
+        }
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.container, profileFragment)
+            .commit()
+
         Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()
     }
 
