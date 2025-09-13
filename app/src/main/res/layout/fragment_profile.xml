@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/background"
-    android:scrollbarStyle="insideInset">
+    android:scrollbarStyle="insideInset"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
@@ -22,7 +23,8 @@
             android:text="Profile"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"/>
+            android:textColor="@color/text_primary"
+            tools:ignore="HardcodedText"/>
 
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -74,7 +76,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="14dp"
-                        android:text="Guest"
                         android:textColor="@color/text_primary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -83,7 +84,6 @@
                         android:id="@+id/profileEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="user@example.com"
                         android:textSize="14sp"
                         android:textColor="@color/text_secondary"
                         android:layout_gravity="center"
@@ -134,7 +134,9 @@
                             android:text="My Orders"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            tools:ignore="HardcodedText"/>
                     </LinearLayout>
 
                     <com.google.android.material.divider.MaterialDivider
@@ -167,7 +169,9 @@
                             android:text="Community"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            tools:ignore="HardcodedText"/>
 
                     </LinearLayout>
 
@@ -201,7 +205,9 @@
                             android:text="Domains"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            tools:ignore="HardcodedText"/>
 
                     </LinearLayout>
 
@@ -235,7 +241,9 @@
                             android:text="Offers provided"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            tools:ignore="HardcodedText"/>
 
                     </LinearLayout>
 
@@ -268,9 +276,17 @@
                             android:text="Contact"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            tools:ignore="HardcodedText"/>
 
                     </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        app:dividerColor="@color/divider" />
+
                     <LinearLayout
                         android:id="@+id/visit_more"
                         android:layout_width="match_parent"
@@ -295,7 +311,9 @@
                             android:text="Visit us"
                             android:textSize="14sp"
                             android:textColor="@color/text_primary"
-                            android:paddingStart="20dp" />
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            tools:ignore="HardcodedText"/>
 
                     </LinearLayout>
 
@@ -325,7 +343,8 @@
                             android:paddingStart="18dp"
                             android:paddingEnd="18dp"
                             android:textStyle="bold"
-                            android:gravity="center_vertical"/>
+                            android:gravity="center_vertical"
+                            tools:ignore="HardcodedText"/>
 
 <!--                        <Button-->
 <!--                            android:id="@+id/logout"-->
