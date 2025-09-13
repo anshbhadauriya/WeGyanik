@@ -20,8 +20,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/productImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
             android:adjustViewBounds="true"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded16"
             android:scaleType="fitCenter"

@@ -3,6 +3,7 @@ package com.example.wegyanik
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -23,16 +24,11 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.recyclerViewProjects)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         shimmerLayout = view.findViewById(R.id.shimmerLayout)
 
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         projectAdapter = ProjectAdapter { project ->
-            val fragment = ProjectDetailFragment.newInstance(project)
-            val activity = requireActivity() as AppCompatActivity
-            activity.supportFragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .addToBackStack(null)
-                .commit()
+            navigateToProjectDetail(project)
         }
 
         recyclerView.adapter = projectAdapter
@@ -40,42 +36,54 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
         fetchProjectData()
     }
 
+    private fun navigateToProjectDetail(project: Project) {
+        val fragment = ProjectDetailFragment.newInstance(project)
+        val activity = requireActivity() as? AppCompatActivity
+        if (activity != null) {
+            activity.supportFragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit()
+        } else {
+            Log.e("ProjectFragment", "Activity is null or not AppCompatActivity")
+        }
+    }
+
+    private fun showShimmer() {
+        shimmerLayout.visibility = View.VISIBLE
+        shimmerLayout.startShimmer()
+        recyclerView.visibility = View.GONE
+    }
+
+    private fun hideShimmer() {
+        shimmerLayout.stopShimmer()
+        shimmerLayout.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
+    }
+
     private fun fetchProjectData() {
         viewLifecycleOwner.lifecycleScope.launch {
-            // Show shimmer
-            shimmerLayout.startShimmer()
-            shimmerLayout.visibility = View.VISIBLE
-            recyclerView.visibility = View.GONE
-
-            val cached = ProjectRepository.getCachedProjects()
-            if (cached != null && cached.isNotEmpty()) {
-                projectAdapter.submitList(cached)
-                stopLoading()
-                Log.d("ProjectFragment", "Loaded projects from cache")
-                return@launch
-            }
-
+            showShimmer()
             try {
                 val response = projectApiService.getProjects()
                 if (response.isSuccessful) {
                     val projects = response.body()?.projects ?: emptyList()
+                    if (projects.isEmpty()) {
+                        Toast.makeText(requireContext(), "No projects found", Toast.LENGTH_SHORT).show()
+                    }
                     ProjectRepository.saveProjects(projects)
                     projectAdapter.submitList(projects)
                     Log.d("ProjectFragment", "Fetched projects from API")
                 } else {
-                    Log.e("ProjectFragment", "Failed to fetch projects: ${response.code()}")
+                    Log.e("ProjectFragment", "API error: ${response.code()} ${response.message()}")
+                    Toast.makeText(requireContext(), "Failed to load projects (code: ${response.code()})", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception) {
                 Log.e("ProjectFragment", "Error fetching projects", e)
+                Toast.makeText(requireContext(), "Error loading projects: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
             } finally {
-                stopLoading()
+                hideShimmer()
             }
         }
-    }
-
-    private fun stopLoading() {
-        shimmerLayout.stopShimmer()
-        shimmerLayout.visibility = View.GONE
-        recyclerView.visibility = View.VISIBLE
     }
 }
